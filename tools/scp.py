@@ -11,7 +11,7 @@
 """
 import struct
 
-TEXT_OPS = frozenset({0x38, 0x39, 0x3B})
+TEXT_OPS = frozenset({0x14, 0x38, 0x39, 0x3B})  # 장소명, 화자, 대사, 선택지
 JUMP_OP = 0x01
 SEP = b"\xff\xff\xff\xff"
 

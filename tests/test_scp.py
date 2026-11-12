@@ -99,7 +99,7 @@ def test_grow_every_text_in_real_script_reparses():
 
 
 def test_text_ops_constant():
-    assert 0x39 in TEXT_OPS and 0x38 in TEXT_OPS
+    assert TEXT_OPS == {0x14, 0x38, 0x39, 0x3B}
 
 
 @need
