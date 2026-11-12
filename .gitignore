@@ -1,0 +1,11 @@
+# 원본 디스크·배포 아카이브는 절대 커밋하지 않음
+orig/
+*.bin
+*.cue
+*.iso
+*.zip
+build/
+work/
+__pycache__/
+*.pyc
+Tsugunai (Japan)/
