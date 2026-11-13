@@ -8,7 +8,7 @@
 {"id": "G0008", "cat": "char", "ja": "ルイ", "ko": "루이", "na": "Rui", "state": "draft", "note": "수도원 승관"}
 {"id": "G0009", "cat": "char", "ja": "ウォーレス", "ko": "월리스", "na": "Wallace", "state": "draft", "note": "어부 우두머리의 충직한 일꾼. 영어 이름 → 원어 표기"}
 {"id": "G0010", "cat": "char", "ja": "ビルド", "ko": "빌드", "na": "Bild", "state": "draft", "note": "요정 이야기를 좋아하는 어부의 아들"}
-{"id": "G0011", "cat": "char", "ja": "シェイク", "ko": "셰이크", "na": "", "state": "draft", "note": "여동생이 있는 청년(퀘스트 '사라진 오빠를 찾아라')"}
+{"id": "G0011", "cat": "char", "ja": "シェイク", "ko": "셰이크", "na": "", "state": "draft", "note": "아슈고의 어린 남동생(ボク), 여동생이 있음 (MQ22 M22_01#078–081)"}
 {"id": "G0012", "cat": "char", "ja": "メーソン", "ko": "메이슨", "na": "Mason", "state": "draft", "note": "건축가. 영어 이름 → 원어 표기"}
 {"id": "G0013", "cat": "char", "ja": "ジェイコブ", "ko": "제이콥", "na": "Jacob", "state": "draft", "note": "전 기사. 라후르크를 구해 줌"}
 {"id": "G0014", "cat": "char", "ja": "レジーナ", "ko": "레지나", "na": "", "state": "draft", "note": "셰이크의 여동생. 그림을 팖"}
@@ -16,7 +16,7 @@
 {"id": "G0016", "cat": "char", "ja": "リジュ", "ko": "리주", "na": "", "state": "draft", "note": "꽃을 좋아하는 아이"}
 {"id": "G0017", "cat": "char", "ja": "ギルス", "ko": "길스", "na": "", "state": "draft", "note": "병사들이 동경하는 병사. 전체 이름 ギルス・ドノバン"}
 {"id": "G0018", "cat": "char", "ja": "ギルス・ドノバン", "ko": "길스 도너번", "na": "", "state": "draft", "note": "ギルス 의 전체 이름. 도노반 → 원어 Donovan 표기"}
-{"id": "G0019", "cat": "char", "ja": "アモル", "ko": "아모르", "na": "Amor", "state": "draft", "note": "마시 상자를 다루는 인물"}
+{"id": "G0019", "cat": "char", "ja": "アモル", "ko": "아모르", "na": "Amor", "state": "draft", "note": "여관에 묵는 외국 남자, 외지인이라 따돌림받음 (MQ22 M22_01#801–826)"}
 {"id": "G0020", "cat": "char", "ja": "ラムズ", "ko": "람즈", "na": "", "state": "draft", "note": "집사"}
 {"id": "G0021", "cat": "char", "ja": "ヤック", "ko": "야크", "na": "Yaq", "state": "draft", "note": "문지기"}
 {"id": "G0022", "cat": "char", "ja": "ファス", "ko": "파스", "na": "", "state": "draft", "note": "술집 단골"}
@@ -470,7 +470,7 @@
 {"id": "G0471", "cat": "role", "ja": "赤のバンダナ漁師", "ko": "빨간 두건 어부", "na": "", "state": "draft", "note": "赤いバンダナ漁師 와 같은 인물"}
 {"id": "G0472", "cat": "role", "ja": "赤バンダナの漁師", "ko": "빨간 두건 어부", "na": "", "state": "draft", "note": "赤いバンダナ漁師 와 같은 인물"}
 {"id": "G0473", "cat": "role", "ja": "道具屋の主人", "ko": "도구점 주인", "na": "", "state": "draft", "note": "道具屋主人 과 같은 인물"}
-{"id": "G0474", "cat": "role", "ja": "シェイクの妹", "ko": "셰이크의 여동생", "na": "", "state": "draft", "note": "레지나"}
+{"id": "G0474", "cat": "role", "ja": "シェイクの妹", "ko": "셰이크의 여동생", "na": "", "state": "draft", "note": "셰이크·아슈고의 막내 여동생(이름 미확인)"}
 {"id": "G0475", "cat": "term", "ja": "ガード", "ko": "가드", "na": "Guard", "state": "draft", "note": ""}
 {"id": "G0476", "cat": "term", "ja": "ノーマルガード", "ko": "노멀 가드", "na": "Normal Guard", "state": "draft", "note": ""}
 {"id": "G0477", "cat": "term", "ja": "ストレージガード", "ko": "스토리지 가드", "na": "Strage Guard", "state": "draft", "note": "줄여서 ＳＰ 가드"}
