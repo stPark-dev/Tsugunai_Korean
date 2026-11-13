@@ -1,0 +1,185 @@
+"""대사 번역 작업 묶음(배치) 생성·검사·병합.
+
+같은 원문은 한 번만 번역한다(처음 나온 곳이 TODO, 나머지는 같은 번역을 받음).
+이미 번역된 원문(다른 퀘스트 포함)은 known 으로 보여 주기만 한다.
+배치 파일 한 줄: id <TAB> op <TAB> 화자 <TAB> 원문 <TAB> TODO 또는 "=기존 번역"
+번역 결과(TSV) 한 줄: id <TAB> 번역  (TODO 줄만)
+
+  python -m tools.batch make  MQ21 <출력 폴더> <배치당 TODO 수>
+  python -m tools.batch check <배치 파일> <번역 TSV>
+  python -m tools.batch merge MQ21 <배치 폴더>     → text/ko/MQ21.jsonl
+  python -m tools.batch fix   MQ21 <검수 TSV>...    (id <TAB> 번역 <TAB> 이유, fixcheck = 검사만)
+"""
+import glob
+import json
+import os
+import sys
+
+from tools.translation import TranslationError, check
+
+SRC_PATH = "text/scp_src.jsonl"
+KO_DIR = "text/ko"
+SPLIT_OPS = (20, 56)            # 배치를 끊어도 되는 줄(장소명·화자 이름)
+
+
+class BatchError(ValueError):
+    pass
+
+
+def make_batches(rows, known, size, skip=()):
+    batches, cur, n, seen, speaker = [], [], 0, set(), ""
+    for r in rows:
+        if r["id"].startswith(skip):
+            continue
+        if r["op"] in SPLIT_OPS and n >= size:
+            batches.append(cur)
+            cur, n = [], 0
+        speaker = r["src"] if r["op"] == 56 else "" if r["op"] == 20 else speaker
+        todo = r["src"] not in known and r["src"] not in seen
+        seen.add(r["src"])
+        n += todo
+        cur.append({**r, "speaker": speaker if r["op"] != 56 else "", "todo": todo,
+                    "known": known.get(r["src"], "")})
+    if cur:
+        batches.append(cur)
+    return batches
+
+
+def render(batch):
+    return "".join(f"{r['id']}\t{r['op']}\t{r['speaker']}\t{r['src']}\t"
+                   f"{'TODO' if r['todo'] else '=' + r['known']}\n" for r in batch)
+
+
+def parse_tsv(text, batch):
+    todo = {r["id"]: r["src"] for r in batch if r["todo"]}
+    out = {}
+    for line in text.splitlines():
+        if not line.strip():
+            continue
+        rid, sep, ko = line.partition("\t")
+        if not sep or rid not in todo:
+            raise BatchError(f"TODO 가 아닌 줄 또는 형식 오류: {line[:40]}")
+        out[todo[rid]] = ko
+    return out
+
+
+def _row(r, ko, state):
+    return {"id": r["id"], "src": r["src"], "ko": ko, "state": state}
+
+
+def row_errors(src2ko, rows, src):
+    errs = []
+    for r in rows:
+        if r["src"] in src2ko:
+            try:
+                check([_row(r, src2ko[r["src"]], "needs_review")], src)
+            except TranslationError as e:
+                errs.append((r["id"], str(e)))
+    return errs
+
+
+def expand(rows, src2ko, skip=(), state="needs_review"):
+    out = []
+    for r in rows:
+        if r["id"].startswith(skip):
+            out.append({**_row(r, "", "untranslated"), "note": "디버그 스크립트(플레이어에게 안 보임)"})
+        elif r["src"] in src2ko:
+            out.append(_row(r, src2ko[r["src"]], state))
+        else:
+            out.append(_row(r, "", "untranslated"))
+    return out
+
+
+def apply_fixes(rows, text):
+    """검수 결과(id <TAB> 번역 <TAB> 이유)를 적용. 같은 원문의 모든 줄에 퍼뜨린다."""
+    by = {r["id"]: r for r in rows}
+    fix = {}
+    for line in text.splitlines():
+        if not line.strip():
+            continue
+        rid, ko = (line.split("\t") + [""])[:2]
+        r = by.get(rid)
+        if r is None or r["state"] == "untranslated" or not ko:
+            raise BatchError(f"적용할 수 없는 검수 줄: {line[:40]}")
+        fix[r["src"]] = ko
+    return [{**r, "ko": fix[r["src"]]} if r["src"] in fix and r["state"] != "untranslated" else r
+            for r in rows]
+
+
+def _load_src():
+    return [json.loads(l) for l in open(SRC_PATH, encoding="utf-8")]
+
+
+def _known(exclude=""):
+    k = {}
+    for p in sorted(glob.glob(os.path.join(KO_DIR, "*.jsonl"))):
+        if os.path.basename(p) == exclude + ".jsonl":
+            continue
+        for r in map(json.loads, open(p, encoding="utf-8")):
+            if r["state"] != "untranslated":
+                k.setdefault(r["src"], r["ko"])
+    return k
+
+
+def _quest(rows, q):
+    return [r for r in rows if r["id"].startswith(q + "/")]
+
+
+def _skip(q):
+    return (f"{q}/M{q[2:]}_99",)
+
+
+def _read_batch(path):
+    rows = []
+    for line in open(path, encoding="utf-8"):
+        rid, op, sp, s, tail = line.rstrip("\n").split("\t")
+        rows.append({"id": rid, "op": int(op), "speaker": sp, "src": s, "todo": tail == "TODO"})
+    return rows
+
+
+def main(cmd, *a):
+    rows = _load_src()
+    if cmd == "make":
+        q, out, size = a[0], a[1], int(a[2])
+        os.makedirs(out, exist_ok=True)
+        bs = make_batches(_quest(rows, q), _known(q), size, _skip(q))
+        for i, b in enumerate(bs):
+            open(os.path.join(out, f"{q}_b{i:02d}.tsv"), "w", encoding="utf-8").write(render(b))
+            print(f"{q}_b{i:02d}", len(b), "줄", sum(r["todo"] for r in b), "TODO")
+    elif cmd == "check":
+        b = _read_batch(a[0])
+        got = parse_tsv(open(a[1], encoding="utf-8").read(), b)
+        src = {r["id"]: r for r in rows}
+        miss = [r["id"] for r in b if r["todo"] and r["src"] not in got]
+        for e in row_errors(got, [r for r in b if r["todo"]], src):
+            print("오류", *e)
+        print("빠진 TODO", len(miss), miss[:10])
+    elif cmd == "merge":
+        q, d = a[0], a[1]
+        src2ko = _known(q)
+        for bp in sorted(glob.glob(os.path.join(d, f"{q}_b??.tsv"))):
+            kp = bp[:-4] + ".ko.tsv"
+            src2ko.update(parse_tsv(open(kp, encoding="utf-8").read(), _read_batch(bp)))
+        out = expand(_quest(rows, q), src2ko, _skip(q))
+        check(out, {r["id"]: r for r in rows})
+        with open(os.path.join(KO_DIR, q + ".jsonl"), "w", encoding="utf-8") as f:
+            f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in out)
+        print(q, len(out), "줄", sum(r["state"] != "untranslated" for r in out), "번역")
+    elif cmd in ("fix", "fixcheck"):
+        q = a[0]
+        p = os.path.join(KO_DIR, q + ".jsonl")
+        out = [json.loads(l) for l in open(p, encoding="utf-8")]
+        for fp in a[1:]:
+            out = apply_fixes(out, open(fp, encoding="utf-8").read())
+        errs = row_errors({r["src"]: r["ko"] for r in out if r["state"] != "untranslated"},
+                          [r for r in out if r["state"] != "untranslated"], {r["id"]: r for r in rows})
+        for e in errs:
+            print("오류", *e)
+        if cmd == "fix" and not errs:
+            with open(p, "w", encoding="utf-8") as f:
+                f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in out)
+        print(q, "검수", "적용" if cmd == "fix" and not errs else "검사만", len(a) - 1, "파일, 오류", len(errs))
+
+
+if __name__ == "__main__":
+    main(*sys.argv[1:])

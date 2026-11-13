@@ -26,7 +26,6 @@
 {"id": "G0026", "cat": "char", "ja": "メロー", "ko": "메로", "na": "Merrow", "state": "draft", "note": "인어. 아일랜드 민담 merrow → 원어 표기"}
 {"id": "G0027", "cat": "char", "ja": "エザル", "ko": "에잘", "na": "", "state": "draft", "note": "전설 속 도적(빈민을 위해 훔침)"}
 {"id": "G0028", "cat": "char", "ja": "アイリス", "ko": "아이리스", "na": "", "state": "draft", "note": "피세라의 죽은 어머니(アイリス リトリーブ)"}
-{"id": "G0029", "cat": "char", "ja": "スミカ", "ko": "스미카", "na": "", "state": "draft", "note": "고양이 이름"}
 {"id": "G0030", "cat": "char", "ja": "コール", "ko": "콜", "na": "", "state": "draft", "note": "왈론디아 성주. 전체 이름 コール・Ｍ・ウァロンディア３世"}
 {"id": "G0031", "cat": "char", "ja": "コール・Ｍ・ウァロンディア３世", "ko": "콜 Ｍ 왈론디아 ３세", "na": "", "state": "draft", "note": ""}
 {"id": "G0032", "cat": "char", "ja": "デネヴェラス", "ko": "데네베라스", "na": "", "state": "draft", "note": "어둠의 신, 마왕"}
@@ -100,7 +99,7 @@
 {"id": "G0100", "cat": "role", "ja": "レイヴァンの男", "ko": "레이븐 남자", "na": "", "state": "draft", "note": ""}
 {"id": "G0101", "cat": "role", "ja": "ラムズ執事", "ko": "집사 람즈", "na": "", "state": "draft", "note": ""}
 {"id": "G0102", "cat": "role", "ja": "町の警ら兵", "ko": "마을 순찰병", "na": "", "state": "draft", "note": ""}
-{"id": "G0103", "cat": "role", "ja": "若奥さん", "ko": "젊은 새댁", "na": "", "state": "draft", "note": ""}
+{"id": "G0103", "cat": "role", "ja": "若奥さん", "ko": "새댁", "na": "", "state": "draft", "note": "젊은 새댁은 뜻 겹침(검수 지적)"}
 {"id": "G0104", "cat": "role", "ja": "異国の船乗り", "ko": "이국의 뱃사람", "na": "", "state": "draft", "note": ""}
 {"id": "G0105", "cat": "role", "ja": "道化師", "ko": "광대", "na": "", "state": "draft", "note": ""}
 {"id": "G0106", "cat": "role", "ja": "窓口", "ko": "창구", "na": "", "state": "draft", "note": ""}
@@ -485,3 +484,8 @@
 {"id": "G0485", "cat": "char", "ja": "リリア", "ko": "릴리아", "na": "", "state": "draft", "note": "탑 앞에서 죽은 자의 연인"}
 {"id": "G0486", "cat": "role", "ja": "中年の兵士", "ko": "중년 병사", "na": "", "state": "draft", "note": ""}
 {"id": "G0487", "cat": "role", "ja": "若い兵士", "ko": "젊은 병사", "na": "", "state": "draft", "note": ""}
+{"id": "G0488", "cat": "term", "ja": "心のすさみ", "ko": "황폐해진 마음", "na": "", "state": "draft", "note": ""}
+{"id": "G0489", "cat": "term", "ja": "座礁船", "ko": "좌초선", "na": "", "state": "draft", "note": ""}
+{"id": "G0490", "cat": "term", "ja": "ネコとり名人", "ko": "고양이잡이 명인", "na": "", "state": "draft", "note": "별명"}
+{"id": "G0491", "cat": "term", "ja": "キノコとり名人", "ko": "버섯잡이 명인", "na": "", "state": "draft", "note": "별명"}
+{"id": "G0492", "cat": "term", "ja": "張り紙", "ko": "벽보", "na": "", "state": "draft", "note": ""}
