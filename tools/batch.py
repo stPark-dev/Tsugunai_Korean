@@ -8,7 +8,8 @@
   python -m tools.batch make  MQ21 <출력 폴더> <배치당 TODO 수>
   python -m tools.batch check <배치 파일> <번역 TSV>
   python -m tools.batch merge MQ21 <배치 폴더>     → text/ko/MQ21.jsonl
-  python -m tools.batch fix   MQ21 <검수 TSV>...    (id <TAB> 번역 <TAB> 이유, fixcheck = 검사만)
+  python -m tools.batch fix   MQ21 <검수 TSV>...    (id <TAB> 번역 <TAB> 이유, fixcheck = 검사만,
+                                                   !id = 그 줄만)
 """
 import glob
 import json
@@ -90,20 +91,37 @@ def expand(rows, src2ko, skip=(), state="needs_review"):
     return out
 
 
+def rows_errors(rows, src):
+    """줄마다 자기 번역으로 검사(줄 단위 덮어쓰기 뒤에도 쓸 수 있음)."""
+    errs = []
+    for r in rows:
+        try:
+            check([r], src)
+        except TranslationError as e:
+            errs.append((r["id"], str(e)))
+    return errs
+
+
 def apply_fixes(rows, text):
-    """검수 결과(id <TAB> 번역 <TAB> 이유)를 적용. 같은 원문의 모든 줄에 퍼뜨린다."""
+    """검수 결과(id <TAB> 번역 <TAB> 이유)를 적용. 같은 원문의 모든 줄에 퍼뜨린다.
+    id 앞에 '!' 를 붙이면 그 줄만 고친다(화자에 따라 같은 원문을 다르게 옮길 때)."""
     by = {r["id"]: r for r in rows}
-    fix = {}
+    fix, one = {}, {}
     for line in text.splitlines():
         if not line.strip():
             continue
         rid, ko = (line.split("\t") + [""])[:2]
-        r = by.get(rid)
+        only = rid.startswith("!")
+        r = by.get(rid.lstrip("!"))
         if r is None or r["state"] == "untranslated" or not ko:
             raise BatchError(f"적용할 수 없는 검수 줄: {line[:40]}")
-        fix[r["src"]] = ko
-    return [{**r, "ko": fix[r["src"]]} if r["src"] in fix and r["state"] != "untranslated" else r
-            for r in rows]
+        if only:
+            one[r["id"]] = ko
+        else:
+            fix[r["src"]] = ko
+    out = [{**r, "ko": fix[r["src"]]} if r["src"] in fix and r["state"] != "untranslated" else r
+           for r in rows]
+    return [{**r, "ko": one[r["id"]]} if r["id"] in one else r for r in out]
 
 
 def _load_src():
@@ -171,8 +189,7 @@ def main(cmd, *a):
         out = [json.loads(l) for l in open(p, encoding="utf-8")]
         for fp in a[1:]:
             out = apply_fixes(out, open(fp, encoding="utf-8").read())
-        errs = row_errors({r["src"]: r["ko"] for r in out if r["state"] != "untranslated"},
-                          [r for r in out if r["state"] != "untranslated"], {r["id"]: r for r in rows})
+        errs = rows_errors(out, {r["id"]: r for r in rows})
         for e in errs:
             print("오류", *e)
         if cmd == "fix" and not errs:

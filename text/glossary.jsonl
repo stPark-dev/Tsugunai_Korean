@@ -489,3 +489,5 @@
 {"id": "G0490", "cat": "term", "ja": "ネコとり名人", "ko": "고양이잡이 명인", "na": "", "state": "draft", "note": "별명"}
 {"id": "G0491", "cat": "term", "ja": "キノコとり名人", "ko": "버섯잡이 명인", "na": "", "state": "draft", "note": "별명"}
 {"id": "G0492", "cat": "term", "ja": "張り紙", "ko": "벽보", "na": "", "state": "draft", "note": ""}
+{"id": "G0493", "cat": "char", "ja": "オドネル", "ko": "오도널", "na": "", "state": "draft", "note": "메로에게 편지를 쓴 인물. 아일랜드 성 O'Donnell → 원어 표기(D4)"}
+{"id": "G0494", "cat": "term", "ja": "通り抜け", "ko": "빠져나가기", "na": "", "state": "draft", "note": "영혼이 틈을 빠져나가는 능력. 동사는 빠져나가다, 막힌 곳은 지나갈 수 없다"}

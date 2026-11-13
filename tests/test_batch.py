@@ -66,3 +66,16 @@ def test_apply_fixes_propagates_to_same_source():
         apply_fixes(rows, "Q/F1#999\t없음\t이유\n")
     with pytest.raises(BatchError):
         apply_fixes(rows, "Q/F1#001\t번역\t미번역 줄은 검수 대상 아님\n")
+
+
+def test_apply_fixes_single_row_override():
+    """'!id' 는 그 줄만 고친다(화자에 따라 같은 원문을 다르게 옮길 때)."""
+    from tools.batch import apply_fixes, rows_errors
+    rows = expand(ROWS, {"やあ。": "안녕．"}, skip=("Q/F9",))
+    out = apply_fixes(rows, "!Q/F1#004\t안녕하세요．\t다른 화자\n")
+    by = {r["id"]: r for r in out}
+    assert by["Q/F1#002"]["ko"] == "안녕．" and by["Q/F1#004"]["ko"] == "안녕하세요．"
+    src = {r["id"]: r for r in ROWS}
+    assert rows_errors(out, src) == []
+    bad = apply_fixes(rows, "!Q/F1#004\t안녕.\t반각\n")
+    assert [e[0] for e in rows_errors(bad, src)] == ["Q/F1#004"]
