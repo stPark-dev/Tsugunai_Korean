@@ -1,0 +1,474 @@
+{"id": "G0001", "cat": "char", "ja": "レイス", "ko": "레이스", "na": "Reise", "state": "draft", "note": "주인공. 일본판 발음(D4). 이름 변수 {n:01}"}
+{"id": "G0002", "cat": "char", "ja": "フィセラ", "ko": "피세라", "na": "Fisela", "state": "draft", "note": "어부 우두머리의 딸. 이름 변수 {n:04}"}
+{"id": "G0003", "cat": "char", "ja": "イフェム", "ko": "이펨", "na": "Ifem", "state": "draft", "note": "빚진 젊은 레이븐. 이름 변수 {n:02}. 말음 ム는 받침"}
+{"id": "G0004", "cat": "char", "ja": "アシュゴ", "ko": "아슈고", "na": "Ashgo", "state": "draft", "note": "견습 수도사. 이름 변수 {n:05}"}
+{"id": "G0005", "cat": "char", "ja": "ラフルク", "ko": "라후르크", "na": "Raffer", "state": "draft", "note": "전 병사장, 기억 상실. 이름 변수 {n:03}. 북미판은 이름을 바꿈"}
+{"id": "G0006", "cat": "char", "ja": "ナビ", "ko": "나비", "na": "Navi", "state": "draft", "note": "요정 도모보이. 이름 변수 {n:06}"}
+{"id": "G0007", "cat": "char", "ja": "ミルズ", "ko": "밀즈", "na": "Mills", "state": "draft", "note": "고리대금업자(여성)"}
+{"id": "G0008", "cat": "char", "ja": "ルイ", "ko": "루이", "na": "Rui", "state": "draft", "note": "수도원 승관"}
+{"id": "G0009", "cat": "char", "ja": "ウォーレス", "ko": "월리스", "na": "Wallace", "state": "draft", "note": "어부 우두머리의 충직한 일꾼. 영어 이름 → 원어 표기"}
+{"id": "G0010", "cat": "char", "ja": "ビルド", "ko": "빌드", "na": "Bild", "state": "draft", "note": "요정 이야기를 좋아하는 어부의 아들"}
+{"id": "G0011", "cat": "char", "ja": "シェイク", "ko": "셰이크", "na": "", "state": "draft", "note": "여동생이 있는 청년(퀘스트 '사라진 오빠를 찾아라')"}
+{"id": "G0012", "cat": "char", "ja": "メーソン", "ko": "메이슨", "na": "Mason", "state": "draft", "note": "건축가. 영어 이름 → 원어 표기"}
+{"id": "G0013", "cat": "char", "ja": "ジェイコブ", "ko": "제이콥", "na": "Jacob", "state": "draft", "note": "전 기사. 라후르크를 구해 줌"}
+{"id": "G0014", "cat": "char", "ja": "レジーナ", "ko": "레지나", "na": "", "state": "draft", "note": "셰이크의 여동생. 그림을 팖"}
+{"id": "G0015", "cat": "char", "ja": "トレス", "ko": "트레스", "na": "", "state": "draft", "note": "여관 종업원"}
+{"id": "G0016", "cat": "char", "ja": "リジュ", "ko": "리주", "na": "", "state": "draft", "note": "꽃을 좋아하는 아이"}
+{"id": "G0017", "cat": "char", "ja": "ギルス", "ko": "길스", "na": "", "state": "draft", "note": "병사들이 동경하는 병사. 전체 이름 ギルス・ドノバン"}
+{"id": "G0018", "cat": "char", "ja": "ギルス・ドノバン", "ko": "길스 도너번", "na": "", "state": "draft", "note": "ギルス 의 전체 이름. 도노반 → 원어 Donovan 표기"}
+{"id": "G0019", "cat": "char", "ja": "アモル", "ko": "아모르", "na": "Amor", "state": "draft", "note": "마시 상자를 다루는 인물"}
+{"id": "G0020", "cat": "char", "ja": "ラムズ", "ko": "람즈", "na": "", "state": "draft", "note": "집사"}
+{"id": "G0021", "cat": "char", "ja": "ヤック", "ko": "야크", "na": "Yaq", "state": "draft", "note": "문지기"}
+{"id": "G0022", "cat": "char", "ja": "ファス", "ko": "파스", "na": "", "state": "draft", "note": "술집 단골"}
+{"id": "G0023", "cat": "char", "ja": "ジョニー", "ko": "조니", "na": "", "state": "draft", "note": ""}
+{"id": "G0024", "cat": "char", "ja": "ディーン", "ko": "딘", "na": "", "state": "draft", "note": "병사 지망생"}
+{"id": "G0025", "cat": "char", "ja": "ナッツ", "ko": "너츠", "na": "", "state": "draft", "note": "왈론디아 석공 조합 대표"}
+{"id": "G0026", "cat": "char", "ja": "メロー", "ko": "메로", "na": "Merrow", "state": "draft", "note": "인어. 아일랜드 민담 merrow → 원어 표기"}
+{"id": "G0027", "cat": "char", "ja": "エザル", "ko": "에잘", "na": "", "state": "draft", "note": "전설 속 도적(빈민을 위해 훔침)"}
+{"id": "G0028", "cat": "char", "ja": "アイリス", "ko": "아이리스", "na": "", "state": "draft", "note": "피세라의 죽은 어머니(アイリス リトリーブ)"}
+{"id": "G0029", "cat": "char", "ja": "スミカ", "ko": "스미카", "na": "", "state": "draft", "note": "고양이 이름"}
+{"id": "G0030", "cat": "char", "ja": "コール", "ko": "콜", "na": "", "state": "draft", "note": "왈론디아 성주. 전체 이름 コール・Ｍ・ウァロンディア３世"}
+{"id": "G0031", "cat": "char", "ja": "コール・Ｍ・ウァロンディア３世", "ko": "콜 M 왈론디아 3세", "na": "", "state": "draft", "note": ""}
+{"id": "G0032", "cat": "char", "ja": "デネヴェラス", "ko": "데네베라스", "na": "", "state": "draft", "note": "어둠의 신, 마왕"}
+{"id": "G0033", "cat": "char", "ja": "ウルク", "ko": "우르크", "na": "", "state": "draft", "note": "오크 우두머리 이름. 톨킨 Uruk 계열"}
+{"id": "G0034", "cat": "char", "ja": "ドモヴォーイ", "ko": "도모보이", "na": "Domovoi", "state": "draft", "note": "슬라브 민담 집요정. 나비의 종족"}
+{"id": "G0035", "cat": "char", "ja": "クルーラコーン", "ko": "클루리콘", "na": "", "state": "draft", "note": "아일랜드 민담 clurichaun"}
+{"id": "G0036", "cat": "place", "ja": "ウァロンディア", "ko": "왈론디아", "na": "Walondia", "state": "draft", "note": "마을·성의 이름"}
+{"id": "G0037", "cat": "place", "ja": "大聖堂", "ko": "대성당", "na": "", "state": "draft", "note": ""}
+{"id": "G0038", "cat": "place", "ja": "岸壁の洞窟", "ko": "부두 동굴", "na": "Quay Caverns", "state": "draft", "note": ""}
+{"id": "G0039", "cat": "place", "ja": "港", "ko": "항구", "na": "", "state": "draft", "note": ""}
+{"id": "G0040", "cat": "place", "ja": "宝珠の塔", "ko": "보주의 탑", "na": "Tower of Eriu", "state": "draft", "note": ""}
+{"id": "G0041", "cat": "place", "ja": "光の塔", "ko": "빛의 탑", "na": "", "state": "draft", "note": ""}
+{"id": "G0042", "cat": "place", "ja": "町の広場", "ko": "마을 광장", "na": "", "state": "draft", "note": ""}
+{"id": "G0043", "cat": "place", "ja": "町の門", "ko": "마을 문", "na": "Town Gate", "state": "draft", "note": ""}
+{"id": "G0044", "cat": "place", "ja": "砂州", "ko": "모래톱", "na": "", "state": "draft", "note": ""}
+{"id": "G0045", "cat": "place", "ja": "僧院", "ko": "수도원", "na": "Monastery", "state": "draft", "note": ""}
+{"id": "G0046", "cat": "place", "ja": "漁師宿舎", "ko": "어부 숙소", "na": "", "state": "draft", "note": ""}
+{"id": "G0047", "cat": "place", "ja": "酒場", "ko": "술집", "na": "Pub", "state": "draft", "note": ""}
+{"id": "G0048", "cat": "place", "ja": "酒蔵", "ko": "술 창고", "na": "", "state": "draft", "note": ""}
+{"id": "G0049", "cat": "place", "ja": "道具屋", "ko": "도구점", "na": "Item Shop", "state": "draft", "note": ""}
+{"id": "G0050", "cat": "place", "ja": "武器屋", "ko": "무기점", "na": "Weapons Shop", "state": "draft", "note": ""}
+{"id": "G0051", "cat": "place", "ja": "拓石所", "ko": "마석 공방", "na": "Rune Shop", "state": "draft", "note": "승려가 마석을 룬으로 정련하는 곳. 뜻 번역"}
+{"id": "G0052", "cat": "place", "ja": "地下工房", "ko": "지하 공방", "na": "", "state": "draft", "note": ""}
+{"id": "G0053", "cat": "place", "ja": "訓練洞窟", "ko": "훈련 동굴", "na": "Training Caves", "state": "draft", "note": ""}
+{"id": "G0054", "cat": "place", "ja": "遺跡の丘", "ko": "유적 언덕", "na": "Ruins Hillock", "state": "draft", "note": ""}
+{"id": "G0055", "cat": "place", "ja": "オバケ灯台", "ko": "유령 등대", "na": "", "state": "draft", "note": ""}
+{"id": "G0056", "cat": "place", "ja": "千年樹の灯台", "ko": "천년수 등대", "na": "", "state": "draft", "note": ""}
+{"id": "G0057", "cat": "place", "ja": "カタコンベ", "ko": "카타콤", "na": "", "state": "draft", "note": ""}
+{"id": "G0058", "cat": "place", "ja": "墓地", "ko": "묘지", "na": "", "state": "draft", "note": ""}
+{"id": "G0059", "cat": "place", "ja": "採石場", "ko": "채석장", "na": "Quarry", "state": "draft", "note": ""}
+{"id": "G0060", "cat": "place", "ja": "書塔", "ko": "서탑", "na": "", "state": "draft", "note": "수도원의 책 탑"}
+{"id": "G0061", "cat": "place", "ja": "冥界", "ko": "명계", "na": "", "state": "draft", "note": ""}
+{"id": "G0062", "cat": "place", "ja": "北の渓谷", "ko": "북쪽 계곡", "na": "", "state": "draft", "note": ""}
+{"id": "G0063", "cat": "place", "ja": "聖なる森", "ko": "성스러운 숲", "na": "", "state": "draft", "note": ""}
+{"id": "G0064", "cat": "place", "ja": "オークの砦", "ko": "오크 요새", "na": "", "state": "draft", "note": ""}
+{"id": "G0065", "cat": "place", "ja": "赤の門", "ko": "붉은 문", "na": "Red Gate", "state": "draft", "note": ""}
+{"id": "G0066", "cat": "place", "ja": "緑の門", "ko": "초록 문", "na": "Green Gate", "state": "draft", "note": ""}
+{"id": "G0067", "cat": "place", "ja": "青の門", "ko": "푸른 문", "na": "Blue Gate", "state": "draft", "note": ""}
+{"id": "G0068", "cat": "place", "ja": "地下水路", "ko": "지하 수로", "na": "", "state": "draft", "note": ""}
+{"id": "G0069", "cat": "place", "ja": "町の下水道", "ko": "마을 하수도", "na": "", "state": "draft", "note": ""}
+{"id": "G0070", "cat": "place", "ja": "空き家", "ko": "빈집", "na": "Vacant House", "state": "draft", "note": ""}
+{"id": "G0071", "cat": "place", "ja": "いやしの部屋", "ko": "치유의 방", "na": "", "state": "draft", "note": ""}
+{"id": "G0072", "cat": "place", "ja": "酒宿", "ko": "주막", "na": "", "state": "draft", "note": "술집을 겸한 숙소"}
+{"id": "G0073", "cat": "place", "ja": "城", "ko": "성", "na": "", "state": "draft", "note": ""}
+{"id": "G0074", "cat": "role", "ja": "僧士", "ko": "수도사", "na": "Monk", "state": "draft", "note": ""}
+{"id": "G0075", "cat": "role", "ja": "見習い僧士", "ko": "견습 수도사", "na": "Apprentice Monk", "state": "draft", "note": ""}
+{"id": "G0076", "cat": "role", "ja": "僧官", "ko": "승관", "na": "Head Monk", "state": "draft", "note": "수도사보다 높은 직위. ルイ僧官 → 루이 승관"}
+{"id": "G0077", "cat": "role", "ja": "石職人", "ko": "석공", "na": "", "state": "draft", "note": ""}
+{"id": "G0078", "cat": "role", "ja": "町の男", "ko": "마을 남자", "na": "", "state": "draft", "note": ""}
+{"id": "G0079", "cat": "role", "ja": "町の女", "ko": "마을 여자", "na": "", "state": "draft", "note": ""}
+{"id": "G0080", "cat": "role", "ja": "もの知りじいさん", "ko": "박식한 할아버지", "na": "", "state": "draft", "note": ""}
+{"id": "G0081", "cat": "role", "ja": "赤いバンダナ漁師", "ko": "빨간 두건 어부", "na": "", "state": "draft", "note": "赤のバンダナ漁師·赤バンダナの漁師 도 같은 인물로 통일"}
+{"id": "G0082", "cat": "role", "ja": "緑のバンダナ漁師", "ko": "초록 두건 어부", "na": "", "state": "draft", "note": ""}
+{"id": "G0083", "cat": "role", "ja": "長髪の漁師", "ko": "장발 어부", "na": "", "state": "draft", "note": ""}
+{"id": "G0084", "cat": "role", "ja": "ハチマキ漁師", "ko": "머리띠 어부", "na": "", "state": "draft", "note": ""}
+{"id": "G0085", "cat": "role", "ja": "漁師のカシラ", "ko": "어부 우두머리", "na": "Chief Fisherman", "state": "draft", "note": "피세라의 아버지. 대사의 カシラ 도 '우두머리'"}
+{"id": "G0086", "cat": "role", "ja": "女主人", "ko": "여주인", "na": "", "state": "draft", "note": ""}
+{"id": "G0087", "cat": "role", "ja": "城番兵", "ko": "성 파수병", "na": "", "state": "draft", "note": ""}
+{"id": "G0088", "cat": "role", "ja": "番兵", "ko": "파수병", "na": "", "state": "draft", "note": ""}
+{"id": "G0089", "cat": "role", "ja": "門番", "ko": "문지기", "na": "", "state": "draft", "note": ""}
+{"id": "G0090", "cat": "role", "ja": "兵士", "ko": "병사", "na": "", "state": "draft", "note": ""}
+{"id": "G0091", "cat": "role", "ja": "兵長", "ko": "분대장", "na": "", "state": "draft", "note": ""}
+{"id": "G0092", "cat": "role", "ja": "兵士長", "ko": "병사장", "na": "", "state": "draft", "note": ""}
+{"id": "G0093", "cat": "role", "ja": "元兵士長", "ko": "전 병사장", "na": "", "state": "draft", "note": ""}
+{"id": "G0094", "cat": "role", "ja": "城主", "ko": "성주", "na": "", "state": "draft", "note": ""}
+{"id": "G0095", "cat": "role", "ja": "道具屋主人", "ko": "도구점 주인", "na": "", "state": "draft", "note": ""}
+{"id": "G0096", "cat": "role", "ja": "武器屋の親父", "ko": "무기점 아저씨", "na": "", "state": "draft", "note": ""}
+{"id": "G0097", "cat": "role", "ja": "武器屋の親方", "ko": "무기점 주인장", "na": "", "state": "draft", "note": ""}
+{"id": "G0098", "cat": "role", "ja": "武器屋の見習い", "ko": "무기점 견습생", "na": "", "state": "draft", "note": ""}
+{"id": "G0099", "cat": "role", "ja": "魔石加工の僧士", "ko": "마석 가공 수도사", "na": "", "state": "draft", "note": ""}
+{"id": "G0100", "cat": "role", "ja": "レイヴァンの男", "ko": "레이븐 남자", "na": "", "state": "draft", "note": ""}
+{"id": "G0101", "cat": "role", "ja": "ラムズ執事", "ko": "집사 람즈", "na": "", "state": "draft", "note": ""}
+{"id": "G0102", "cat": "role", "ja": "町の警ら兵", "ko": "마을 순찰병", "na": "", "state": "draft", "note": ""}
+{"id": "G0103", "cat": "role", "ja": "若奥さん", "ko": "젊은 새댁", "na": "", "state": "draft", "note": ""}
+{"id": "G0104", "cat": "role", "ja": "異国の船乗り", "ko": "이국의 뱃사람", "na": "", "state": "draft", "note": ""}
+{"id": "G0105", "cat": "role", "ja": "道化師", "ko": "광대", "na": "", "state": "draft", "note": ""}
+{"id": "G0106", "cat": "role", "ja": "窓口", "ko": "창구", "na": "", "state": "draft", "note": ""}
+{"id": "G0107", "cat": "role", "ja": "ハト", "ko": "비둘기", "na": "", "state": "draft", "note": "화자 이름"}
+{"id": "G0108", "cat": "role", "ja": "のら犬", "ko": "들개", "na": "", "state": "draft", "note": ""}
+{"id": "G0109", "cat": "role", "ja": "金貸し", "ko": "대부업자", "na": "", "state": "draft", "note": "金貸しミルズ → 대부업자 밀즈"}
+{"id": "G0110", "cat": "role", "ja": "建築師", "ko": "건축가", "na": "", "state": "draft", "note": ""}
+{"id": "G0111", "cat": "term", "ja": "レイヴァン", "ko": "레이븐", "na": "Raven", "state": "draft", "note": "위험한 일을 맡는 용병 직업. 원어 표기"}
+{"id": "G0112", "cat": "term", "ja": "ルゥン", "ko": "룬", "na": "Rune", "state": "draft", "note": ""}
+{"id": "G0113", "cat": "term", "ja": "アミュレット", "ko": "아뮬렛", "na": "Amulet", "state": "draft", "note": "관용 표기"}
+{"id": "G0114", "cat": "term", "ja": "護符", "ko": "부적", "na": "", "state": "draft", "note": "아이템 이름 ○○の護符"}
+{"id": "G0115", "cat": "term", "ja": "魔石", "ko": "마석", "na": "Magic Stone", "state": "draft", "note": ""}
+{"id": "G0116", "cat": "term", "ja": "宝珠", "ko": "보주", "na": "Treasure Orb", "state": "draft", "note": ""}
+{"id": "G0117", "cat": "term", "ja": "冥封鏡", "ko": "명봉경", "na": "", "state": "draft", "note": "명계를 봉하는 거울. 한자어 유지"}
+{"id": "G0118", "cat": "term", "ja": "召喚獣", "ko": "소환수", "na": "Summon Beast", "state": "draft", "note": ""}
+{"id": "G0119", "cat": "term", "ja": "乗り移り", "ko": "빙의", "na": "Possess", "state": "draft", "note": ""}
+{"id": "G0120", "cat": "term", "ja": "霊体", "ko": "영체", "na": "", "state": "draft", "note": ""}
+{"id": "G0121", "cat": "term", "ja": "魔物", "ko": "마물", "na": "", "state": "draft", "note": ""}
+{"id": "G0122", "cat": "term", "ja": "魔道書", "ko": "마도서", "na": "Spellbook", "state": "draft", "note": ""}
+{"id": "G0123", "cat": "term", "ja": "妖精", "ko": "요정", "na": "", "state": "draft", "note": ""}
+{"id": "G0124", "cat": "term", "ja": "妖精の石", "ko": "요정의 돌", "na": "", "state": "draft", "note": ""}
+{"id": "G0125", "cat": "term", "ja": "妖精キノコ", "ko": "요정 버섯", "na": "", "state": "draft", "note": ""}
+{"id": "G0126", "cat": "term", "ja": "冥界の穴", "ko": "명계의 구멍", "na": "", "state": "draft", "note": ""}
+{"id": "G0127", "cat": "term", "ja": "心のすさんだ者", "ko": "마음이 황폐해진 자", "na": "", "state": "draft", "note": ""}
+{"id": "G0128", "cat": "term", "ja": "神の試練", "ko": "신의 시련", "na": "", "state": "draft", "note": ""}
+{"id": "G0129", "cat": "term", "ja": "光の神", "ko": "빛의 신", "na": "", "state": "draft", "note": ""}
+{"id": "G0130", "cat": "term", "ja": "闇の神", "ko": "어둠의 신", "na": "", "state": "draft", "note": ""}
+{"id": "G0131", "cat": "term", "ja": "魔法力", "ko": "마법력", "na": "", "state": "draft", "note": ""}
+{"id": "G0132", "cat": "term", "ja": "古代文字", "ko": "고대 문자", "na": "", "state": "draft", "note": ""}
+{"id": "G0133", "cat": "term", "ja": "７つの石柱", "ko": "일곱 돌기둥", "na": "", "state": "draft", "note": ""}
+{"id": "G0134", "cat": "term", "ja": "ストレージポイント", "ko": "스토리지 포인트", "na": "Strage Point", "state": "draft", "note": "SP"}
+{"id": "G0135", "cat": "term", "ja": "バックステップ", "ko": "백스텝", "na": "Back step", "state": "draft", "note": ""}
+{"id": "G0136", "cat": "term", "ja": "オービス", "ko": "오르비스", "na": "", "state": "draft", "note": "예언 속 존재(오르비스가 다시 암흑에 물들 때). 라틴어 orbis"}
+{"id": "G0137", "cat": "term", "ja": "スカーレットラッシュ病", "ko": "스칼릿 래시병", "na": "", "state": "draft", "note": ""}
+{"id": "G0138", "cat": "term", "ja": "聖杯", "ko": "성배", "na": "", "state": "draft", "note": ""}
+{"id": "G0139", "cat": "term", "ja": "称号石", "ko": "칭호석", "na": "", "state": "draft", "note": ""}
+{"id": "G0140", "cat": "term", "ja": "マーシュ", "ko": "마시", "na": "", "state": "draft", "note": "상자에 담아 나르는 물품. ソルティーマーシュ와 관련. 정체 확인 필요"}
+{"id": "G0141", "cat": "term", "ja": "ソルティーマーシュ", "ko": "솔티 마시", "na": "", "state": "draft", "note": ""}
+{"id": "G0142", "cat": "term", "ja": "道具屋 サン＆ハーバー", "ko": "도구점 선 앤드 하버", "na": "", "state": "draft", "note": "가게 이름"}
+{"id": "G0143", "cat": "monster", "ja": "アンシリーコート", "ko": "언실리 코트", "na": "", "state": "draft", "note": "Unseelie Court"}
+{"id": "G0144", "cat": "monster", "ja": "マッドシーリー", "ko": "매드 실리", "na": "", "state": "draft", "note": ""}
+{"id": "G0145", "cat": "monster", "ja": "アンブリエル", "ko": "앰브리엘", "na": "", "state": "draft", "note": "Ambriel"}
+{"id": "G0146", "cat": "monster", "ja": "ヴァッサゴ", "ko": "바사고", "na": "", "state": "draft", "note": "Vassago"}
+{"id": "G0147", "cat": "monster", "ja": "ウォーターリーパー", "ko": "워터 리퍼", "na": "", "state": "draft", "note": "Water Leaper"}
+{"id": "G0148", "cat": "monster", "ja": "ヴォジャノーイ", "ko": "보댜노이", "na": "", "state": "draft", "note": "Vodyanoy"}
+{"id": "G0149", "cat": "monster", "ja": "エアリアル", "ko": "에어리얼", "na": "", "state": "draft", "note": ""}
+{"id": "G0150", "cat": "monster", "ja": "オウドゴッキー", "ko": "오드 고기", "na": "", "state": "draft", "note": "Awd Goggie"}
+{"id": "G0151", "cat": "monster", "ja": "オーク", "ko": "오크", "na": "", "state": "draft", "note": ""}
+{"id": "G0152", "cat": "monster", "ja": "ハイオーク", "ko": "하이 오크", "na": "", "state": "draft", "note": ""}
+{"id": "G0153", "cat": "monster", "ja": "ガルム", "ko": "가름", "na": "", "state": "draft", "note": "Garm"}
+{"id": "G0154", "cat": "monster", "ja": "カンヘル", "ko": "칸헬", "na": "", "state": "draft", "note": ""}
+{"id": "G0155", "cat": "monster", "ja": "グールウォック", "ko": "구울워크", "na": "", "state": "draft", "note": ""}
+{"id": "G0156", "cat": "monster", "ja": "グランガチ", "ko": "그랑가치", "na": "", "state": "draft", "note": "유래 미확인"}
+{"id": "G0157", "cat": "monster", "ja": "グリフィン", "ko": "그리핀", "na": "", "state": "draft", "note": ""}
+{"id": "G0158", "cat": "monster", "ja": "グレムリン", "ko": "그렘린", "na": "", "state": "draft", "note": ""}
+{"id": "G0159", "cat": "monster", "ja": "グレムリンガンナー", "ko": "그렘린 거너", "na": "", "state": "draft", "note": ""}
+{"id": "G0160", "cat": "monster", "ja": "グレムリンボス", "ko": "그렘린 보스", "na": "", "state": "draft", "note": ""}
+{"id": "G0161", "cat": "monster", "ja": "ロードゾンビ", "ko": "로드 좀비", "na": "", "state": "draft", "note": ""}
+{"id": "G0162", "cat": "monster", "ja": "ネビロス", "ko": "네비로스", "na": "", "state": "draft", "note": "Nebiros"}
+{"id": "G0163", "cat": "monster", "ja": "コリガン", "ko": "코리건", "na": "", "state": "draft", "note": "Korrigan"}
+{"id": "G0164", "cat": "monster", "ja": "グレンデル", "ko": "그렌델", "na": "", "state": "draft", "note": "Grendel"}
+{"id": "G0165", "cat": "monster", "ja": "ケモシ", "ko": "케모시", "na": "", "state": "draft", "note": "Chemosh"}
+{"id": "G0166", "cat": "monster", "ja": "コーラング", "ko": "코랑", "na": "", "state": "draft", "note": "유래 미확인"}
+{"id": "G0167", "cat": "monster", "ja": "ゴブリン", "ko": "고블린", "na": "", "state": "draft", "note": ""}
+{"id": "G0168", "cat": "monster", "ja": "ウェブゴブリン", "ko": "웹 고블린", "na": "", "state": "draft", "note": ""}
+{"id": "G0169", "cat": "monster", "ja": "ホブゴブリン", "ko": "홉고블린", "na": "", "state": "draft", "note": ""}
+{"id": "G0170", "cat": "monster", "ja": "ガンマゴブリン", "ko": "감마 고블린", "na": "", "state": "draft", "note": ""}
+{"id": "G0171", "cat": "monster", "ja": "ゴブリンボス", "ko": "고블린 보스", "na": "", "state": "draft", "note": ""}
+{"id": "G0172", "cat": "monster", "ja": "コボルト", "ko": "코볼트", "na": "", "state": "draft", "note": ""}
+{"id": "G0173", "cat": "monster", "ja": "ハイコボルト", "ko": "하이 코볼트", "na": "", "state": "draft", "note": ""}
+{"id": "G0174", "cat": "monster", "ja": "ジャバウォック", "ko": "재버워크", "na": "", "state": "draft", "note": "Jabberwock"}
+{"id": "G0175", "cat": "monster", "ja": "ジュールリーパー", "ko": "줄 리퍼", "na": "", "state": "draft", "note": "해안의 촉수 마물. 유래 미확인"}
+{"id": "G0176", "cat": "monster", "ja": "ジュリーウィスプ", "ko": "줄리 위스프", "na": "", "state": "draft", "note": ""}
+{"id": "G0177", "cat": "monster", "ja": "ジュリーフェイ", "ko": "줄리 페이", "na": "", "state": "draft", "note": ""}
+{"id": "G0178", "cat": "monster", "ja": "ジュロブ", "ko": "주로브", "na": "", "state": "draft", "note": ""}
+{"id": "G0179", "cat": "monster", "ja": "ウェブパピー", "ko": "웹 퍼피", "na": "", "state": "draft", "note": ""}
+{"id": "G0180", "cat": "monster", "ja": "スプリガン", "ko": "스프리건", "na": "", "state": "draft", "note": "Spriggan"}
+{"id": "G0181", "cat": "monster", "ja": "スプリガンロード", "ko": "스프리건 로드", "na": "Spriggan Lord", "state": "draft", "note": ""}
+{"id": "G0182", "cat": "monster", "ja": "ゾンビ", "ko": "좀비", "na": "", "state": "draft", "note": ""}
+{"id": "G0183", "cat": "monster", "ja": "タラスクス", "ko": "타라스쿠스", "na": "", "state": "draft", "note": "Tarascus"}
+{"id": "G0184", "cat": "monster", "ja": "ディムサーペント", "ko": "딤 서펀트", "na": "", "state": "draft", "note": ""}
+{"id": "G0185", "cat": "monster", "ja": "トルンガルスク", "ko": "토른가르수크", "na": "Torngarsuk", "state": "draft", "note": "이누이트 신화"}
+{"id": "G0186", "cat": "monster", "ja": "トロル", "ko": "트롤", "na": "", "state": "draft", "note": ""}
+{"id": "G0187", "cat": "monster", "ja": "ナックラビー", "ko": "너컬래비", "na": "", "state": "draft", "note": "Nuckelavee"}
+{"id": "G0188", "cat": "monster", "ja": "バーバヤーガ", "ko": "바바야가", "na": "", "state": "draft", "note": "Baba Yaga"}
+{"id": "G0189", "cat": "monster", "ja": "ハイマンティコラ", "ko": "하이 만티코라", "na": "High Manticore", "state": "draft", "note": ""}
+{"id": "G0190", "cat": "monster", "ja": "マンティコア", "ko": "맨티코어", "na": "", "state": "draft", "note": ""}
+{"id": "G0191", "cat": "monster", "ja": "フェンリル", "ko": "펜리르", "na": "", "state": "draft", "note": "Fenrir"}
+{"id": "G0192", "cat": "monster", "ja": "ブラッドヴァイン", "ko": "블러드 바인", "na": "", "state": "draft", "note": ""}
+{"id": "G0193", "cat": "monster", "ja": "おもちゃの兵士", "ko": "장난감 병사", "na": "", "state": "draft", "note": ""}
+{"id": "G0194", "cat": "monster", "ja": "おもちゃの隊長", "ko": "장난감 대장", "na": "", "state": "draft", "note": ""}
+{"id": "G0195", "cat": "monster", "ja": "ペリュトン", "ko": "페리톤", "na": "", "state": "draft", "note": "Peryton"}
+{"id": "G0196", "cat": "monster", "ja": "魔王デネヴェラス", "ko": "마왕 데네베라스", "na": "", "state": "draft", "note": ""}
+{"id": "G0197", "cat": "monster", "ja": "マンドラヴァイン", "ko": "맨드라 바인", "na": "", "state": "draft", "note": ""}
+{"id": "G0198", "cat": "monster", "ja": "マンドラヘルム", "ko": "맨드라 헬름", "na": "", "state": "draft", "note": ""}
+{"id": "G0199", "cat": "monster", "ja": "ランゴリアント", "ko": "랭골리언트", "na": "", "state": "draft", "note": ""}
+{"id": "G0200", "cat": "monster", "ja": "リザベル", "ko": "리자벨", "na": "", "state": "draft", "note": ""}
+{"id": "G0201", "cat": "monster", "ja": "イービルヘッド", "ko": "이블 헤드", "na": "", "state": "draft", "note": ""}
+{"id": "G0202", "cat": "monster", "ja": "ブロブ", "ko": "블롭", "na": "", "state": "draft", "note": ""}
+{"id": "G0203", "cat": "monster", "ja": "ニミュエ", "ko": "니뮤에", "na": "", "state": "draft", "note": "Nimue"}
+{"id": "G0204", "cat": "monster", "ja": "モルガン・ル・フェイ", "ko": "모르간 르 페이", "na": "", "state": "draft", "note": "Morgan le Fay"}
+{"id": "G0205", "cat": "summon", "ja": "アハ・イシュケ", "ko": "에흐 우슈케", "na": "Each Uisge", "state": "draft", "note": "스코틀랜드 게일어 each-uisge(물말). 원어 발음 근사"}
+{"id": "G0206", "cat": "summon", "ja": "ヴィヴィアン", "ko": "비비안", "na": "Vivian", "state": "draft", "note": ""}
+{"id": "G0207", "cat": "summon", "ja": "ゴーレム", "ko": "골렘", "na": "Golem", "state": "draft", "note": ""}
+{"id": "G0208", "cat": "summon", "ja": "アース・ゴーレム", "ko": "어스 골렘", "na": "", "state": "draft", "note": "AMULET 소환수 이름"}
+{"id": "G0209", "cat": "summon", "ja": "ショゴス", "ko": "쇼고스", "na": "Shoggoth", "state": "draft", "note": ""}
+{"id": "G0210", "cat": "summon", "ja": "バルログ", "ko": "발로그", "na": "Balrog", "state": "draft", "note": ""}
+{"id": "G0211", "cat": "summon", "ja": "ムマキム", "ko": "무마킴", "na": "Mumakeem", "state": "draft", "note": ""}
+{"id": "G0212", "cat": "summon", "ja": "ラウ・ム・ルグ", "ko": "라우 무 루그", "na": "Raum Lugh", "state": "draft", "note": ""}
+{"id": "G0213", "cat": "summon", "ja": "リンドブルム", "ko": "린드부름", "na": "Lindwurm", "state": "draft", "note": ""}
+{"id": "G0214", "cat": "summon", "ja": "レディ・オブ・ザ・レイク", "ko": "레이디 오브 더 레이크", "na": "", "state": "draft", "note": "AMULET 소환수 이름(비비안)"}
+{"id": "G0215", "cat": "amulet", "ja": "鳥の護符", "ko": "새의 부적", "na": "", "state": "draft", "note": ""}
+{"id": "G0216", "cat": "amulet", "ja": "焦熱魔の護符", "ko": "초열마의 부적", "na": "", "state": "draft", "note": "발로그"}
+{"id": "G0217", "cat": "amulet", "ja": "水棲馬の護符", "ko": "물말의 부적", "na": "", "state": "draft", "note": "에흐 우슈케"}
+{"id": "G0218", "cat": "amulet", "ja": "氷粘の護符", "ko": "얼음 점액의 부적", "na": "", "state": "draft", "note": "쇼고스"}
+{"id": "G0219", "cat": "amulet", "ja": "土塊の護符", "ko": "흙덩이의 부적", "na": "", "state": "draft", "note": "골렘"}
+{"id": "G0220", "cat": "amulet", "ja": "楼湖宮の護符", "ko": "누호궁의 부적", "na": "", "state": "draft", "note": "레이디 오브 더 레이크"}
+{"id": "G0221", "cat": "amulet", "ja": "沼精獣の護符", "ko": "늪 정령수의 부적", "na": "", "state": "draft", "note": "무마킴"}
+{"id": "G0222", "cat": "amulet", "ja": "閃光竜の護符", "ko": "섬광룡의 부적", "na": "", "state": "draft", "note": "린드부름"}
+{"id": "G0223", "cat": "item", "ja": "回復薬", "ko": "회복약", "na": "Medicine", "state": "draft", "note": ""}
+{"id": "G0224", "cat": "item", "ja": "特効回復薬", "ko": "특효 회복약", "na": "Special Medicine", "state": "draft", "note": ""}
+{"id": "G0225", "cat": "item", "ja": "回復の秘薬", "ko": "회복의 비약", "na": "Secret Medicine", "state": "draft", "note": ""}
+{"id": "G0226", "cat": "item", "ja": "法力の水", "ko": "법력의 물", "na": "Holy Water", "state": "draft", "note": ""}
+{"id": "G0227", "cat": "item", "ja": "精錬の法水", "ko": "정련된 법수", "na": "Refined Holy Water", "state": "draft", "note": ""}
+{"id": "G0228", "cat": "item", "ja": "聖魔の原水", "ko": "성마의 원수", "na": "Sacred Water", "state": "draft", "note": ""}
+{"id": "G0229", "cat": "item", "ja": "毒消し", "ko": "해독제", "na": "Antidote", "state": "draft", "note": ""}
+{"id": "G0230", "cat": "item", "ja": "目薬", "ko": "안약", "na": "Eyedrop", "state": "draft", "note": ""}
+{"id": "G0231", "cat": "item", "ja": "破魔の水", "ko": "파마의 물", "na": "Water of Exorcism", "state": "draft", "note": ""}
+{"id": "G0232", "cat": "item", "ja": "万能の妙薬", "ko": "만능 묘약", "na": "Wonder Drug", "state": "draft", "note": ""}
+{"id": "G0233", "cat": "item", "ja": "火トカゲのうろこ", "ko": "불도마뱀 비늘", "na": "Salamander Scale", "state": "draft", "note": ""}
+{"id": "G0234", "cat": "item", "ja": "サラマンダの目玉", "ko": "샐러맨더의 눈알", "na": "Salamander Eye", "state": "draft", "note": ""}
+{"id": "G0235", "cat": "item", "ja": "メレダイヤの樹氷", "ko": "멜레다이아 상고대", "na": "Diamond Dust", "state": "draft", "note": ""}
+{"id": "G0236", "cat": "item", "ja": "凍土のカメオ", "ko": "동토의 카메오", "na": "Frozen Earth", "state": "draft", "note": ""}
+{"id": "G0237", "cat": "item", "ja": "雷なまずのひげ", "ko": "번개메기 수염", "na": "Electric Catfish", "state": "draft", "note": ""}
+{"id": "G0238", "cat": "item", "ja": "雷竜のツノ", "ko": "뇌룡의 뿔", "na": "Lightning Dragon", "state": "draft", "note": ""}
+{"id": "G0239", "cat": "item", "ja": "ゴーレムの小指", "ko": "골렘의 새끼손가락", "na": "Golem Finger", "state": "draft", "note": ""}
+{"id": "G0240", "cat": "item", "ja": "ゴーレムのこぶし", "ko": "골렘의 주먹", "na": "Golem Fist", "state": "draft", "note": ""}
+{"id": "G0241", "cat": "item", "ja": "炉心の玉", "ko": "노심의 구슬", "na": "Reactor Core", "state": "draft", "note": ""}
+{"id": "G0242", "cat": "item", "ja": "毒蛇の牙", "ko": "독사의 이빨", "na": "Snake Fang", "state": "draft", "note": ""}
+{"id": "G0243", "cat": "item", "ja": "居眠り草", "ko": "졸음풀", "na": "Sleeping Grass", "state": "draft", "note": ""}
+{"id": "G0244", "cat": "item", "ja": "封魔の護符", "ko": "봉마의 부적", "na": "Charm of Seal", "state": "draft", "note": ""}
+{"id": "G0245", "cat": "item", "ja": "トロルの粉薬", "ko": "트롤의 가루약", "na": "Troll's Powder", "state": "draft", "note": ""}
+{"id": "G0246", "cat": "item", "ja": "身代わり人形", "ko": "대역 인형", "na": "Sacrificial Doll", "state": "draft", "note": ""}
+{"id": "G0247", "cat": "item", "ja": "ミスリルの布", "ko": "미스릴 천", "na": "Mythril Cloth", "state": "draft", "note": ""}
+{"id": "G0248", "cat": "item", "ja": "水晶の布", "ko": "수정 천", "na": "Quartz Cloth", "state": "draft", "note": ""}
+{"id": "G0249", "cat": "item", "ja": "加護の布", "ko": "가호의 천", "na": "Cloth of Divinity", "state": "draft", "note": ""}
+{"id": "G0250", "cat": "item", "ja": "追い風の羽根", "ko": "순풍의 깃털", "na": "Shuttlecock", "state": "draft", "note": ""}
+{"id": "G0251", "cat": "item", "ja": "名工の砥石", "ko": "명공의 숫돌", "na": "Whetstone", "state": "draft", "note": ""}
+{"id": "G0252", "cat": "item", "ja": "強力煙だま", "ko": "강력 연막탄", "na": "Smoke Screen", "state": "draft", "note": ""}
+{"id": "G0253", "cat": "item", "ja": "パワーのくるみ", "ko": "파워 호두", "na": "Walnut of Power", "state": "draft", "note": ""}
+{"id": "G0254", "cat": "item", "ja": "スピードの種", "ko": "스피드 씨앗", "na": "Seed of Speed", "state": "draft", "note": ""}
+{"id": "G0255", "cat": "item", "ja": "メンタルのきのこ", "ko": "멘탈 버섯", "na": "Mental Mushroom", "state": "draft", "note": ""}
+{"id": "G0256", "cat": "item", "ja": "ライフの果実", "ko": "라이프 열매", "na": "Fruit of Life", "state": "draft", "note": ""}
+{"id": "G0257", "cat": "item", "ja": "簡単な魔道書", "ko": "쉬운 마도서", "na": "", "state": "draft", "note": ""}
+{"id": "G0258", "cat": "item", "ja": "古びた魔道書", "ko": "낡은 마도서", "na": "Old Spellbook", "state": "draft", "note": ""}
+{"id": "G0259", "cat": "item", "ja": "きれいな魔道書", "ko": "깨끗한 마도서", "na": "Clean Spellbook", "state": "draft", "note": ""}
+{"id": "G0260", "cat": "item", "ja": "分厚い魔道書", "ko": "두꺼운 마도서", "na": "", "state": "draft", "note": ""}
+{"id": "G0261", "cat": "item", "ja": "破壊の魔道書", "ko": "파괴의 마도서", "na": "Book of Destroyer", "state": "draft", "note": ""}
+{"id": "G0262", "cat": "item", "ja": "癒しの魔道書", "ko": "치유의 마도서", "na": "Book of Healing", "state": "draft", "note": ""}
+{"id": "G0263", "cat": "item", "ja": "炎の魔道書", "ko": "불꽃의 마도서", "na": "Book of Fire", "state": "draft", "note": ""}
+{"id": "G0264", "cat": "item", "ja": "難解な魔道書", "ko": "난해한 마도서", "na": "", "state": "draft", "note": ""}
+{"id": "G0265", "cat": "item", "ja": "汚い紙切れ", "ko": "더러운 종잇조각", "na": "Piece of Paper", "state": "draft", "note": ""}
+{"id": "G0266", "cat": "item", "ja": "真・魔道大全集", "ko": "진·마도대전집", "na": "", "state": "draft", "note": ""}
+{"id": "G0267", "cat": "item", "ja": "赤の魔石", "ko": "붉은 마석", "na": "Red Magic Stone", "state": "draft", "note": ""}
+{"id": "G0268", "cat": "item", "ja": "青の魔石", "ko": "푸른 마석", "na": "Blue Magic Stone", "state": "draft", "note": ""}
+{"id": "G0269", "cat": "item", "ja": "黄の魔石", "ko": "노란 마석", "na": "Yellow Magic Stone", "state": "draft", "note": ""}
+{"id": "G0270", "cat": "item", "ja": "白の魔石", "ko": "하얀 마석", "na": "White Magic Stone", "state": "draft", "note": ""}
+{"id": "G0271", "cat": "item", "ja": "緑の魔石", "ko": "초록 마석", "na": "Green Magic Stone", "state": "draft", "note": ""}
+{"id": "G0272", "cat": "item", "ja": "暗黒の魔石", "ko": "암흑 마석", "na": "Dark Magic Stone", "state": "draft", "note": ""}
+{"id": "G0273", "cat": "equip", "ja": "耳栓", "ko": "귀마개", "na": "Earplugs", "state": "draft", "note": ""}
+{"id": "G0274", "cat": "equip", "ja": "命のリング", "ko": "생명의 반지", "na": "Ring of Life", "state": "draft", "note": ""}
+{"id": "G0275", "cat": "equip", "ja": "魔力のリング", "ko": "마력의 반지", "na": "Ring of Magic", "state": "draft", "note": ""}
+{"id": "G0276", "cat": "equip", "ja": "力のリング", "ko": "힘의 반지", "na": "", "state": "draft", "note": ""}
+{"id": "G0277", "cat": "equip", "ja": "速さのリング", "ko": "속도의 반지", "na": "", "state": "draft", "note": ""}
+{"id": "G0278", "cat": "equip", "ja": "精神のリング", "ko": "정신의 반지", "na": "Ring of Mind", "state": "draft", "note": ""}
+{"id": "G0279", "cat": "equip", "ja": "賢者の指輪", "ko": "현자의 반지", "na": "Sophist's Ring", "state": "draft", "note": ""}
+{"id": "G0280", "cat": "equip", "ja": "闘士のベルト", "ko": "투사의 벨트", "na": "", "state": "draft", "note": ""}
+{"id": "G0281", "cat": "equip", "ja": "達人の腕輪", "ko": "달인의 팔찌", "na": "Master's Armband", "state": "draft", "note": ""}
+{"id": "G0282", "cat": "equip", "ja": "戦士の守護石", "ko": "전사의 수호석", "na": "", "state": "draft", "note": ""}
+{"id": "G0283", "cat": "equip", "ja": "魔道士のめがね", "ko": "마도사의 안경", "na": "Magic Glasses", "state": "draft", "note": ""}
+{"id": "G0284", "cat": "equip", "ja": "中和石", "ko": "중화석", "na": "", "state": "draft", "note": ""}
+{"id": "G0285", "cat": "equip", "ja": "反撃の腕輪", "ko": "반격의 팔찌", "na": "Counter Band", "state": "draft", "note": ""}
+{"id": "G0286", "cat": "equip", "ja": "黄金の指輪", "ko": "황금 반지", "na": "Golden Ring", "state": "draft", "note": ""}
+{"id": "G0287", "cat": "equip", "ja": "クレイモアソード", "ko": "클레이모어 소드", "na": "Claymore Sword", "state": "draft", "note": ""}
+{"id": "G0288", "cat": "equip", "ja": "コルタナブレード", "ko": "코르타나 블레이드", "na": "Coltana Blade", "state": "draft", "note": ""}
+{"id": "G0289", "cat": "equip", "ja": "フランベルジェ", "ko": "플랑베르주", "na": "Flamberge", "state": "draft", "note": ""}
+{"id": "G0290", "cat": "equip", "ja": "トリスタング", "ko": "트리스탕그", "na": "Tristan", "state": "draft", "note": ""}
+{"id": "G0291", "cat": "equip", "ja": "トライデント", "ko": "트라이던트", "na": "Trident", "state": "draft", "note": ""}
+{"id": "G0292", "cat": "equip", "ja": "オックスタンジェ", "ko": "옥스탕제", "na": "Ox Tongue", "state": "draft", "note": "일본판 음역(D5)"}
+{"id": "G0293", "cat": "equip", "ja": "バルディッシュ", "ko": "바르디슈", "na": "Bardiche", "state": "draft", "note": ""}
+{"id": "G0294", "cat": "equip", "ja": "ゲイボルグニル", "ko": "게이볼그닐", "na": "Gae Bolg Gungir", "state": "draft", "note": ""}
+{"id": "G0295", "cat": "equip", "ja": "バトルメイス", "ko": "배틀 메이스", "na": "Battle Mace", "state": "draft", "note": ""}
+{"id": "G0296", "cat": "equip", "ja": "マッシュハンマー", "ko": "매시 해머", "na": "Mash Hammer", "state": "draft", "note": ""}
+{"id": "G0297", "cat": "equip", "ja": "モルゲンステルン", "ko": "모르겐슈테른", "na": "Morgenstein", "state": "draft", "note": ""}
+{"id": "G0298", "cat": "equip", "ja": "オーグルフィスト", "ko": "오거 피스트", "na": "Ogre Fist", "state": "draft", "note": ""}
+{"id": "G0299", "cat": "equip", "ja": "スティングボウ", "ko": "스팅 보우", "na": "Sting Bow", "state": "draft", "note": ""}
+{"id": "G0300", "cat": "equip", "ja": "ホークストリング", "ko": "호크 스트링", "na": "Hawk String", "state": "draft", "note": ""}
+{"id": "G0301", "cat": "equip", "ja": "パイルワインダー", "ko": "파일 와인더", "na": "Pile Winder", "state": "draft", "note": ""}
+{"id": "G0302", "cat": "equip", "ja": "ヘドウッグ", "ko": "헤드우그", "na": "", "state": "draft", "note": ""}
+{"id": "G0303", "cat": "equip", "ja": "ヘヴィトマホーク", "ko": "헤비 토마호크", "na": "Heavy Tomahawk", "state": "draft", "note": ""}
+{"id": "G0304", "cat": "equip", "ja": "バスターアックス", "ko": "버스터 액스", "na": "Buster Axe", "state": "draft", "note": ""}
+{"id": "G0305", "cat": "equip", "ja": "ブランディッシュ", "ko": "브랜디시", "na": "Brandish", "state": "draft", "note": ""}
+{"id": "G0306", "cat": "equip", "ja": "フラゼッツ", "ko": "프라제츠", "na": "Flazets", "state": "draft", "note": ""}
+{"id": "G0307", "cat": "equip", "ja": "レザーアーマー", "ko": "레더 아머", "na": "Leather Armor", "state": "draft", "note": ""}
+{"id": "G0308", "cat": "equip", "ja": "キュイルボイル", "ko": "퀴르부이", "na": "Cuirboil", "state": "draft", "note": ""}
+{"id": "G0309", "cat": "equip", "ja": "チェインメイル", "ko": "체인 메일", "na": "Chain Mail", "state": "draft", "note": ""}
+{"id": "G0310", "cat": "equip", "ja": "プレートメイル", "ko": "플레이트 메일", "na": "Plate Mail", "state": "draft", "note": ""}
+{"id": "G0311", "cat": "equip", "ja": "漁師の服", "ko": "어부의 옷", "na": "Fisherman Clothes", "state": "draft", "note": ""}
+{"id": "G0312", "cat": "equip", "ja": "ドレスアーマー", "ko": "드레스 아머", "na": "Dress Armor", "state": "draft", "note": ""}
+{"id": "G0313", "cat": "equip", "ja": "メタルビスチェ", "ko": "메탈 뷔스티에", "na": "Metal Bustier", "state": "draft", "note": ""}
+{"id": "G0314", "cat": "equip", "ja": "バイキングガード", "ko": "바이킹 가드", "na": "Viking Guard", "state": "draft", "note": ""}
+{"id": "G0315", "cat": "equip", "ja": "クロスアーマー", "ko": "클로스 아머", "na": "Cloth Armor", "state": "draft", "note": ""}
+{"id": "G0316", "cat": "equip", "ja": "ハンターコート", "ko": "헌터 코트", "na": "Hunter Coat", "state": "draft", "note": ""}
+{"id": "G0317", "cat": "equip", "ja": "レザープレート", "ko": "레더 플레이트", "na": "Leather Plate", "state": "draft", "note": ""}
+{"id": "G0318", "cat": "equip", "ja": "メタルプレート", "ko": "메탈 플레이트", "na": "Metal Plate", "state": "draft", "note": ""}
+{"id": "G0319", "cat": "equip", "ja": "見習い僧衣", "ko": "견습 승복", "na": "Apprentice Robe", "state": "draft", "note": ""}
+{"id": "G0320", "cat": "equip", "ja": "武闘僧衣", "ko": "무투 승복", "na": "Fighting Robe", "state": "draft", "note": ""}
+{"id": "G0321", "cat": "equip", "ja": "退魔僧衣", "ko": "퇴마 승복", "na": "Exorcist Robe", "state": "draft", "note": ""}
+{"id": "G0322", "cat": "equip", "ja": "聖紋の衣", "ko": "성문의 옷", "na": "Holy Robe", "state": "draft", "note": ""}
+{"id": "G0323", "cat": "equip", "ja": "バンデッドメイル", "ko": "밴디드 메일", "na": "Bandit Mail", "state": "draft", "note": ""}
+{"id": "G0324", "cat": "equip", "ja": "ブロンズアーマー", "ko": "브론즈 아머", "na": "Bronze Armor", "state": "draft", "note": ""}
+{"id": "G0325", "cat": "equip", "ja": "トロルアーマー", "ko": "트롤 아머", "na": "Troll Armor", "state": "draft", "note": ""}
+{"id": "G0326", "cat": "equip", "ja": "ルゥンアーマー", "ko": "룬 아머", "na": "Rune Armor", "state": "draft", "note": ""}
+{"id": "G0327", "cat": "skill", "ja": "ハイランド・ブレイヴ", "ko": "하이랜드 브레이브", "na": "Highland Brave", "state": "draft", "note": "가운뎃점은 띄어쓰기로"}
+{"id": "G0328", "cat": "skill", "ja": "キャリバー・ウォーシップ", "ko": "캘리버 워십", "na": "", "state": "draft", "note": ""}
+{"id": "G0329", "cat": "skill", "ja": "ファイア・バック・ブリード", "ko": "파이어 백 브리드", "na": "", "state": "draft", "note": ""}
+{"id": "G0330", "cat": "skill", "ja": "バニッシュ・ドレイク", "ko": "배니시 드레이크", "na": "", "state": "draft", "note": ""}
+{"id": "G0331", "cat": "skill", "ja": "フィッシュ・イン・トラブル", "ko": "피시 인 트러블", "na": "", "state": "draft", "note": ""}
+{"id": "G0332", "cat": "skill", "ja": "プリック・クロー・マラ", "ko": "프릭 클로 마라", "na": "", "state": "draft", "note": ""}
+{"id": "G0333", "cat": "skill", "ja": "シングル・アウト・フォー", "ko": "싱글 아웃 포", "na": "", "state": "draft", "note": ""}
+{"id": "G0334", "cat": "skill", "ja": "アンダー・ザ・サン", "ko": "언더 더 선", "na": "", "state": "draft", "note": ""}
+{"id": "G0335", "cat": "skill", "ja": "ディフィート・バウンダー", "ko": "디피트 바운더", "na": "", "state": "draft", "note": ""}
+{"id": "G0336", "cat": "skill", "ja": "ブレーク・イントゥ・ピース", "ko": "브레이크 인투 피스", "na": "", "state": "draft", "note": ""}
+{"id": "G0337", "cat": "skill", "ja": "ホーリー・スプリンクル", "ko": "홀리 스프링클", "na": "", "state": "draft", "note": ""}
+{"id": "G0338", "cat": "skill", "ja": "ジャイアント・スウィンジング", "ko": "자이언트 스윙징", "na": "", "state": "draft", "note": ""}
+{"id": "G0339", "cat": "skill", "ja": "ヴェスパイン・スクリュー", "ko": "베스파인 스크루", "na": "Vespine Screw", "state": "draft", "note": ""}
+{"id": "G0340", "cat": "skill", "ja": "クゥイヴァー・フル・ブロー", "ko": "퀴버 풀 블로", "na": "", "state": "draft", "note": ""}
+{"id": "G0341", "cat": "skill", "ja": "サーペンタイン・スパウト", "ko": "서펜타인 스파우트", "na": "", "state": "draft", "note": ""}
+{"id": "G0342", "cat": "skill", "ja": "ブリザード・レイ", "ko": "블리자드 레이", "na": "", "state": "draft", "note": ""}
+{"id": "G0343", "cat": "skill", "ja": "シルヴァン・ローグ", "ko": "실반 로그", "na": "", "state": "draft", "note": ""}
+{"id": "G0344", "cat": "skill", "ja": "エンデュランス・クリーヴァー", "ko": "인듀어런스 클리버", "na": "", "state": "draft", "note": ""}
+{"id": "G0345", "cat": "skill", "ja": "メナシング・ウォーリアー", "ko": "메나싱 워리어", "na": "", "state": "draft", "note": ""}
+{"id": "G0346", "cat": "skill", "ja": "バーニング・ドヴェルグ", "ko": "버닝 드베르그", "na": "", "state": "draft", "note": ""}
+{"id": "G0347", "cat": "magic", "ja": "フレイム", "ko": "플레임", "na": "Flame", "state": "draft", "note": "불 1단계"}
+{"id": "G0348", "cat": "magic", "ja": "フレアル", "ko": "플레아르", "na": "Flare", "state": "draft", "note": "불 2단계"}
+{"id": "G0349", "cat": "magic", "ja": "フレメア", "ko": "플레메아", "na": "Flamare", "state": "draft", "note": "불 3단계"}
+{"id": "G0350", "cat": "magic", "ja": "ツドラ", "ko": "투드라", "na": "Tundra", "state": "draft", "note": "얼음 1단계"}
+{"id": "G0351", "cat": "magic", "ja": "ツドラダ", "ko": "투드라다", "na": "Tundrada", "state": "draft", "note": "얼음 2단계"}
+{"id": "G0352", "cat": "magic", "ja": "ツドレア", "ko": "투드레아", "na": "Tundrea", "state": "draft", "note": "얼음 3단계"}
+{"id": "G0353", "cat": "magic", "ja": "プラズマ", "ko": "플라스마", "na": "Plasma", "state": "draft", "note": "번개 1단계"}
+{"id": "G0354", "cat": "magic", "ja": "プラザム", "ko": "플라잠", "na": "Plasm", "state": "draft", "note": "번개 2단계"}
+{"id": "G0355", "cat": "magic", "ja": "プラゾマ", "ko": "플라조마", "na": "Plasoma", "state": "draft", "note": "번개 3단계"}
+{"id": "G0356", "cat": "magic", "ja": "ラピス", "ko": "라피스", "na": "Lapis", "state": "draft", "note": "운석 1단계"}
+{"id": "G0357", "cat": "magic", "ja": "ミディオム", "ko": "미디옴", "na": "Mediom", "state": "draft", "note": "운석 2단계"}
+{"id": "G0358", "cat": "magic", "ja": "ミディギガス", "ko": "미디기가스", "na": "Medio Gigas", "state": "draft", "note": "운석 3단계"}
+{"id": "G0359", "cat": "magic", "ja": "ビグバム", "ko": "비그밤", "na": "Big Bang", "state": "draft", "note": "폭발 1단계"}
+{"id": "G0360", "cat": "magic", "ja": "メルダウ", "ko": "멜다우", "na": "Melt Down", "state": "draft", "note": "폭발 2단계"}
+{"id": "G0361", "cat": "magic", "ja": "メガクラトス", "ko": "메가크라토스", "na": "Melt Cratos", "state": "draft", "note": "폭발 3단계"}
+{"id": "G0362", "cat": "magic", "ja": "キュア", "ko": "큐어", "na": "Cure", "state": "draft", "note": "회복 1단계"}
+{"id": "G0363", "cat": "magic", "ja": "キュアル", "ko": "큐아르", "na": "Cural", "state": "draft", "note": "회복 2단계"}
+{"id": "G0364", "cat": "magic", "ja": "キュアロ", "ko": "큐아로", "na": "Curalo", "state": "draft", "note": "회복 3단계"}
+{"id": "G0365", "cat": "magic", "ja": "スリィプ", "ko": "슬리프", "na": "Sleep", "state": "draft", "note": ""}
+{"id": "G0366", "cat": "magic", "ja": "ベノム", "ko": "베놈", "na": "Venom", "state": "draft", "note": ""}
+{"id": "G0367", "cat": "magic", "ja": "アミュレス", "ko": "아뮬레스", "na": "Amuless", "state": "draft", "note": ""}
+{"id": "G0368", "cat": "magic", "ja": "デフェンド", "ko": "데펜드", "na": "Defend", "state": "draft", "note": "일본판 음역(D5)"}
+{"id": "G0369", "cat": "magic", "ja": "ディフレク", "ko": "디플렉", "na": "Deflect", "state": "draft", "note": ""}
+{"id": "G0370", "cat": "magic", "ja": "デフィザス", "ko": "데피자스", "na": "Deflizas", "state": "draft", "note": ""}
+{"id": "G0371", "cat": "magic", "ja": "クイックア", "ko": "퀵카", "na": "Quicker", "state": "draft", "note": ""}
+{"id": "G0372", "cat": "magic", "ja": "ダブラス", "ko": "다브라스", "na": "Doublus", "state": "draft", "note": ""}
+{"id": "G0373", "cat": "magic", "ja": "ナスタ", "ko": "나스타", "na": "Naster", "state": "draft", "note": ""}
+{"id": "G0374", "cat": "key", "ja": "赤い羽の帽子", "ko": "빨간 깃털 모자", "na": "", "state": "draft", "note": ""}
+{"id": "G0375", "cat": "key", "ja": "樫の木の髪飾り", "ko": "떡갈나무 머리 장식", "na": "", "state": "draft", "note": ""}
+{"id": "G0376", "cat": "key", "ja": "古い手紙", "ko": "낡은 편지", "na": "", "state": "draft", "note": ""}
+{"id": "G0377", "cat": "key", "ja": "牢獄のカギ", "ko": "감옥 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0378", "cat": "key", "ja": "赤のクリスタル", "ko": "붉은 크리스털", "na": "", "state": "draft", "note": ""}
+{"id": "G0379", "cat": "key", "ja": "青のクリスタル", "ko": "푸른 크리스털", "na": "", "state": "draft", "note": ""}
+{"id": "G0380", "cat": "key", "ja": "緑のクリスタル", "ko": "초록 크리스털", "na": "", "state": "draft", "note": ""}
+{"id": "G0381", "cat": "key", "ja": "アクアマリン", "ko": "아콰마린", "na": "Aquamarine", "state": "draft", "note": ""}
+{"id": "G0382", "cat": "key", "ja": "小魚", "ko": "작은 물고기", "na": "", "state": "draft", "note": ""}
+{"id": "G0383", "cat": "key", "ja": "黒っぽいキノコ", "ko": "거무스름한 버섯", "na": "", "state": "draft", "note": ""}
+{"id": "G0384", "cat": "key", "ja": "赤紫のキノコ", "ko": "적자색 버섯", "na": "", "state": "draft", "note": ""}
+{"id": "G0385", "cat": "key", "ja": "エントの枝", "ko": "엔트의 가지", "na": "", "state": "draft", "note": "エント = 나무 정령 Ent"}
+{"id": "G0386", "cat": "key", "ja": "クランク", "ko": "크랭크", "na": "", "state": "draft", "note": ""}
+{"id": "G0387", "cat": "key", "ja": "空のランプ", "ko": "빈 램프", "na": "", "state": "draft", "note": ""}
+{"id": "G0388", "cat": "key", "ja": "オイルポット", "ko": "오일 포트", "na": "", "state": "draft", "note": ""}
+{"id": "G0389", "cat": "key", "ja": "ガンマゴブリンのツノ", "ko": "감마 고블린의 뿔", "na": "", "state": "draft", "note": ""}
+{"id": "G0390", "cat": "key", "ja": "眠り酒", "ko": "수면주", "na": "", "state": "draft", "note": ""}
+{"id": "G0391", "cat": "key", "ja": "酒ダルのカギ", "ko": "술통 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0392", "cat": "key", "ja": "海岸の合いカギ", "ko": "해안 여벌 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0393", "cat": "key", "ja": "灯台小屋のカギ", "ko": "등대 오두막 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0394", "cat": "key", "ja": "油作りのメモ", "ko": "기름 제조 메모", "na": "", "state": "draft", "note": ""}
+{"id": "G0395", "cat": "key", "ja": "油つぼ", "ko": "기름 단지", "na": "", "state": "draft", "note": ""}
+{"id": "G0396", "cat": "key", "ja": "油つぼの部屋のカギ", "ko": "기름 단지 방 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0397", "cat": "key", "ja": "火だね", "ko": "불씨", "na": "", "state": "draft", "note": ""}
+{"id": "G0398", "cat": "key", "ja": "赤の油", "ko": "붉은 기름", "na": "", "state": "draft", "note": ""}
+{"id": "G0399", "cat": "key", "ja": "青の油", "ko": "푸른 기름", "na": "", "state": "draft", "note": ""}
+{"id": "G0400", "cat": "key", "ja": "透明の油", "ko": "투명한 기름", "na": "", "state": "draft", "note": ""}
+{"id": "G0401", "cat": "key", "ja": "不変油", "ko": "불변유", "na": "", "state": "draft", "note": ""}
+{"id": "G0402", "cat": "key", "ja": "廃油", "ko": "폐유", "na": "", "state": "draft", "note": ""}
+{"id": "G0403", "cat": "key", "ja": "聖なるカガミ", "ko": "성스러운 거울", "na": "", "state": "draft", "note": ""}
+{"id": "G0404", "cat": "key", "ja": "三角形の石", "ko": "삼각형 돌", "na": "", "state": "draft", "note": ""}
+{"id": "G0405", "cat": "key", "ja": "四角形の石", "ko": "사각형 돌", "na": "", "state": "draft", "note": ""}
+{"id": "G0406", "cat": "key", "ja": "五角形の石", "ko": "오각형 돌", "na": "", "state": "draft", "note": ""}
+{"id": "G0407", "cat": "key", "ja": "オイル入りランプ", "ko": "기름 든 램프", "na": "", "state": "draft", "note": ""}
+{"id": "G0408", "cat": "key", "ja": "船倉のカギ", "ko": "선창 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0409", "cat": "key", "ja": "キーストーン", "ko": "키스톤", "na": "", "state": "draft", "note": ""}
+{"id": "G0410", "cat": "key", "ja": "法典", "ko": "법전", "na": "", "state": "draft", "note": ""}
+{"id": "G0411", "cat": "key", "ja": "工具箱のカギ", "ko": "공구함 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0412", "cat": "key", "ja": "バール", "ko": "쇠지렛대", "na": "", "state": "draft", "note": ""}
+{"id": "G0413", "cat": "key", "ja": "タイマツ", "ko": "횃불", "na": "", "state": "draft", "note": ""}
+{"id": "G0414", "cat": "key", "ja": "橋のレバー", "ko": "다리 레버", "na": "", "state": "draft", "note": ""}
+{"id": "G0415", "cat": "key", "ja": "水門のクランク", "ko": "수문 크랭크", "na": "", "state": "draft", "note": ""}
+{"id": "G0416", "cat": "key", "ja": "小さなカギ", "ko": "작은 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0417", "cat": "key", "ja": "石版のかけら", "ko": "석판 조각", "na": "", "state": "draft", "note": ""}
+{"id": "G0418", "cat": "key", "ja": "小さな歯車", "ko": "작은 톱니바퀴", "na": "", "state": "draft", "note": ""}
+{"id": "G0419", "cat": "key", "ja": "大きな歯車", "ko": "큰 톱니바퀴", "na": "", "state": "draft", "note": ""}
+{"id": "G0420", "cat": "key", "ja": "ヴィヴィアンの書", "ko": "비비안의 책", "na": "", "state": "draft", "note": ""}
+{"id": "G0421", "cat": "key", "ja": "リンドブルムの書", "ko": "린드부름의 책", "na": "", "state": "draft", "note": ""}
+{"id": "G0422", "cat": "key", "ja": "ラウ・ム・ルグの書", "ko": "라우 무 루그의 책", "na": "", "state": "draft", "note": ""}
+{"id": "G0423", "cat": "key", "ja": "ショゴスの書", "ko": "쇼고스의 책", "na": "", "state": "draft", "note": ""}
+{"id": "G0424", "cat": "key", "ja": "書庫のカギ", "ko": "서고 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0425", "cat": "key", "ja": "海岸のカギ", "ko": "해안 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0426", "cat": "key", "ja": "下水道のカギ", "ko": "하수도 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0427", "cat": "key", "ja": "岩塩", "ko": "암염", "na": "", "state": "draft", "note": ""}
+{"id": "G0428", "cat": "key", "ja": "小さな石版", "ko": "작은 석판", "na": "", "state": "draft", "note": ""}
+{"id": "G0429", "cat": "key", "ja": "兵士の勲章", "ko": "병사의 훈장", "na": "", "state": "draft", "note": ""}
+{"id": "G0430", "cat": "key", "ja": "ハンマー", "ko": "해머", "na": "", "state": "draft", "note": ""}
+{"id": "G0431", "cat": "key", "ja": "弁当ぶくろ", "ko": "도시락 주머니", "na": "", "state": "draft", "note": ""}
+{"id": "G0432", "cat": "key", "ja": "板きれ", "ko": "판자 조각", "na": "", "state": "draft", "note": ""}
+{"id": "G0433", "cat": "key", "ja": "僧院の許可証", "ko": "수도원 허가증", "na": "", "state": "draft", "note": ""}
+{"id": "G0434", "cat": "key", "ja": "形見のネックレス", "ko": "유품 목걸이", "na": "", "state": "draft", "note": ""}
+{"id": "G0435", "cat": "key", "ja": "水路の合いカギ", "ko": "수로 여벌 열쇠", "na": "", "state": "draft", "note": ""}
+{"id": "G0436", "cat": "key", "ja": "ミルズの絵本", "ko": "밀즈의 그림책", "na": "", "state": "draft", "note": ""}
+{"id": "G0437", "cat": "key", "ja": "コールのメモ", "ko": "콜의 메모", "na": "", "state": "draft", "note": ""}
+{"id": "G0438", "cat": "quest", "ja": "試練の始まり", "ko": "시련의 시작", "na": "", "state": "draft", "note": ""}
+{"id": "G0439", "cat": "quest", "ja": "協力者", "ko": "협력자", "na": "Cooperator", "state": "draft", "note": ""}
+{"id": "G0440", "cat": "quest", "ja": "家出した娘", "ko": "가출한 딸", "na": "Runaway Girl", "state": "draft", "note": ""}
+{"id": "G0441", "cat": "quest", "ja": "道具屋の憂うつ", "ko": "도구점의 우울", "na": "", "state": "draft", "note": ""}
+{"id": "G0442", "cat": "quest", "ja": "耳の長いネコ", "ko": "귀가 긴 고양이", "na": "", "state": "draft", "note": ""}
+{"id": "G0443", "cat": "quest", "ja": "座礁した帆船", "ko": "좌초된 범선", "na": "The Stranded Vessel", "state": "draft", "note": ""}
+{"id": "G0444", "cat": "quest", "ja": "墓地の異変", "ko": "묘지의 이변", "na": "", "state": "draft", "note": ""}
+{"id": "G0445", "cat": "quest", "ja": "父の奇病", "ko": "아버지의 괴질", "na": "", "state": "draft", "note": ""}
+{"id": "G0446", "cat": "quest", "ja": "酒ドロボウ", "ko": "술 도둑", "na": "Beer Thief", "state": "draft", "note": ""}
+{"id": "G0447", "cat": "quest", "ja": "大聖堂の魔物", "ko": "대성당의 마물", "na": "", "state": "draft", "note": ""}
+{"id": "G0448", "cat": "quest", "ja": "主人を求めて", "ko": "주인을 찾아서", "na": "", "state": "draft", "note": ""}
+{"id": "G0449", "cat": "quest", "ja": "灯台の回復", "ko": "등대 복구", "na": "", "state": "draft", "note": ""}
+{"id": "G0450", "cat": "quest", "ja": "建築師の計略", "ko": "건축가의 계략", "na": "", "state": "draft", "note": ""}
+{"id": "G0451", "cat": "quest", "ja": "マーシュを求めて", "ko": "마시를 찾아서", "na": "", "state": "draft", "note": ""}
+{"id": "G0452", "cat": "quest", "ja": "奪われた法典", "ko": "빼앗긴 법전", "na": "", "state": "draft", "note": ""}
+{"id": "G0453", "cat": "quest", "ja": "メローの探し物", "ko": "메로가 찾는 물건", "na": "", "state": "draft", "note": ""}
+{"id": "G0454", "cat": "quest", "ja": "採石場の奪回", "ko": "채석장 탈환", "na": "", "state": "draft", "note": ""}
+{"id": "G0455", "cat": "quest", "ja": "兵士への憧れ", "ko": "병사를 향한 동경", "na": "", "state": "draft", "note": ""}
+{"id": "G0456", "cat": "quest", "ja": "僧院の異変", "ko": "수도원의 이변", "na": "", "state": "draft", "note": ""}
+{"id": "G0457", "cat": "quest", "ja": "石版の行方", "ko": "석판의 행방", "na": "", "state": "draft", "note": ""}
+{"id": "G0458", "cat": "quest", "ja": "消えた兄を捜せ", "ko": "사라진 오빠를 찾아라", "na": "", "state": "draft", "note": "셰이크의 여동생이 오빠를 찾음"}
+{"id": "G0459", "cat": "quest", "ja": "見習い僧士の自信", "ko": "견습 수도사의 자신감", "na": "", "state": "draft", "note": ""}
+{"id": "G0460", "cat": "quest", "ja": "闇の始まり", "ko": "어둠의 시작", "na": "", "state": "draft", "note": ""}
+{"id": "G0461", "cat": "quest", "ja": "Ｌ－４", "ko": "L-4", "na": "", "state": "draft", "note": ""}
+{"id": "G0462", "cat": "quest", "ja": "母の行方", "ko": "어머니의 행방", "na": "", "state": "draft", "note": ""}
+{"id": "G0463", "cat": "quest", "ja": "ミルズの依頼", "ko": "밀즈의 의뢰", "na": "", "state": "draft", "note": ""}
+{"id": "G0464", "cat": "quest", "ja": "妖精との約束", "ko": "요정과의 약속", "na": "", "state": "draft", "note": ""}
+{"id": "G0465", "cat": "quest", "ja": "反乱の時", "ko": "반란의 때", "na": "", "state": "draft", "note": ""}
+{"id": "G0466", "cat": "quest", "ja": "運命に逆らえ", "ko": "운명을 거슬러라", "na": "", "state": "draft", "note": ""}
+{"id": "G0467", "cat": "quest", "ja": "闇の復活", "ko": "어둠의 부활", "na": "", "state": "draft", "note": ""}
+{"id": "G0468", "cat": "key", "ja": "タイマツの火", "ko": "횃불의 불", "na": "", "state": "draft", "note": ""}
+{"id": "G0469", "cat": "role", "ja": "ルイ僧官", "ko": "루이 승관", "na": "", "state": "draft", "note": "이름+직위 어순 유지"}
+{"id": "G0470", "cat": "role", "ja": "コール城主", "ko": "콜 성주", "na": "", "state": "draft", "note": ""}
+{"id": "G0471", "cat": "role", "ja": "赤のバンダナ漁師", "ko": "빨간 두건 어부", "na": "", "state": "draft", "note": "赤いバンダナ漁師 와 같은 인물"}
+{"id": "G0472", "cat": "role", "ja": "赤バンダナの漁師", "ko": "빨간 두건 어부", "na": "", "state": "draft", "note": "赤いバンダナ漁師 와 같은 인물"}
+{"id": "G0473", "cat": "role", "ja": "道具屋の主人", "ko": "도구점 주인", "na": "", "state": "draft", "note": "道具屋主人 과 같은 인물"}
+{"id": "G0474", "cat": "role", "ja": "シェイクの妹", "ko": "셰이크의 여동생", "na": "", "state": "draft", "note": "레지나"}

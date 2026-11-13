@@ -60,3 +60,15 @@
 | 다른 폰트 소비자(1bpp 루틴) | 메뉴·전투 화면 관찰로 확인 |
 | 그림 글자 G1–G5 | 재작성 방식 결정, PSI/GTM 인코더(8bpp 팔레트 최근접 구현됨) |
 | 맵 텍스처 속 글자 | 플레이 중 관찰 |
+
+## 북미판 참고 자료 (용어집 근거, D2·D4)
+
+원문은 저작권 문제로 저장소에 넣지 않고 `work/ref/` 에만 둔다. 이름의 철자·유래 확인용이며 번역 문장의 근거로 쓰지 않는다.
+
+| 자료 | 주소(웹 아카이브) | 내용 |
+|---|---|---|
+| Mysticcat FAQ v5.1 (2002) | http://web.archive.org/web/20101009022323/http://www.gamefaqs.com:80/ps2/466244-tsugunai-atonement/faqs/15733 | 인물, 룬·마법, 소환수, 무기·방어구·장신구, 아이템 영문 이름 |
+| Hadoken FAQ v0.8 (2002) | http://web.archive.org/web/20111002024621/http://www.gamefaqs.com:80/ps2/466244-tsugunai-atonement/faqs/14978 | 인물, 전투 용어, 일부 아이템 |
+| Grand Admiral FAQ v1.0 (2002) | http://web.archive.org/web/20100530062210/http://www.gamefaqs.com:80/ps2/466244-tsugunai-atonement/faqs/19252 | 앞부분 퀘스트 이름 |
+
+확인한 대응: 조작 캐릭터 이름은 실행 파일 0x251a78 표(アシュゴ·フィセラ·ラフルク·イフェム = Ashgo·Fisela·Raffer·Ifem). 대사 이름 변수 {n:01}~{n:07} 은 문맥상 레이스·이펨·라후르크·피세라·아슈고·나비·고양이 순이다(런타임 미확인).
