@@ -69,3 +69,5 @@ def test_project_glossary_valid_and_grounded():
     validate(entries)
     texts = [json.loads(l)["src"] for f in TEXTS for l in open(f, encoding="utf-8")]
     assert missing_in_sources(entries, texts) == []
+    # 반각 영숫자·기호는 화면에 안 그려짐(PoC3) → 전각만
+    assert [e["id"] for e in entries if any(0x21 <= ord(c) <= 0x7E for c in e["ko"])] == []

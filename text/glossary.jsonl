@@ -28,7 +28,7 @@
 {"id": "G0028", "cat": "char", "ja": "アイリス", "ko": "아이리스", "na": "", "state": "draft", "note": "피세라의 죽은 어머니(アイリス リトリーブ)"}
 {"id": "G0029", "cat": "char", "ja": "スミカ", "ko": "스미카", "na": "", "state": "draft", "note": "고양이 이름"}
 {"id": "G0030", "cat": "char", "ja": "コール", "ko": "콜", "na": "", "state": "draft", "note": "왈론디아 성주. 전체 이름 コール・Ｍ・ウァロンディア３世"}
-{"id": "G0031", "cat": "char", "ja": "コール・Ｍ・ウァロンディア３世", "ko": "콜 M 왈론디아 3세", "na": "", "state": "draft", "note": ""}
+{"id": "G0031", "cat": "char", "ja": "コール・Ｍ・ウァロンディア３世", "ko": "콜 Ｍ 왈론디아 ３세", "na": "", "state": "draft", "note": ""}
 {"id": "G0032", "cat": "char", "ja": "デネヴェラス", "ko": "데네베라스", "na": "", "state": "draft", "note": "어둠의 신, 마왕"}
 {"id": "G0033", "cat": "char", "ja": "ウルク", "ko": "우르크", "na": "", "state": "draft", "note": "오크 우두머리 이름. 톨킨 Uruk 계열"}
 {"id": "G0034", "cat": "char", "ja": "ドモヴォーイ", "ko": "도모보이", "na": "Domovoi", "state": "draft", "note": "슬라브 민담 집요정. 나비의 종족"}
@@ -458,7 +458,7 @@
 {"id": "G0458", "cat": "quest", "ja": "消えた兄を捜せ", "ko": "사라진 오빠를 찾아라", "na": "", "state": "draft", "note": "셰이크의 여동생이 오빠를 찾음"}
 {"id": "G0459", "cat": "quest", "ja": "見習い僧士の自信", "ko": "견습 수도사의 자신감", "na": "", "state": "draft", "note": ""}
 {"id": "G0460", "cat": "quest", "ja": "闇の始まり", "ko": "어둠의 시작", "na": "", "state": "draft", "note": ""}
-{"id": "G0461", "cat": "quest", "ja": "Ｌ－４", "ko": "L-4", "na": "", "state": "draft", "note": ""}
+{"id": "G0461", "cat": "quest", "ja": "Ｌ－４", "ko": "Ｌ－４", "na": "", "state": "draft", "note": ""}
 {"id": "G0462", "cat": "quest", "ja": "母の行方", "ko": "어머니의 행방", "na": "", "state": "draft", "note": ""}
 {"id": "G0463", "cat": "quest", "ja": "ミルズの依頼", "ko": "밀즈의 의뢰", "na": "", "state": "draft", "note": ""}
 {"id": "G0464", "cat": "quest", "ja": "妖精との約束", "ko": "요정과의 약속", "na": "", "state": "draft", "note": ""}
@@ -472,3 +472,16 @@
 {"id": "G0472", "cat": "role", "ja": "赤バンダナの漁師", "ko": "빨간 두건 어부", "na": "", "state": "draft", "note": "赤いバンダナ漁師 와 같은 인물"}
 {"id": "G0473", "cat": "role", "ja": "道具屋の主人", "ko": "도구점 주인", "na": "", "state": "draft", "note": "道具屋主人 과 같은 인물"}
 {"id": "G0474", "cat": "role", "ja": "シェイクの妹", "ko": "셰이크의 여동생", "na": "", "state": "draft", "note": "레지나"}
+{"id": "G0475", "cat": "term", "ja": "ガード", "ko": "가드", "na": "Guard", "state": "draft", "note": ""}
+{"id": "G0476", "cat": "term", "ja": "ノーマルガード", "ko": "노멀 가드", "na": "Normal Guard", "state": "draft", "note": ""}
+{"id": "G0477", "cat": "term", "ja": "ストレージガード", "ko": "스토리지 가드", "na": "Strage Guard", "state": "draft", "note": "줄여서 ＳＰ 가드"}
+{"id": "G0478", "cat": "term", "ja": "カウンターガード", "ko": "카운터 가드", "na": "Counter Guard", "state": "draft", "note": ""}
+{"id": "G0479", "cat": "term", "ja": "ストレージアタック", "ko": "스토리지 어택", "na": "Strage Attack", "state": "draft", "note": ""}
+{"id": "G0480", "cat": "term", "ja": "セーブポイント", "ko": "세이브 포인트", "na": "", "state": "draft", "note": ""}
+{"id": "G0481", "cat": "term", "ja": "石碑", "ko": "비석", "na": "", "state": "draft", "note": ""}
+{"id": "G0482", "cat": "term", "ja": "ニンフ", "ko": "님프", "na": "", "state": "draft", "note": ""}
+{"id": "G0483", "cat": "place", "ja": "聖なる島", "ko": "성스러운 섬", "na": "", "state": "draft", "note": "보주의 탑이 있는 섬"}
+{"id": "G0484", "cat": "char", "ja": "ネイアス", "ko": "네이아스", "na": "", "state": "draft", "note": "하늘의 님프"}
+{"id": "G0485", "cat": "char", "ja": "リリア", "ko": "릴리아", "na": "", "state": "draft", "note": "탑 앞에서 죽은 자의 연인"}
+{"id": "G0486", "cat": "role", "ja": "中年の兵士", "ko": "중년 병사", "na": "", "state": "draft", "note": ""}
+{"id": "G0487", "cat": "role", "ja": "若い兵士", "ko": "젊은 병사", "na": "", "state": "draft", "note": ""}

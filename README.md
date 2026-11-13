@@ -15,7 +15,7 @@ PS2 일본판 **つぐない (SCPS-11007)** 를 한국어로 옮기는 팬 번�
 | 기술 PoC | PoC1 한글 글리프 표시, PoC2 대사 길이 변경, PoC3 줄 폭 상한, PoC4 데이터 파일·실행 파일 문자열 수정 — PCSX2에서 통과(PoC4 전투 화면 항목은 미확인) (`docs/poc.md`) |
 | 텍스트 추출 | 대사 스크립트 44,290행(고유 약 17만 자), 데이터 파일 7종 804행(약 7천 자), 실행 파일 화면용 293행(약 2,160자) 추출 완료 (`docs/text_map.md`) |
 | 그림 글자 | 대상 확정: 타이틀 로고, 퀘스트 제목 카드 35장, 스태프롤, 메뉴·전투 UI 텍스처 (`docs/graphics_text.md`) |
-| 번역 | 용어집 초안 474항목(인물·지명·몬스터·아이템·기술·마법·퀘스트 제목, `text/glossary.jsonl`). 대사 번역은 시작 전 |
+| 번역 | 용어집 초안 474항목(인물·지명·몬스터·아이템·기술·마법·퀘스트 제목, `text/glossary.jsonl`). 대사 번역: MQ00(도입부) 489줄 검수 반영(D6), 나머지 진행 중 (`text/ko/`) |
 | 배포 | 시작 전 |
 
 ### 남은 큰 작업
@@ -51,6 +51,7 @@ tools/      빌드·분석 도구 (Python)
   elfrefs.py    실행 파일 주소 참조 탐지·수정(MIPS)
   elf_text.py   실행 파일 텍스트 추출·적용(제자리/재배치)
   glossary.py   용어집 형식 검사·원문 근거 확인
+  translation.py 번역 파일 검사(보호 원문·토큰·조사 토큰·줄 폭·반각 금지)
   psi.py        PSI 이미지 코덱
   build_poc*.py PoC 이미지 빌드
   run.sh, xinput.py  PCSX2 가상 디스플레이 실행·입력·스크린샷
@@ -71,6 +72,7 @@ orig/       원본 이미지 심볼릭 링크 (저장소에 포함하지 않음)
 python -m pytest -q tests                                   # 테스트
 python -m tools.scp_text work/ex text/scp_src.jsonl         # 대사 추출 (work/ex = 디스크에서 꺼낸 파일)
 python -m tools.glossary text/glossary.jsonl text/*_src.jsonl  # 용어집 검사
+python -m tools.translation text/ko text/scp_src.jsonl text/glossary.jsonl  # 번역 검사
 python -m tools.build_poc1 orig/tsugunai.bin build/poc1.bin # PoC 이미지 빌드
 tools/run.sh build/poc1.bin                                 # PCSX2로 실행
 ```
