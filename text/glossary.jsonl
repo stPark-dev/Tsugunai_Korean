@@ -492,3 +492,11 @@
 {"id": "G0493", "cat": "char", "ja": "オドネル", "ko": "오도널", "na": "", "state": "draft", "note": "메로에게 편지를 쓴 인물. 아일랜드 성 O'Donnell → 원어 표기(D4)"}
 {"id": "G0494", "cat": "term", "ja": "通り抜け", "ko": "빠져나가기", "na": "", "state": "draft", "note": "영혼이 틈을 빠져나가는 능력. 동사는 빠져나가다, 막힌 곳은 지나갈 수 없다"}
 {"id": "G0495", "cat": "char", "ja": "ドモヴィーハ", "ko": "도모비하", "na": "", "state": "draft", "note": "도모보이의 아내(슬라브 민담 domovikha) → 원어 표기(D4)"}
+{"id": "G0496", "cat": "char", "ja": "キノイ大僧官", "ko": "키노이 대승관", "na": "", "state": "draft", "note": "수도원 윗사람(MQ33). 지어낸 이름 → 일본어 발음(D4)"}
+{"id": "G0497", "cat": "char", "ja": "ナッシュ", "ko": "나슈", "na": "", "state": "draft", "note": "좌초선 선원(MQ01 일기). 외래어 표기 내시는 다른 뜻으로 읽혀 일본어 발음"}
+{"id": "G0498", "cat": "term", "ja": "閃光の知らせ", "ko": "섬광의 계시", "na": "", "state": "draft", "note": "신의 용서가 가까웠다는 징표(MQ35)"}
+{"id": "G0499", "cat": "term", "ja": "神の許し", "ko": "신의 용서", "na": "", "state": "draft", "note": ""}
+{"id": "G0500", "cat": "term", "ja": "封印装置", "ko": "봉인 장치", "na": "", "state": "draft", "note": "명계의 구멍을 막는 성스러운 거울 장치"}
+{"id": "G0501", "cat": "term", "ja": "眠り男", "ko": "잠자는 남자", "na": "", "state": "draft", "note": ""}
+{"id": "G0502", "cat": "place", "ja": "宝物庫", "ko": "보물 창고", "na": "", "state": "draft", "note": "성의 보물 창고"}
+{"id": "G0503", "cat": "item", "ja": "回復の秘水", "ko": "회복의 신수", "na": "", "state": "draft", "note": "유적 언덕 온천(MQ71). 비수는 匕首로 읽혀 신수"}

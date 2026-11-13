@@ -5,9 +5,10 @@
 배치 파일 한 줄: id <TAB> op <TAB> 화자 <TAB> 원문 <TAB> TODO 또는 "=기존 번역"
 번역 결과(TSV) 한 줄: id <TAB> 번역  (TODO 줄만)
 
-  python -m tools.batch make  MQ21 <출력 폴더> <배치당 TODO 수>
+  python -m tools.batch make  MQ21 <출력 폴더> <배치당 TODO 수> [묶음 이름]
+      (MQ01,MQ02,... 처럼 여러 퀘스트를 한 묶음으로: 같은 원문은 묶음 전체에서 한 번만)
   python -m tools.batch check <배치 파일> <번역 TSV>
-  python -m tools.batch merge MQ21 <배치 폴더>     → text/ko/MQ21.jsonl
+  python -m tools.batch merge MQ21 <배치 폴더> [묶음 이름]  → text/ko/MQ21.jsonl (묶음이면 퀘스트별 파일)
   python -m tools.batch fix   MQ21 <검수 TSV>...    (id <TAB> 번역 <TAB> 이유, fixcheck = 검사만,
                                                    !id = 그 줄만)
 """
@@ -129,9 +130,9 @@ def _load_src():
 
 
 def _known(exclude=""):
-    k = {}
+    k, ex = {}, {q + ".jsonl" for q in exclude.split(",")}
     for p in sorted(glob.glob(os.path.join(KO_DIR, "*.jsonl"))):
-        if os.path.basename(p) == exclude + ".jsonl":
+        if os.path.basename(p) in ex:
             continue
         for r in map(json.loads, open(p, encoding="utf-8")):
             if r["state"] != "untranslated":
@@ -147,6 +148,15 @@ def _skip(q):
     return (f"{q}/M{q[2:]}_99",)
 
 
+def group_rows(rows, spec):
+    """'MQ01,MQ02' → 그 퀘스트들의 줄을 적은 순서대로."""
+    return [r for q in spec.split(",") for r in _quest(rows, q)]
+
+
+def group_skips(spec):
+    return tuple(s for q in spec.split(",") for s in _skip(q))
+
+
 def _read_batch(path):
     rows = []
     for line in open(path, encoding="utf-8"):
@@ -159,11 +169,12 @@ def main(cmd, *a):
     rows = _load_src()
     if cmd == "make":
         q, out, size = a[0], a[1], int(a[2])
+        name = a[3] if len(a) > 3 else q
         os.makedirs(out, exist_ok=True)
-        bs = make_batches(_quest(rows, q), _known(q), size, _skip(q))
+        bs = make_batches(group_rows(rows, q), _known(q), size, group_skips(q))
         for i, b in enumerate(bs):
-            open(os.path.join(out, f"{q}_b{i:02d}.tsv"), "w", encoding="utf-8").write(render(b))
-            print(f"{q}_b{i:02d}", len(b), "줄", sum(r["todo"] for r in b), "TODO")
+            open(os.path.join(out, f"{name}_b{i:02d}.tsv"), "w", encoding="utf-8").write(render(b))
+            print(f"{name}_b{i:02d}", len(b), "줄", sum(r["todo"] for r in b), "TODO")
     elif cmd == "check":
         b = _read_batch(a[0])
         got = parse_tsv(open(a[1], encoding="utf-8").read(), b)
@@ -173,28 +184,32 @@ def main(cmd, *a):
             print("오류", *e)
         print("빠진 TODO", len(miss), miss[:10])
     elif cmd == "merge":
-        q, d = a[0], a[1]
-        src2ko = _known(q)
-        for bp in sorted(glob.glob(os.path.join(d, f"{q}_b??.tsv"))):
+        spec, d = a[0], a[1]
+        name = a[2] if len(a) > 2 else spec
+        src2ko = _known(spec)
+        for bp in sorted(glob.glob(os.path.join(d, f"{name}_b??.tsv"))):
             kp = bp[:-4] + ".ko.tsv"
             src2ko.update(parse_tsv(open(kp, encoding="utf-8").read(), _read_batch(bp)))
-        out = expand(_quest(rows, q), src2ko, _skip(q))
-        check(out, {r["id"]: r for r in rows})
-        with open(os.path.join(KO_DIR, q + ".jsonl"), "w", encoding="utf-8") as f:
-            f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in out)
-        print(q, len(out), "줄", sum(r["state"] != "untranslated" for r in out), "번역")
+        for q in spec.split(","):
+            out = expand(_quest(rows, q), src2ko, _skip(q))
+            check(out, {r["id"]: r for r in rows})
+            with open(os.path.join(KO_DIR, q + ".jsonl"), "w", encoding="utf-8") as f:
+                f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in out)
+            print(q, len(out), "줄", sum(r["state"] != "untranslated" for r in out), "번역")
     elif cmd in ("fix", "fixcheck"):
-        q = a[0]
-        p = os.path.join(KO_DIR, q + ".jsonl")
-        out = [json.loads(l) for l in open(p, encoding="utf-8")]
+        q = a[0]                                   # 묶음(MQ01,MQ02)이면 같은 원문을 묶음 전체에서 고침
+        qs = q.split(",")
+        out = [json.loads(l) for x in qs for l in open(os.path.join(KO_DIR, x + ".jsonl"), encoding="utf-8")]
         for fp in a[1:]:
             out = apply_fixes(out, open(fp, encoding="utf-8").read())
         errs = rows_errors(out, {r["id"]: r for r in rows})
         for e in errs:
             print("오류", *e)
         if cmd == "fix" and not errs:
-            with open(p, "w", encoding="utf-8") as f:
-                f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in out)
+            for x in qs:
+                with open(os.path.join(KO_DIR, x + ".jsonl"), "w", encoding="utf-8") as f:
+                    f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in out
+                                 if r["id"].startswith(x + "/"))
         print(q, "검수", "적용" if cmd == "fix" and not errs else "검사만", len(a) - 1, "파일, 오류", len(errs))
 
 

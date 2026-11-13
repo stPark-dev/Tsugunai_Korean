@@ -79,3 +79,38 @@ def test_apply_fixes_single_row_override():
     assert rows_errors(out, src) == []
     bad = apply_fixes(rows, "!Q/F1#004\t안녕.\t반각\n")
     assert [e[0] for e in rows_errors(bad, src)] == ["Q/F1#004"]
+
+
+def test_quest_group_selection_and_skips():
+    """여러 퀘스트를 한 묶음으로: 순서대로 고르고 각 디버그 스크립트를 뺀다."""
+    from tools.batch import group_rows, group_skips
+    rows = [{"id": "MQ02/M02_00#000", "op": 57, "src": "あ"},
+            {"id": "MQ01/M01_00#000", "op": 57, "src": "あ"},
+            {"id": "MQ01/M01_99#000", "op": 57, "src": "デバッグ"},
+            {"id": "MQ03/M03_00#000", "op": 57, "src": "い"}]
+    got = group_rows(rows, "MQ01,MQ02")
+    assert [r["id"] for r in got] == ["MQ01/M01_00#000", "MQ01/M01_99#000", "MQ02/M02_00#000"]
+    assert group_skips("MQ01,MQ02") == ("MQ01/M01_99", "MQ02/M02_99")
+    bs = make_batches(got, {}, 100, group_skips("MQ01,MQ02"))
+    assert [r["src"] for r in bs[0] if r["todo"]] == ["あ"]     # 퀘스트를 넘어 한 번만
+
+
+def test_fix_group_propagates_across_quests(tmp_path, monkeypatch):
+    """fix 에 퀘스트 묶음을 주면 같은 원문은 묶음 안 모든 퀘스트에서 고친다."""
+    import json
+    import tools.batch as tb
+    src = [{"id": "MQ01/M01_00#000", "op": 57, "src": "やあ。"},
+           {"id": "MQ02/M02_00#000", "op": 57, "src": "やあ。"}]
+    (tmp_path / "src.jsonl").write_text("".join(json.dumps(r) + "\n" for r in src))
+    ko = tmp_path / "ko"
+    ko.mkdir()
+    for r in src:
+        q = r["id"][:4]
+        (ko / f"{q}.jsonl").write_text(json.dumps({**r, "ko": "안녕．", "state": "needs_review"}) + "\n")
+    fix = tmp_path / "f.tsv"
+    fix.write_text("MQ02/M02_00#000\t안녕하세요．\t존댓말\n")
+    monkeypatch.setattr(tb, "SRC_PATH", str(tmp_path / "src.jsonl"))
+    monkeypatch.setattr(tb, "KO_DIR", str(ko))
+    tb.main("fix", "MQ01,MQ02", str(fix))
+    for q in ("MQ01", "MQ02"):
+        assert json.loads((ko / f"{q}.jsonl").read_text())["ko"] == "안녕하세요．"
