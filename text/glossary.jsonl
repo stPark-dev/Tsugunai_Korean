@@ -491,3 +491,4 @@
 {"id": "G0492", "cat": "term", "ja": "張り紙", "ko": "벽보", "na": "", "state": "draft", "note": ""}
 {"id": "G0493", "cat": "char", "ja": "オドネル", "ko": "오도널", "na": "", "state": "draft", "note": "메로에게 편지를 쓴 인물. 아일랜드 성 O'Donnell → 원어 표기(D4)"}
 {"id": "G0494", "cat": "term", "ja": "通り抜け", "ko": "빠져나가기", "na": "", "state": "draft", "note": "영혼이 틈을 빠져나가는 능력. 동사는 빠져나가다, 막힌 곳은 지나갈 수 없다"}
+{"id": "G0495", "cat": "char", "ja": "ドモヴィーハ", "ko": "도모비하", "na": "", "state": "draft", "note": "도모보이의 아내(슬라브 민담 domovikha) → 원어 표기(D4)"}
