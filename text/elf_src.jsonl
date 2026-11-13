@@ -1,0 +1,315 @@
+{"id": "ELF#249fd0", "src": "レイス", "refs": 0, "cap": 6, "debug": false}
+{"id": "ELF#24c880", "src": "レイス", "refs": 0, "cap": 6, "debug": false}
+{"id": "ELF#250120", "src": "ｔｓｕｇｕｎａｉ～つぐない～", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#250290", "src": "　スロット１のメモリーカード（ＰＳ２）を", "refs": 13, "cap": 47, "debug": false}
+{"id": "ELF#2502c0", "src": "　チェックしています　メモリーカード（ＰＳ２）", "refs": 9, "cap": 47, "debug": false}
+{"id": "ELF#2502f0", "src": "　を抜き差ししないでください", "refs": 17, "cap": 31, "debug": false}
+{"id": "ELF#250310", "src": "　ロードデータを選択してください", "refs": 1, "cap": 39, "debug": false}
+{"id": "ELF#250338", "src": "　　　　　　　　決定　　　戻る", "refs": 2, "cap": 31, "debug": false}
+{"id": "ELF#250358", "src": "　セーブ場所を選択してください", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#250378", "src": "　ロードしますか", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#250390", "src": "　　　　　　　はい　　　いいえ　", "refs": 6, "cap": 39, "debug": false}
+{"id": "ELF#2503b8", "src": "　スロット１のメモリーカード（ＰＳ２）に", "refs": 7, "cap": 47, "debug": false}
+{"id": "ELF#2503e8", "src": "　「つぐない」のセーブデータがありません", "refs": 3, "cap": 47, "debug": false}
+{"id": "ELF#250418", "src": "　　　ＰＵＳＨ　ＡＮＹ　ＢＵＴＴＯＮ", "refs": 7, "cap": 39, "debug": false}
+{"id": "ELF#250440", "src": "　スロット１のメモリーカード（ＰＳ２）から", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250470", "src": "　ロード中です　メモリーカード（ＰＳ２）", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#2504a0", "src": "　ロードを終了しました", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2504b8", "src": "　ロードに失敗しました", "refs": 2, "cap": 23, "debug": false}
+{"id": "ELF#2504d0", "src": "　スロット１のメモリーカード（ＰＳ２）への", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250500", "src": "　アクセスに失敗しました", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#250520", "src": "　チェックに失敗しました　「つぐない」の", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250550", "src": "　セーブデータが破損している可能性があります", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250580", "src": "　セーブしますか", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#250598", "src": "　上書きしますか", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2505b0", "src": "　セーブ中です　メモリーカード（ＰＳ２）", "refs": 5, "cap": 47, "debug": false}
+{"id": "ELF#2505e0", "src": "　セーブしました", "refs": 2, "cap": 23, "debug": false}
+{"id": "ELF#2505f8", "src": "　セーブに失敗しました", "refs": 2, "cap": 23, "debug": false}
+{"id": "ELF#250610", "src": "　スロット１にメモリーカード（ＰＳ２）が", "refs": 2, "cap": 47, "debug": false}
+{"id": "ELF#250640", "src": "　差されていません", "refs": 2, "cap": 23, "debug": false}
+{"id": "ELF#250658", "src": "　スロット１のメモリーカード（ＰＳ２）の", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250688", "src": "　空き容量が足りません", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2506a0", "src": "　ファイルがありません　新規作成しますか？", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#2506d0", "src": "　スロット１のメモリーカード（ＰＳ２）は", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250700", "src": "　フォーマットされていません", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#250720", "src": "　フォーマットしますか？", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#250740", "src": "　フォーマット中です　メモリーカード（ＰＳ２）", "refs": 3, "cap": 47, "debug": false}
+{"id": "ELF#250770", "src": "　フォーマットに失敗しました", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#250908", "src": "　メッセージ表示速度の調整を行ないます", "refs": 2, "cap": 39, "debug": false}
+{"id": "ELF#250930", "src": "　音楽のボリュームの調整を行ないます", "refs": 2, "cap": 39, "debug": false}
+{"id": "ELF#250958", "src": "　環境音のボリュームの調整を行ないます", "refs": 2, "cap": 39, "debug": false}
+{"id": "ELF#250980", "src": "　振動機能の設定を切り替えます", "refs": 2, "cap": 31, "debug": false}
+{"id": "ELF#2509a0", "src": "オプション", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2509b0", "src": "メッセージスピード　　　遅い　　　　　　速い", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#2509e0", "src": "ＢＧＭボリューム　　　　ＭＩＮ　　　　ＭＡＸ", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250a10", "src": "ＳＥボリューム　　　　　ＭＩＮ　　　　ＭＡＸ", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250a40", "src": "バイブレーション　　　　ＯＮ　　／　　ＯＦＦ", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250a70", "src": "設定終了", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#250ab8", "src": "　スロット１にメモリーカード（ＰＳ２）が", "refs": 2, "cap": 47, "debug": false}
+{"id": "ELF#250ae8", "src": "　差されていません。", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#250b00", "src": "　「つぐない」のデータをセーブするには", "refs": 2, "cap": 39, "debug": false}
+{"id": "ELF#250b28", "src": "　４２０ＫＢ以上の空き容量が必要です。", "refs": 2, "cap": 39, "debug": false}
+{"id": "ELF#250b50", "src": "　このままはじめてよろしいですか？", "refs": 2, "cap": 39, "debug": false}
+{"id": "ELF#250b78", "src": "　　　　　　　　　　はい　　　いいえ", "refs": 2, "cap": 39, "debug": false}
+{"id": "ELF#250ba0", "src": "　スロット１のメモリーカード（ＰＳ２）の", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#250bd0", "src": "　空き容量が足りません。", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#250c08", "src": "　差されていませんので", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#250c20", "src": "　ＣＯＮＴＩＮＵＥは選択できません。", "refs": 1, "cap": 39, "debug": false}
+{"id": "ELF#250c48", "src": "　メモリーカード（ＰＳ２）を差してください。", "refs": 1, "cap": 47, "debug": false}
+{"id": "ELF#251a78", "src": "アシュゴ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251a88", "src": "フィセラ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251a98", "src": "ラフルク", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251aa8", "src": "イフェム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251ab8", "src": "ディーン", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251ac8", "src": "ウォーレス", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251ad8", "src": "道具屋の主人", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251ae8", "src": "０１２３４５６７８９", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#251b00", "src": "ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ", "refs": 2, "cap": 23, "debug": false}
+{"id": "ELF#251b18", "src": "？！＋－±×÷♂♀☆", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#251b30", "src": "ｕｖｗｘｙｚ　　　　", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#251b48", "src": "ｋｌｍｎｏｐｑｒｓｔ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#251b60", "src": "ａｂｃｄｅｆｇｈｉｊ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#251b78", "src": "ＵＶＷＸＹＺ　　　　", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#251b90", "src": "ＫＬＭＮＯＰＱＲＳＴ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#251ba8", "src": "ＡＢＣＤＥＦＧＨＩＪ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#251bc0", "src": "ヮッヴー～", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251bd0", "src": "ャュョヵヶ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251be0", "src": "ァィゥェォ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251bf0", "src": "パピプペポ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c00", "src": "バビブベボ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c10", "src": "ダヂヅデド", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c20", "src": "ザジズゼゾ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c30", "src": "ガギグゲゴ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c40", "src": "ワ　ヲ　ン", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c50", "src": "ラリルレロ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c60", "src": "ヤ　ユ　ヨ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c70", "src": "マミムメモ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c80", "src": "ハヒフヘホ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251c90", "src": "ナニヌネノ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251ca0", "src": "タチツテト", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251cb0", "src": "サシスセソ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251cc0", "src": "カキクケコ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251cd0", "src": "アイウエオ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251ce0", "src": "ゎっ　ー～", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251cf0", "src": "ゃ　ゅ　ょ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d00", "src": "ぁぃぅぇぉ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d10", "src": "ぱぴぷぺぽ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d20", "src": "ばびぶべぼ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d30", "src": "だぢづでど", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d40", "src": "ざじずぜぞ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d50", "src": "がぎぐげご", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d60", "src": "わ　を　ん", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d70", "src": "らりるれろ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d80", "src": "や　ゆ　よ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251d90", "src": "まみむめも", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251da0", "src": "はひふへほ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251db0", "src": "なにぬねの", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251dc0", "src": "たちつてと", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251dd0", "src": "さしすせそ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251de0", "src": "かきくけこ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#251df0", "src": "あいうえお", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#253e78", "src": "宝箱は空っぽだった！", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#253eb8", "src": "手に入れた。", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#253ec8", "src": "%c%c%s%c%cを出ますか？", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#253ee0", "src": "地下%s%s階", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#253ef0", "src": "地下%s階", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254280", "src": "デフォルト", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254290", "src": "アルファベット", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2542a0", "src": "カタカナ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2542b0", "src": "ひらがな", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2542c0", "src": "名前入力", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2545a8", "src": "今はそのアイテムを", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2545c0", "src": "使うことはできません。", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2545d8", "src": "そのアイテムを捨てる", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2545f0", "src": "ことはできません。", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#254608", "src": "（未解決）", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254618", "src": "（実行中）", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254628", "src": "（解決）", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#254668", "src": "売りますか？", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254678", "src": "買いますか？", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254688", "src": "所持数：", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254698", "src": "買う数：", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2546a8", "src": "売る数：", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2546b8", "src": "赤の魔石×", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2546c8", "src": "青の魔石×", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2546d8", "src": "黄の魔石×", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2546e8", "src": "白の魔石×", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2546f8", "src": "緑の魔石×", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254708", "src": "暗黒魔石×", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254718", "src": "個できました。", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254728", "src": "精錬結果", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254738", "src": "買いますか？", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254748", "src": "売りますか？", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254758", "src": "精錬しますか？", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254768", "src": "買う数：", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254778", "src": "売る数：", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254788", "src": "作る数：", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254798", "src": "所持数：", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254ba0", "src": "%c%c悲しみ%c%cを抱えているようだ。", "refs": 1, "cap": 39, "debug": false}
+{"id": "ELF#254bc8", "src": "のりうつりますか？", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#254c08", "src": "%s はありません\n", "refs": 1, "cap": 23, "debug": true}
+{"id": "ELF#254e48", "src": "霊体では宝箱を開けられない！", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#254e78", "src": "宝箱は空っぽだった！", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#254ea8", "src": "手に入れた。", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#254eb8", "src": "何も入っていない！", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2550f0", "src": "通り抜けられない", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255108", "src": "　　お金　%c%c－%s", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255120", "src": "　　お金　%c%c＋%s", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#255590", "src": "左スティック：回転", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2555a8", "src": "ボタン：回転      ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2555c0", "src": "ボタン：決定", "refs": 2, "cap": 15, "debug": false}
+{"id": "ELF#2555d0", "src": "ボタン：戻る", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2555e0", "src": "ボタン：全てはずす", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2555f8", "src": "    ：アミュレット変更", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255610", "src": "ボタン：キャンセル", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255628", "src": "ボタン：はずす", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255638", "src": "ボタン：取り出す", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255650", "src": "ボタン：戻す", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255660", "src": "   ： ルゥン回転", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255678", "src": "全てのルゥンをはずします", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#255698", "src": "    よろしいですか？    ", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#2556b8", "src": "    ：はい    ：いいえ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#2556d0", "src": "せってい", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2557e8", "src": "%s はありません\n", "refs": 1, "cap": 23, "debug": true}
+{"id": "ELF#255800", "src": "GSパケットが足りません。SIZE=%d\n", "refs": 1, "cap": 47, "debug": true}
+{"id": "ELF#255a30", "src": "敵配置№ : %d", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255a40", "src": "名前　：%s", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255a50", "src": "レベル：%d　経験値：%d", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255a68", "src": "ＨＰ　：%d / %d", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255a78", "src": "ＭＰ　：%d / %d", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255a88", "src": "力：%d　素早さ：%d　精神：%d", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#255aa8", "src": "攻撃力：%d　防御力：%d", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255ae8", "src": "効果:%d  ターン:%d", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255b00", "src": "行動リスト№：%d", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255b18", "src": "行動テーブル：a", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255b28", "src": "行動テーブル：b", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255b38", "src": "行動テーブル：c", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255b68", "src": "行動№：%d  前の行動№：%d", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#255d00", "src": "戦闘管理ワークが設定されていません\n", "refs": 1, "cap": 39, "debug": true}
+{"id": "ELF#255d70", "src": "戦闘結果", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255d80", "src": "タクティカルボーナス", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255d98", "src": "獲得経験値", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255da8", "src": "次のレベルまで", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255db8", "src": "獲得金額", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255dc8", "src": "獲得アイテム", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256028", "src": "SE LOAD ERROR : 敵の種類が多すぎます\n", "refs": 1, "cap": 39, "debug": true}
+{"id": "ELF#256280", "src": "行動条件が不正です ID=%d NUM=%d 条件=%d\n", "refs": 1, "cap": 47, "debug": true}
+{"id": "ELF#256300", "src": "キャラの種別が不正です NUM=%d FLG=%x\n", "refs": 1, "cap": 47, "debug": true}
+{"id": "ELF#256358", "src": "不正なアイテムを落としました ITEM0=%d ITEM1=%d\n", "refs": 1, "cap": 47, "debug": true}
+{"id": "ELF#256388", "src": "召喚獣が死にました\n", "refs": 1, "cap": 23, "debug": true}
+{"id": "ELF#2563e8", "src": "復活エラー\n", "refs": 1, "cap": 23, "debug": true}
+{"id": "ELF#256450", "src": "条件式のパラメータが不正です\n", "refs": 2, "cap": 31, "debug": true}
+{"id": "ELF#2564c8", "src": "タスクコマンド登録しすぎ num=%d id=%d flg=%x\n", "refs": 1, "cap": 55, "debug": true}
+{"id": "ELF#256500", "src": "リンドブルム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256510", "src": "ムマキム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256520", "src": "ヴィヴィアン", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256530", "src": "ゴーレム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256540", "src": "ショゴス", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256550", "src": "アハ・イシュケ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256560", "src": "バルログ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256570", "src": "ラウ・ム・ルグ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2565a0", "src": "　にげる", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2565b0", "src": "ストレージ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2565c0", "src": "たたかう", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2565d0", "src": "　まほう", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2565e0", "src": "しょうかん", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2565f0", "src": "アイテム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256618", "src": "いれかえ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256628", "src": "召喚できないのに召喚しようとしてます\n", "refs": 1, "cap": 39, "debug": true}
+{"id": "ELF#256650", "src": "MPが足りない魔法を使いました\n", "refs": 1, "cap": 31, "debug": true}
+{"id": "ELF#256670", "src": "死んでます。\n", "refs": 1, "cap": 15, "debug": true}
+{"id": "ELF#2566a8", "src": "魔法№が不正です NUM=%d\n", "refs": 1, "cap": 39, "debug": true}
+{"id": "ELF#256990", "src": "数が足りないアイテムを使いました\n", "refs": 1, "cap": 47, "debug": true}
+{"id": "ELF#2569c0", "src": "リンドブルム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2569d0", "src": "ムマキム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2569e0", "src": "ヴィヴィアン", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#2569f0", "src": "ゴーレム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256a00", "src": "ショゴス", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256a10", "src": "アハ・イシュケ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256a20", "src": "バルログ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256a30", "src": "ラウ・ム・ルグ", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256b38", "src": "召喚しすぎ\n", "refs": 1, "cap": 15, "debug": true}
+{"id": "ELF#256b48", "src": "召喚していないのに戻そうとしました\n", "refs": 1, "cap": 39, "debug": true}
+{"id": "ELF#256c48", "src": "ポイントライト出し過ぎ\n", "refs": 1, "cap": 23, "debug": true}
+{"id": "ELF#256c60", "src": "ポイントライト開放エラー\n", "refs": 1, "cap": 31, "debug": true}
+{"id": "ELF#256dc0", "src": "死んでます。\n", "refs": 1, "cap": 15, "debug": true}
+{"id": "ELF#256e08", "src": "ホーリー・スプリンクル", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256e20", "src": "ブレーク・イントゥ・ピース", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256e40", "src": "ディフィート・バウンダー", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256e60", "src": "アンダー・ザ・サン", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256e78", "src": "シングル・アウト・フォー", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256e98", "src": "プリック・クロー・マラ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256eb0", "src": "フィッシュ・イン・トラブル", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256ed0", "src": "バーニング・ドヴェルグ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256ee8", "src": "メナシング・ウォーリア", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256f00", "src": "エンデュランス・クリーヴァー", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256f20", "src": "シルヴァン・ローグ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256f38", "src": "ブリザード・レイ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256f50", "src": "サーペンタイン・スパウト", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256f70", "src": "クゥイヴァー・フル・ブロー", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256f90", "src": "ヴェスパイン・スクリュー", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256fb0", "src": "バニッシュ・ドレイク", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#256fc8", "src": "ファイア・バック・ブリード", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#256fe8", "src": "キャリバー・ウォーシップ", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#257008", "src": "ハイランド・ブレイヴ", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#25ce18", "src": "／", "refs": 8, "cap": 7, "debug": false}
+{"id": "ELF#25ce20", "src": "ロード", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25ce28", "src": "セーブ", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25ce98", "src": "　", "refs": 2, "cap": 3, "debug": false}
+{"id": "ELF#25cff8", "src": "ミミー", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d000", "src": "ナビ", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d008", "src": "レイス", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d010", "src": "ギルス", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d018", "src": "アモル", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d020", "src": "漁師", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d028", "src": "ビルド", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d200", "src": "は　い", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d208", "src": "いいえ", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d210", "src": "９", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d218", "src": "８", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d220", "src": "７", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d228", "src": "６", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d230", "src": "５", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d238", "src": "４", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d240", "src": "３", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d248", "src": "２", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d250", "src": "１", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d258", "src": "０", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d2c0", "src": "　", "refs": 4, "cap": 7, "debug": false}
+{"id": "ELF#25d2c8", "src": "決定", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d2d0", "src": "もどる", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d2d8", "src": "すすむ", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d2e0", "src": "＿", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d2f0", "src": "やめる", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d340", "src": "つかう", "refs": 3, "cap": 7, "debug": false}
+{"id": "ELF#25d348", "src": "やめる", "refs": 3, "cap": 7, "debug": false}
+{"id": "ELF#25d350", "src": "すてる", "refs": 3, "cap": 7, "debug": false}
+{"id": "ELF#25d360", "src": "つかう", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d368", "src": "やめる", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d378", "src": "そうび", "refs": 3, "cap": 7, "debug": false}
+{"id": "ELF#25d380", "src": "はずす", "refs": 2, "cap": 7, "debug": false}
+{"id": "ELF#25d388", "src": "やめる", "refs": 2, "cap": 7, "debug": false}
+{"id": "ELF#25d390", "src": "－", "refs": 3, "cap": 7, "debug": false}
+{"id": "ELF#25d398", "src": "説明：", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3a0", "src": "買う", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3a8", "src": "売る", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3b0", "src": "はい", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3b8", "src": "いいえ", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3c0", "src": "個", "refs": 2, "cap": 7, "debug": false}
+{"id": "ELF#25d3c8", "src": "道具屋", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3d0", "src": "武器屋", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3d8", "src": "個", "refs": 2, "cap": 7, "debug": false}
+{"id": "ELF#25d3e0", "src": "買う", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3e8", "src": "売る", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3f0", "src": "精錬", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d3f8", "src": "が", "refs": 1, "cap": 3, "debug": false}
+{"id": "ELF#25d400", "src": "精錬中", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d408", "src": "・", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d410", "src": "拓石所", "refs": 1, "cap": 11, "debug": false}
+{"id": "ELF#25d510", "src": "は　い", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d518", "src": "いいえ", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d538", "src": "返済：", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d540", "src": "報酬：", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d5b8", "src": "はずす", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d5c0", "src": "そうび", "refs": 1, "cap": 7, "debug": false}
+{"id": "ELF#25d6a0", "src": "もどす", "refs": 1, "cap": 7, "debug": false}

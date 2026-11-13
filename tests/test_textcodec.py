@@ -44,3 +44,9 @@ def test_all_script_texts_roundtrip():
             assert encode_sjis(decode_sjis(t.text)) == t.text, (fn, t.text)
             n += 1
     assert n == 44290
+
+
+def test_newline_passthrough():
+    b = "エラー".encode("cp932") + b"\n"
+    assert decode_sjis(b) == "エラー\n"
+    assert encode_sjis("エラー\n") == b

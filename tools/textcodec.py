@@ -3,6 +3,7 @@
 제어 코드(관찰: SCP op 0x14/0x38/0x39/0x3B)
   01 xx  글자색 (08 = 기본색)       → {c:xx}
   02 xx  이름 변수 (01 = 주인공 등)  → {n:xx}
+  0a     줄바꿈(실행 파일 디버그 문자열)  → "\n" 그대로
 원문에 '{' '}' 는 나오지 않으므로 토큰 구분자로 쓴다.
 """
 import re
@@ -20,7 +21,7 @@ def decode_sjis(b: bytes) -> str:
     i = 0
     while i < len(b):
         c = b[i]
-        if c < 0x20:
+        if c < 0x20 and c != 0x0A:                 # 0x0A(실행 파일 문자열의 줄바꿈)는 그대로
             if c not in CTRL or i + 1 >= len(b):
                 raise TextCodecError(f"알 수 없는 제어 바이트 {b[i:i+2].hex()} @{i}")
             out.append(f"{{{CTRL[c]}:{b[i + 1]:02x}}}")
