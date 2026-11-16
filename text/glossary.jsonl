@@ -500,3 +500,4 @@
 {"id": "G0501", "cat": "term", "ja": "眠り男", "ko": "잠자는 남자", "na": "", "state": "draft", "note": ""}
 {"id": "G0502", "cat": "place", "ja": "宝物庫", "ko": "보물 창고", "na": "", "state": "draft", "note": "성의 보물 창고"}
 {"id": "G0503", "cat": "item", "ja": "回復の秘水", "ko": "회복의 신수", "na": "", "state": "draft", "note": "유적 언덕 온천(MQ71). 비수는 匕首로 읽혀 신수"}
+{"id": "G0504", "cat": "char", "ja": "ミミー", "ko": "미미", "na": "", "state": "draft", "note": "고양이, 이름 변수 {n:07} 기본 이름(docs/voice.md, 표기 미확정)"}

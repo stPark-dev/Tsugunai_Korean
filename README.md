@@ -16,12 +16,13 @@ PS2 일본판 **つぐない (SCPS-11007)** 를 한국어로 옮기는 팬 번�
 | 텍스트 추출 | 대사 스크립트 44,290행(고유 약 17만 자), 데이터 파일 7종 804행(약 7천 자), 실행 파일 화면용 293행(약 2,160자) 추출 완료 (`docs/text_map.md`) |
 | 그림 글자 | 대상 확정: 타이틀 로고, 퀘스트 제목 카드 35장, 스태프롤, 메뉴·전투 UI 텍스처 (`docs/graphics_text.md`) |
 | 번역 | 용어집 초안 502항목(인물·지명·몬스터·아이템·기술·마법·퀘스트 제목, `text/glossary.jsonl`). 대사 번역: 전체 44,290줄 중 43,728줄 초안+독립 검수 반영(디버그 스크립트 562줄 제외). 한글 1,056자로 폰트 한자 슬롯 1,385개 안에 들어감, 런타임 확인 대기 (`text/ko/`, 말투 `docs/voice.md`) |
+| 제품 빌드 | `tools/build.py` 개발판: 대사 43,728줄 + 한글 1,066음절 + 조사 훅 + 이름 입력, 같은 입력이면 같은 SHA1. PCSX2 첫 장면~이름 입력~「레이스였던가．」 확인 (`docs/build.md`) |
 | 배포 | 시작 전 |
 
 ### 남은 큰 작업
 
 1. 대사 번역·검수 (번역·검수 모두 Claude, `docs/decisions.md` D1). 용어집 2차 검수 포함
-2. 정식 재삽입 빌드(글리프 배정이 넘치거나 빠진 글자면 실패)와 대표 장면 실행 확인 — 조사(D8)·이름 입력(D9)·글꼴(D10)은 PoC5로 확인
+2. 실행 파일·데이터 파일 텍스트 번역(메뉴·아이템·마법 등 611줄이 지금은 한자가 깨져 보임), 첫 장면 이후 대표 장면 실행 확인
 3. 그림 글자 다시 그리기
 4. 배포용 xdelta 패치와 적용 스크립트, 엔딩까지 실행 확인
 
@@ -57,6 +58,7 @@ tools/      빌드·분석 도구 (Python)
   translation.py 번역 파일 검사(보호 원문·토큰·조사 토큰·줄 폭·반각 금지·인코딩)
   batch.py      번역 배치 생성·검사·병합, 검수 수정 적용(퀘스트 묶음 MQ01,MQ02,…, !id = 한 줄만)
   psi.py        PSI 이미지 코덱
+  build.py      제품 빌드(개발 정책): 원본 SHA1 확인 → 대사 전체·글꼴·조사 훅·이름 입력 → 이미지 + 매니페스트
   build_poc*.py PoC 이미지 빌드
   run.sh, xinput.py  PCSX2 가상 디스플레이 실행·입력·스크린샷
 tests/      pytest 테스트
@@ -77,6 +79,7 @@ python -m pytest -q tests                                   # 테스트
 python -m tools.scp_text work/ex text/scp_src.jsonl         # 대사 추출 (work/ex = 디스크에서 꺼낸 파일)
 python -m tools.glossary text/glossary.jsonl text/*_src.jsonl  # 용어집 검사
 python -m tools.translation text/ko text/scp_src.jsonl text/glossary.jsonl  # 번역 검사
+python -m tools.build orig/tsugunai.bin build/tsugunai_ko.bin  # 제품 빌드(배포 금지 개발판, 매니페스트 함께 생성)
 python -m tools.build_poc1 orig/tsugunai.bin build/poc1.bin # PoC 이미지 빌드
 tools/run.sh build/poc1.bin                                 # PCSX2로 실행
 ```
