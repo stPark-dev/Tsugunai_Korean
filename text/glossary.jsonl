@@ -212,13 +212,13 @@
 {"id": "G0213", "cat": "summon", "ja": "リンドブルム", "ko": "린드부름", "na": "Lindwurm", "state": "draft", "note": ""}
 {"id": "G0214", "cat": "summon", "ja": "レディ・オブ・ザ・レイク", "ko": "레이디 오브 더 레이크", "na": "", "state": "draft", "note": "AMULET 소환수 이름(비비안)"}
 {"id": "G0215", "cat": "amulet", "ja": "鳥の護符", "ko": "새의 부적", "na": "", "state": "draft", "note": ""}
-{"id": "G0216", "cat": "amulet", "ja": "焦熱魔の護符", "ko": "초열마의 부적", "na": "", "state": "draft", "note": "발로그"}
+{"id": "G0216", "cat": "amulet", "ja": "焦熱魔の護符", "ko": "초열마 부적", "na": "", "state": "draft", "note": "발로그 / 메뉴 폭 제한으로 「초열마의 부적」→「초열마 부적」(2026-11-16)"}
 {"id": "G0217", "cat": "amulet", "ja": "水棲馬の護符", "ko": "물말의 부적", "na": "", "state": "draft", "note": "에흐 우슈케"}
-{"id": "G0218", "cat": "amulet", "ja": "氷粘の護符", "ko": "얼음 점액의 부적", "na": "", "state": "draft", "note": "쇼고스"}
-{"id": "G0219", "cat": "amulet", "ja": "土塊の護符", "ko": "흙덩이의 부적", "na": "", "state": "draft", "note": "골렘"}
-{"id": "G0220", "cat": "amulet", "ja": "楼湖宮の護符", "ko": "누호궁의 부적", "na": "", "state": "draft", "note": "레이디 오브 더 레이크"}
-{"id": "G0221", "cat": "amulet", "ja": "沼精獣の護符", "ko": "늪 정령수의 부적", "na": "", "state": "draft", "note": "무마킴"}
-{"id": "G0222", "cat": "amulet", "ja": "閃光竜の護符", "ko": "섬광룡의 부적", "na": "", "state": "draft", "note": "린드부름"}
+{"id": "G0218", "cat": "amulet", "ja": "氷粘の護符", "ko": "빙점액 부적", "na": "", "state": "draft", "note": "쇼고스 / 메뉴 폭 제한으로 「얼음 점액의 부적」→「빙점액 부적」(2026-11-16)"}
+{"id": "G0219", "cat": "amulet", "ja": "土塊の護符", "ko": "흙덩이 부적", "na": "", "state": "draft", "note": "골렘 / 메뉴 폭 제한으로 「흙덩이의 부적」→「흙덩이 부적」(2026-11-16)"}
+{"id": "G0220", "cat": "amulet", "ja": "楼湖宮の護符", "ko": "누호궁 부적", "na": "", "state": "draft", "note": "레이디 오브 더 레이크 / 메뉴 폭 제한으로 「누호궁의 부적」→「누호궁 부적」(2026-11-16)"}
+{"id": "G0221", "cat": "amulet", "ja": "沼精獣の護符", "ko": "늪정령 부적", "na": "", "state": "draft", "note": "무마킴 / 메뉴 폭 제한으로 「늪 정령수의 부적」→「늪정령 부적」(2026-11-16)"}
+{"id": "G0222", "cat": "amulet", "ja": "閃光竜の護符", "ko": "섬광룡 부적", "na": "", "state": "draft", "note": "린드부름 / 메뉴 폭 제한으로 「섬광룡의 부적」→「섬광룡 부적」(2026-11-16)"}
 {"id": "G0223", "cat": "item", "ja": "回復薬", "ko": "회복약", "na": "Medicine", "state": "draft", "note": ""}
 {"id": "G0224", "cat": "item", "ja": "特効回復薬", "ko": "특효 회복약", "na": "Special Medicine", "state": "draft", "note": ""}
 {"id": "G0225", "cat": "item", "ja": "回復の秘薬", "ko": "회복의 비약", "na": "Secret Medicine", "state": "draft", "note": ""}
@@ -231,11 +231,11 @@
 {"id": "G0232", "cat": "item", "ja": "万能の妙薬", "ko": "만능 묘약", "na": "Wonder Drug", "state": "draft", "note": ""}
 {"id": "G0233", "cat": "item", "ja": "火トカゲのうろこ", "ko": "불도마뱀 비늘", "na": "Salamander Scale", "state": "draft", "note": ""}
 {"id": "G0234", "cat": "item", "ja": "サラマンダの目玉", "ko": "샐러맨더의 눈알", "na": "Salamander Eye", "state": "draft", "note": ""}
-{"id": "G0235", "cat": "item", "ja": "メレダイヤの樹氷", "ko": "멜레다이아 상고대", "na": "Diamond Dust", "state": "draft", "note": ""}
+{"id": "G0235", "cat": "item", "ja": "メレダイヤの樹氷", "ko": "멜레다이아상고대", "na": "Diamond Dust", "state": "draft", "note": "메뉴 폭 제한으로 「멜레다이아 상고대」→「멜레다이아상고대」(2026-11-16)"}
 {"id": "G0236", "cat": "item", "ja": "凍土のカメオ", "ko": "동토의 카메오", "na": "Frozen Earth", "state": "draft", "note": ""}
 {"id": "G0237", "cat": "item", "ja": "雷なまずのひげ", "ko": "번개메기 수염", "na": "Electric Catfish", "state": "draft", "note": ""}
 {"id": "G0238", "cat": "item", "ja": "雷竜のツノ", "ko": "뇌룡의 뿔", "na": "Lightning Dragon", "state": "draft", "note": ""}
-{"id": "G0239", "cat": "item", "ja": "ゴーレムの小指", "ko": "골렘의 새끼손가락", "na": "Golem Finger", "state": "draft", "note": ""}
+{"id": "G0239", "cat": "item", "ja": "ゴーレムの小指", "ko": "골렘 새끼손가락", "na": "Golem Finger", "state": "draft", "note": "메뉴 폭 제한으로 「골렘의 새끼손가락」→「골렘 새끼손가락」(2026-11-16)"}
 {"id": "G0240", "cat": "item", "ja": "ゴーレムのこぶし", "ko": "골렘의 주먹", "na": "Golem Fist", "state": "draft", "note": ""}
 {"id": "G0241", "cat": "item", "ja": "炉心の玉", "ko": "노심의 구슬", "na": "Reactor Core", "state": "draft", "note": ""}
 {"id": "G0242", "cat": "item", "ja": "毒蛇の牙", "ko": "독사의 이빨", "na": "Snake Fang", "state": "draft", "note": ""}
@@ -284,7 +284,7 @@
 {"id": "G0285", "cat": "equip", "ja": "反撃の腕輪", "ko": "반격의 팔찌", "na": "Counter Band", "state": "draft", "note": ""}
 {"id": "G0286", "cat": "equip", "ja": "黄金の指輪", "ko": "황금 반지", "na": "Golden Ring", "state": "draft", "note": ""}
 {"id": "G0287", "cat": "equip", "ja": "クレイモアソード", "ko": "클레이모어 소드", "na": "Claymore Sword", "state": "draft", "note": ""}
-{"id": "G0288", "cat": "equip", "ja": "コルタナブレード", "ko": "코르타나 블레이드", "na": "Coltana Blade", "state": "draft", "note": ""}
+{"id": "G0288", "cat": "equip", "ja": "コルタナブレード", "ko": "코르타나블레이드", "na": "Coltana Blade", "state": "draft", "note": "메뉴 폭 제한으로 「코르타나 블레이드」→「코르타나블레이드」(2026-11-16)"}
 {"id": "G0289", "cat": "equip", "ja": "フランベルジェ", "ko": "플랑베르주", "na": "Flamberge", "state": "draft", "note": ""}
 {"id": "G0290", "cat": "equip", "ja": "トリスタング", "ko": "트리스탕그", "na": "Tristan", "state": "draft", "note": ""}
 {"id": "G0291", "cat": "equip", "ja": "トライデント", "ko": "트라이던트", "na": "Trident", "state": "draft", "note": ""}
@@ -449,13 +449,13 @@
 {"id": "G0450", "cat": "quest", "ja": "建築師の計略", "ko": "건축가의 계략", "na": "", "state": "draft", "note": ""}
 {"id": "G0451", "cat": "quest", "ja": "マーシュを求めて", "ko": "마시를 찾아서", "na": "", "state": "draft", "note": ""}
 {"id": "G0452", "cat": "quest", "ja": "奪われた法典", "ko": "빼앗긴 법전", "na": "", "state": "draft", "note": ""}
-{"id": "G0453", "cat": "quest", "ja": "メローの探し物", "ko": "메로가 찾는 물건", "na": "", "state": "draft", "note": ""}
+{"id": "G0453", "cat": "quest", "ja": "メローの探し物", "ko": "메로가 찾는 것", "na": "", "state": "draft", "note": "메뉴 폭 제한으로 「메로가 찾는 물건」→「메로가 찾는 것」(2026-11-16)"}
 {"id": "G0454", "cat": "quest", "ja": "採石場の奪回", "ko": "채석장 탈환", "na": "", "state": "draft", "note": ""}
-{"id": "G0455", "cat": "quest", "ja": "兵士への憧れ", "ko": "병사를 향한 동경", "na": "", "state": "draft", "note": ""}
+{"id": "G0455", "cat": "quest", "ja": "兵士への憧れ", "ko": "병사를 동경하여", "na": "", "state": "draft", "note": "메뉴 폭 제한으로 「병사를 향한 동경」→「병사를 동경하여」(2026-11-16)"}
 {"id": "G0456", "cat": "quest", "ja": "僧院の異変", "ko": "수도원의 이변", "na": "", "state": "draft", "note": ""}
 {"id": "G0457", "cat": "quest", "ja": "石版の行方", "ko": "석판의 행방", "na": "", "state": "draft", "note": ""}
-{"id": "G0458", "cat": "quest", "ja": "消えた兄を捜せ", "ko": "사라진 오빠를 찾아라", "na": "", "state": "draft", "note": "셰이크의 여동생이 오빠를 찾음"}
-{"id": "G0459", "cat": "quest", "ja": "見習い僧士の自信", "ko": "견습 수도사의 자신감", "na": "", "state": "draft", "note": ""}
+{"id": "G0458", "cat": "quest", "ja": "消えた兄を捜せ", "ko": "오빠를 찾아라", "na": "", "state": "draft", "note": "셰이크의 여동생이 오빠를 찾음 / 메뉴 폭 제한으로 「사라진 오빠를 찾아라」→「오빠를 찾아라」(2026-11-16)"}
+{"id": "G0459", "cat": "quest", "ja": "見習い僧士の自信", "ko": "견습생의 자신감", "na": "", "state": "draft", "note": "메뉴 폭 제한으로 「견습 수도사의 자신감」→「견습생의 자신감」(2026-11-16)"}
 {"id": "G0460", "cat": "quest", "ja": "闇の始まり", "ko": "어둠의 시작", "na": "", "state": "draft", "note": ""}
 {"id": "G0461", "cat": "quest", "ja": "Ｌ－４", "ko": "Ｌ－４", "na": "", "state": "draft", "note": ""}
 {"id": "G0462", "cat": "quest", "ja": "母の行方", "ko": "어머니의 행방", "na": "", "state": "draft", "note": ""}

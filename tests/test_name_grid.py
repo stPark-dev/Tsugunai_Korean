@@ -4,7 +4,7 @@ import struct
 
 import pytest
 
-from tools.name_grid import COLS, PAGES, TABLE, NameGridError, apply, load
+from tools.name_grid import COLS, PAGES, TABLE, NameGridError, apply, load, targets
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DELTA = 0xFF000                                    # 가상 주소 - 파일 오프셋
@@ -50,3 +50,9 @@ def test_apply_rejects_wrong_shape():
     struct.pack_into("<I", bad, TABLE - DELTA, 0)                     # 원본 표가 아님
     with pytest.raises(NameGridError):
         apply(bad, DELTA, ["가나다라마"] * (PAGES * COLS), enc)
+
+
+def test_targets_lists_column_strings():
+    elf = _fake_elf()
+    t = targets(elf, DELTA)
+    assert len(t) == PAGES * COLS and "ELF#251000" in t and f"ELF#{0x251000 + 0x10 * 35:06x}" in t

@@ -18,6 +18,13 @@ def load(path):
     return [l.strip() for l in open(path, encoding="utf-8") if l.strip() and not l.startswith("#")]
 
 
+def targets(elf, delta):
+    """음절표가 덮어쓰는 열 문자열의 ID(ELF#주소) — 다른 단계가 같은 문자열을 쓰지 않게 막는 데 쓴다."""
+    return {f"ELF#{int.from_bytes(elf[p:p + 4], 'little'):06x}"
+            for p in (TABLE + PAGE_STRIDE * page + 4 * col - delta
+                      for page in range(PAGES) for col in range(COLS))}
+
+
 def apply(elf, delta, cols, encoder):
     """elf(bytearray)를 제자리 수정. delta = 가상 주소 - 파일 오프셋."""
     if len(cols) != PAGES * COLS or any(len(c) != ROWS for c in cols):

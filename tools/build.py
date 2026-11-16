@@ -27,6 +27,7 @@ from tools.josa_hook import apply as apply_hook, build as build_hook
 from tools.scp_text import apply_texts
 from tools.sl00 import compress, decompress
 from tools.translation import check, load_dir
+from tools import data_text, ui_text
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 TEXT = ROOT / "text"
@@ -75,6 +76,72 @@ def stale_kanji(rows, used_codes, translated):
         if bad:
             out[r["id"]] = bad
     return out
+
+
+WRAP_CELLS, WRAP_LINES = 10, 9       # 퀘스트 설명 칸: 10칸마다 자동 줄바꿈, 원문 최장 90자 = 9줄(docs/build.md)
+
+
+def _words(rid, s):
+    """반각 공백으로 단어를 나눈다. 【】 안 공백은 나누지 않되(용어가 두 줄로 갈리지 않게),
+    묶음이 한 줄(10칸)을 넘으면 그 안 공백에서 나눈다. 괄호 짝·앞뒤·연속 공백이 틀리면 실패."""
+    if s != s.strip(" ") or "  " in s:
+        raise BuildError(f"{rid}: 앞뒤 또는 연속 반각 공백")
+    words, cur, depth = [], "", 0
+    for c in s:
+        depth += (c == "【") - (c == "】")
+        if depth not in (0, 1):
+            raise BuildError(f"{rid}: 【】 짝이 맞지 않음")
+        if c == " " and depth == 0:
+            words.append(cur)
+            cur = ""
+        else:
+            cur += "　" if c == " " else c
+    if depth:
+        raise BuildError(f"{rid}: 【】 짝이 맞지 않음")
+    words.append(cur)
+    return [p for w in words for p in (w.split("　") if len(w) > WRAP_CELLS else [w])]
+
+
+def _wrap(rid, s):
+    """단어가 줄 끝에서 잘리지 않게 줄 끝을 전각 공백으로 채운다(10칸 배수로 — 10칸보다 긴 단어 뒤도 어긋나지 않게)."""
+    lines, cur = [], ""
+    for w in _words(rid, s):
+        cand = f"{cur}　{w}" if cur else w
+        if len(cand) <= WRAP_CELLS or not cur:
+            cur = cand
+        else:
+            lines.append(cur)
+            cur = w
+    lines.append(cur)
+    out = "".join(l.ljust(-(-len(l) // WRAP_CELLS) * WRAP_CELLS, "　") for l in lines[:-1]) + lines[-1]
+    n = -(-len(out) // WRAP_CELLS)
+    if n > WRAP_LINES:
+        raise BuildError(f"{rid}: 퀘스트 설명이 {n}줄(최대 {WRAP_LINES}줄)")
+    return out
+
+
+def data_layout(texts):
+    """퀘스트 설명(RECORD#…desc)은 게임이 2바이트 10칸 단위로 자동 줄바꿈 → 넣을 때만 공백을 전각으로 바꾸고 줄 끝을 채움.
+    반각 공백(1바이트)은 글자를 반으로 가르므로 남기지 않는다. 번역 파일은 그대로."""
+    return {rid: _wrap(rid, s) if rid.startswith("RECORD#") and rid.endswith(".desc") else s
+            for rid, s in texts.items()}
+
+
+def encode_ui(s, enc):
+    """실행 파일 문자열: 서식 토큰(%d %s %c …)은 바이트 그대로, 나머지는 enc 로."""
+    out, pos = bytearray(), 0
+    for m in ui_text.FMT_RE.finditer(s):
+        out += enc(s[pos:m.start()]) + m.group().encode("ascii")
+        pos = m.end()
+    return bytes(out + enc(s[pos:]))
+
+
+def merge_writers(ui, fixed, reserved):
+    """실행 파일 번역(ui)과 다른 단계의 문자열(fixed: 기본 이름·화면 글자, reserved: 음절표)이 겹치면 실패."""
+    both = sorted((set(ui) & set(fixed)) | (set(ui) & set(reserved)) | (set(fixed) & set(reserved)))
+    if both:
+        raise BuildError(f"한 문자열을 두 단계가 씀: {both}")
+    return {**ui, **fixed}
 
 
 def reject_reassigned(strings, used_codes):
@@ -133,14 +200,23 @@ def main(src, out):
         raise BuildError("번역 파일이 없음")
     warns = check(rows, scp_src)
     texts = selected_texts(rows)
-    elf_tr = {**default_names(_jsonl(TEXT / "glossary.jsonl")), **LABELS}
+    elf_src, data_src = _jsonl(TEXT / "elf_src.jsonl"), _jsonl(TEXT / "data_src.jsonl")
+    ui_rows = {k: _jsonl(TEXT / "ko_ui" / f"{k}.jsonl") for k in ("ELF", "DATA")}
+    ui_text.check(ui_rows["ELF"], elf_src)
+    ui_text.check(ui_rows["DATA"], data_src)
+    data_tr = data_layout(selected_texts(ui_rows["DATA"]))
     grid = name_grid.load(TEXT / "name_grid.txt")
     pairs = josa_pairs(texts.values())
 
     img = cdimage.Image(src)
     by = {f.path: f for f in img.list_files()}
     font = Font.parse(decompress(img.read_file(by[FONT])))
-    encoded = {**texts, **elf_tr, **{f"grid#{i}": g for i, g in enumerate(grid)}}
+    elf = img.read_file(by[ELF])
+    lay = layout_from_elf(elf)
+    elf_tr = merge_writers(selected_texts(ui_rows["ELF"]),
+                           {**default_names(_jsonl(TEXT / "glossary.jsonl")), **LABELS},
+                           name_grid.targets(elf, lay.delta))
+    encoded = {**texts, **elf_tr, **data_tr, **{f"grid#{i}": g for i, g in enumerate(grid)}}
     used = {c for s in encoded.values() for c in s if is_hangul(c)}
     alloc = allocate(used, kanji_slots(font.codes))
     slots = set(alloc.cmap.values())
@@ -150,21 +226,21 @@ def main(src, out):
 
     scps = {p: img.read_file(f) for p, f in by.items() if "/SCP/" in p and p.endswith(".SCP")}
     rep = apply_texts(scps, texts, enc)
-    elf = img.read_file(by[ELF])
-    lay = layout_from_elf(elf)
-    elf = bytearray(ElfText.parse(elf, lay, font.codes).apply(elf_tr, enc))
+    data_files = {p: img.read_file(by[p]) for p in data_text.PATHS.values()}
+    rep.update(data_text.apply_texts(data_files, data_tr, enc))
+    elf = bytearray(ElfText.parse(elf, lay, font.codes).apply(elf_tr, lambda s: encode_ui(s, enc)))
     name_grid.apply(elf, lay.delta, grid, enc)
     apply_hook(elf, lay.delta, build_hook(alloc.lo, alloc.split, josa_table(pairs, alloc.cmap)))
     rep[ELF] = bytes(elf)
     rep[FONT] = compress(font.to_bytes())
 
-    kept = (list(scp_src.values()) + [r for r in _jsonl(TEXT / "elf_src.jsonl") if not r["debug"]]
-            + _jsonl(TEXT / "data_src.jsonl"))
-    stale = stale_kanji(kept, slots, set(texts) | set(elf_tr))
+    kept = list(scp_src.values()) + [r for r in elf_src if not r["debug"]] + data_src
+    stale = stale_kanji(kept, slots, set(texts) | set(elf_tr) | set(data_tr))
     report = {}
     publish(out, lambda p: report.setdefault("r", build(src, rep, p)), lambda: {
         "policy": "development", "distribution": False, "source_sha1": SOURCE_SHA1,
         "translated_lines": len(texts), "untranslated_lines": len(rows) - len(texts),
+        "elf_strings": len(elf_tr), "data_strings": len(data_tr),
         "width_warnings": len(warns), "hangul_syllables": len(alloc.cmap),
         "kanji_slots": len(kanji_slots(font.codes)), "josa_pairs": len(pairs),
         "changed_files": len(rep), "relocated": report["r"].relocated,

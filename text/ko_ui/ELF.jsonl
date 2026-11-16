@@ -1,0 +1,293 @@
+{"id": "ELF#249fd0", "src": "レイス", "ko": "레이스", "state": "reviewed", "note": "용어집 G0001"}
+{"id": "ELF#24c880", "src": "レイス", "ko": "레이스", "state": "reviewed", "note": "용어집 G0001"}
+{"id": "ELF#250120", "src": "ｔｓｕｇｕｎａｉ～つぐない～", "ko": "", "state": "untranslated", "note": "원문 유지: 용어집에 つぐない 의 한국어 제목이 없음"}
+{"id": "ELF#250290", "src": "　スロット１のメモリーカード（ＰＳ２）を", "ko": "　슬롯１의 메모리 카드（ＰＳ２）를", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2502c0", "src": "　チェックしています　メモリーカード（ＰＳ２）", "ko": "　확인 중입니다　메모리 카드（ＰＳ２）를", "state": "reviewed", "note": "초안: 다음 줄(뽑거나 꽂지…)로 문장이 이어지므로 목적격 조사를 이 줄 끝에 둠"}
+{"id": "ELF#2502f0", "src": "　を抜き差ししないでください", "ko": "　뽑거나 꽂지 마십시오", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250310", "src": "　ロードデータを選択してください", "ko": "　로드할 데이터를 선택하십시오", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250338", "src": "　　　　　　　　決定　　　戻る", "ko": "　　　　　　　　결정　　　뒤로", "state": "reviewed", "note": "초안: 열 위치 유지"}
+{"id": "ELF#250358", "src": "　セーブ場所を選択してください", "ko": "　세이브할 곳을 선택하십시오", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250378", "src": "　ロードしますか", "ko": "　로드합니까？", "state": "reviewed", "note": "초안: 폭 제한으로 ~하겠습니까 대신 ~합니까"}
+{"id": "ELF#250390", "src": "　　　　　　　はい　　　いいえ　", "ko": "　　　　　　　예　　　　아니요　", "state": "reviewed", "note": "초안: 열 위치 유지, 예 뒤 전각 공백으로 はい 폭 맞춤"}
+{"id": "ELF#2503b8", "src": "　スロット１のメモリーカード（ＰＳ２）に", "ko": "　슬롯１의 메모리 카드（ＰＳ２）에", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2503e8", "src": "　「つぐない」のセーブデータがありません", "ko": "　「つぐない」 데이터가 없습니다", "state": "reviewed", "note": "초안: 게임 제목 つぐない 는 용어집에 한국어 제목이 없어 가나 유지, 폭 20칸이라 세이브 생략"}
+{"id": "ELF#250418", "src": "　　　ＰＵＳＨ　ＡＮＹ　ＢＵＴＴＯＮ", "ko": "", "state": "untranslated", "note": "원문 유지: 일본어 없음(전각 영문)"}
+{"id": "ELF#250440", "src": "　スロット１のメモリーカード（ＰＳ２）から", "ko": "　슬롯１의 메모리 카드（ＰＳ２）에서", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250470", "src": "　ロード中です　メモリーカード（ＰＳ２）", "ko": "　로드 중　메모리 카드（ＰＳ２）를", "state": "reviewed", "note": "초안: 다음 줄(뽑거나 꽂지…)과 이어짐, 폭 제한으로 ~중입니다→~중"}
+{"id": "ELF#2504a0", "src": "　ロードを終了しました", "ko": "　로드를 마쳤습니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2504b8", "src": "　ロードに失敗しました", "ko": "　로드에 실패했습니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2504d0", "src": "　スロット１のメモリーカード（ＰＳ２）への", "ko": "　슬롯１의 메모리 카드（ＰＳ２）", "state": "reviewed", "note": "초안: への 는 다음 줄 접근에 실패 로 처리"}
+{"id": "ELF#250500", "src": "　アクセスに失敗しました", "ko": "　접근에 실패했습니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250520", "src": "　チェックに失敗しました　「つぐない」の", "ko": "　확인에 실패했습니다　「つぐない」의", "state": "reviewed", "note": "초안: 게임 제목 가나 유지"}
+{"id": "ELF#250550", "src": "　セーブデータが破損している可能性があります", "ko": "　세이브 데이터가 손상되었을 수 있습니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250580", "src": "　セーブしますか", "ko": "　세이브합니까？", "state": "reviewed", "note": "초안: 폭 제한으로 ~합니까"}
+{"id": "ELF#250598", "src": "　上書きしますか", "ko": "　덮어씁니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2505b0", "src": "　セーブ中です　メモリーカード（ＰＳ２）", "ko": "　세이브 중　메모리 카드（ＰＳ２）를", "state": "reviewed", "note": "초안: 다음 줄(뽑거나 꽂지…)과 이어짐, 폭 제한으로 ~중입니다→~중"}
+{"id": "ELF#2505e0", "src": "　セーブしました", "ko": "　세이브했습니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2505f8", "src": "　セーブに失敗しました", "ko": "　세이브 실패했습니다", "state": "reviewed", "note": "초안: 폭 11칸이라 세이브→저장 / 검수: 세이브/저장 혼용 → 용어집·대사와 같은 세이브로 통일(11칸이라 조사 에 생략)"}
+{"id": "ELF#250610", "src": "　スロット１にメモリーカード（ＰＳ２）が", "ko": "　슬롯１에 메모리 카드（ＰＳ２）가", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250640", "src": "　差されていません", "ko": "　빠져 있습니다", "state": "reviewed", "note": "초안: 差されていません, 폭 9칸이라 빠져 있다로 표현"}
+{"id": "ELF#250658", "src": "　スロット１のメモリーカード（ＰＳ２）の", "ko": "　슬롯１의 메모리 카드（ＰＳ２）의", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250688", "src": "　空き容量が足りません", "ko": "　용량이 부족합니다", "state": "reviewed", "note": "초안: 폭 제한으로 空き(빈) 생략"}
+{"id": "ELF#2506a0", "src": "　ファイルがありません　新規作成しますか？", "ko": "　파일이 없습니다　새로 만들겠습니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2506d0", "src": "　スロット１のメモリーカード（ＰＳ２）は", "ko": "　슬롯１의 메모리 카드（ＰＳ２）는", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250700", "src": "　フォーマットされていません", "ko": "　포맷되어 있지 않습니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250720", "src": "　フォーマットしますか？", "ko": "　포맷하겠습니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250740", "src": "　フォーマット中です　メモリーカード（ＰＳ２）", "ko": "　포맷 중입니다　메모리 카드（ＰＳ２）를", "state": "reviewed", "note": "초안: 다음 줄(뽑거나 꽂지…)과 이어짐"}
+{"id": "ELF#250770", "src": "　フォーマットに失敗しました", "ko": "　포맷에 실패했습니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250908", "src": "　メッセージ表示速度の調整を行ないます", "ko": "　메시지 표시 속도를 조정합니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250930", "src": "　音楽のボリュームの調整を行ないます", "ko": "　음악 볼륨을 조정합니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250958", "src": "　環境音のボリュームの調整を行ないます", "ko": "　환경음 볼륨을 조정합니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250980", "src": "　振動機能の設定を切り替えます", "ko": "　진동 기능을 켜고 끕니다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2509a0", "src": "オプション", "ko": "옵션", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2509b0", "src": "メッセージスピード　　　遅い　　　　　　速い", "ko": "메시지속도　　　　　　　느림　　　　　　빠름", "state": "reviewed", "note": "초안: 열 위치 유지(12·20번째 칸), 열 정렬 때문에 띄어쓰기 대신 붙여 씀"}
+{"id": "ELF#2509e0", "src": "ＢＧＭボリューム　　　　ＭＩＮ　　　　ＭＡＸ", "ko": "ＢＧＭ볼륨　　　　　　　ＭＩＮ　　　　ＭＡＸ", "state": "reviewed", "note": "초안: 열 위치 유지"}
+{"id": "ELF#250a10", "src": "ＳＥボリューム　　　　　ＭＩＮ　　　　ＭＡＸ", "ko": "ＳＥ볼륨　　　　　　　　ＭＩＮ　　　　ＭＡＸ", "state": "reviewed", "note": "초안: 열 위치 유지"}
+{"id": "ELF#250a40", "src": "バイブレーション　　　　ＯＮ　　／　　ＯＦＦ", "ko": "진동　　　　　　　　　　ＯＮ　　／　　ＯＦＦ", "state": "reviewed", "note": "초안: 열 위치 유지"}
+{"id": "ELF#250a70", "src": "設定終了", "ko": "종료", "state": "reviewed", "note": "초안: 설정 종료 는 5칸이라 폭 초과"}
+{"id": "ELF#250ab8", "src": "　スロット１にメモリーカード（ＰＳ２）が", "ko": "　슬롯１에 메모리 카드（ＰＳ２）가", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250ae8", "src": "　差されていません。", "ko": "　빠져 있습니다．", "state": "reviewed", "note": "초안: 폭 10칸이라 빠져 있다로 표현"}
+{"id": "ELF#250b00", "src": "　「つぐない」のデータをセーブするには", "ko": "　「つぐない」 데이터를 세이브하려면", "state": "reviewed", "note": "초안: 게임 제목 가나 유지"}
+{"id": "ELF#250b28", "src": "　４２０ＫＢ以上の空き容量が必要です。", "ko": "　４２０ＫＢ 이상이 필요합니다．", "state": "reviewed", "note": "초안: 폭 19칸이라 空き容量(빈 용량) 생략, 앞 줄 세이브하려면과 이어짐"}
+{"id": "ELF#250b50", "src": "　このままはじめてよろしいですか？", "ko": "　이대로 시작하겠습니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250b78", "src": "　　　　　　　　　　はい　　　いいえ", "ko": "　　　　　　　　　　예　　　　아니요", "state": "reviewed", "note": "초안: 열 위치 유지"}
+{"id": "ELF#250ba0", "src": "　スロット１のメモリーカード（ＰＳ２）の", "ko": "　슬롯１의 메모리 카드（ＰＳ２）의", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250bd0", "src": "　空き容量が足りません。", "ko": "　용량이 부족합니다．", "state": "reviewed", "note": "초안"}
+{"id": "ELF#250c08", "src": "　差されていませんので", "ko": "　빠져 있으므로", "state": "reviewed", "note": "초안: 빠져 있다로 통일"}
+{"id": "ELF#250c20", "src": "　ＣＯＮＴＩＮＵＥは選択できません。", "ko": "　ＣＯＮＴＩＮＵＥ할 수 없습니다．", "state": "reviewed", "note": "초안: 폭 18칸이라 선택할 수 없다→ＣＯＮＴＩＮＵＥ할 수 없다"}
+{"id": "ELF#250c48", "src": "　メモリーカード（ＰＳ２）を差してください。", "ko": "　메모리 카드（ＰＳ２）를 꽂아 주십시오．", "state": "reviewed", "note": "초안"}
+{"id": "ELF#251a78", "src": "アシュゴ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251a88", "src": "フィセラ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251a98", "src": "ラフルク", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251aa8", "src": "イフェム", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251ab8", "src": "ディーン", "ko": "딘", "state": "reviewed", "note": "용어집 G0024"}
+{"id": "ELF#251ac8", "src": "ウォーレス", "ko": "월리스", "state": "reviewed", "note": "용어집 G0009"}
+{"id": "ELF#251ad8", "src": "道具屋の主人", "ko": "도구점 주인", "state": "reviewed", "note": "용어집 G0473"}
+{"id": "ELF#251ae8", "src": "０１２３４５６７８９", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 숫자 표"}
+{"id": "ELF#251b00", "src": "ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 로마 숫자 표"}
+{"id": "ELF#251b18", "src": "？！＋－±×÷♂♀☆", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 기호 표"}
+{"id": "ELF#251b30", "src": "ｕｖｗｘｙｚ　　　　", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 영문 소문자 표"}
+{"id": "ELF#251b48", "src": "ｋｌｍｎｏｐｑｒｓｔ", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 영문 소문자 표"}
+{"id": "ELF#251b60", "src": "ａｂｃｄｅｆｇｈｉｊ", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 영문 소문자 표"}
+{"id": "ELF#251b78", "src": "ＵＶＷＸＹＺ　　　　", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 영문 대문자 표"}
+{"id": "ELF#251b90", "src": "ＫＬＭＮＯＰＱＲＳＴ", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 영문 대문자 표"}
+{"id": "ELF#251ba8", "src": "ＡＢＣＤＥＦＧＨＩＪ", "ko": "", "state": "untranslated", "note": "원문 유지: 이름 입력 영문 대문자 표"}
+{"id": "ELF#251bc0", "src": "ヮッヴー～", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251bd0", "src": "ャュョヵヶ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251be0", "src": "ァィゥェォ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251bf0", "src": "パピプペポ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c00", "src": "バビブベボ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c10", "src": "ダヂヅデド", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c20", "src": "ザジズゼゾ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c30", "src": "ガギグゲゴ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c40", "src": "ワ　ヲ　ン", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c50", "src": "ラリルレロ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c60", "src": "ヤ　ユ　ヨ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c70", "src": "マミムメモ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c80", "src": "ハヒフヘホ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251c90", "src": "ナニヌネノ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251ca0", "src": "タチツテト", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251cb0", "src": "サシスセソ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251cc0", "src": "カキクケコ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251cd0", "src": "アイウエオ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251ce0", "src": "ゎっ　ー～", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251cf0", "src": "ゃ　ゅ　ょ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d00", "src": "ぁぃぅぇぉ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d10", "src": "ぱぴぷぺぽ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d20", "src": "ばびぶべぼ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d30", "src": "だぢづでど", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d40", "src": "ざじずぜぞ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d50", "src": "がぎぐげご", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d60", "src": "わ　を　ん", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d70", "src": "らりるれろ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d80", "src": "や　ゆ　よ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251d90", "src": "まみむめも", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251da0", "src": "はひふへほ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251db0", "src": "なにぬねの", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251dc0", "src": "たちつてと", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251dd0", "src": "さしすせそ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251de0", "src": "かきくけこ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#251df0", "src": "あいうえお", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#253e78", "src": "宝箱は空っぽだった！", "ko": "보물상자가 비었다！", "state": "reviewed", "note": "초안: 폭 10칸 제한"}
+{"id": "ELF#253eb8", "src": "手に入れた。", "ko": "입수했다．", "state": "reviewed", "note": "초안: 폭 6칸, 앞에 아이템 이름이 붙는 구조인지 미확인"}
+{"id": "ELF#253ec8", "src": "%c%c%s%c%cを出ますか？", "ko": "%c%c%s%c%c 나갑니까？", "state": "reviewed", "note": "초안: 폭 6칸이라 조사 생략(장소 이름 받침과 무관)"}
+{"id": "ELF#253ee0", "src": "地下%s%s階", "ko": "지하%s%s층", "state": "reviewed", "note": "초안"}
+{"id": "ELF#253ef0", "src": "地下%s階", "ko": "지하%s층", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254280", "src": "デフォルト", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#254290", "src": "アルファベット", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#2542a0", "src": "カタカナ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#2542b0", "src": "ひらがな", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#2542c0", "src": "名前入力", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#2545a8", "src": "今はそのアイテムを", "ko": "지금 그 아이템은", "state": "reviewed", "note": "초안: 다음 줄 사용할 수 없습니다와 이어짐"}
+{"id": "ELF#2545c0", "src": "使うことはできません。", "ko": "사용할 수 없습니다．", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2545d8", "src": "そのアイテムを捨てる", "ko": "그 아이템은", "state": "reviewed", "note": "초안 / 검수: “버릴 / 수 없습니다”로 동사구가 줄 사이에서 끊김 → 동사 전체를 다음 줄로"}
+{"id": "ELF#2545f0", "src": "ことはできません。", "ko": "버리지 못합니다．", "state": "reviewed", "note": "초안 / 검수: 앞 줄과 함께 수정, 9칸 안에 맞춤"}
+{"id": "ELF#254608", "src": "（未解決）", "ko": "（미해결）", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254618", "src": "（実行中）", "ko": "（진행중）", "state": "reviewed", "note": "초안: 폭 5칸이라 붙여 씀"}
+{"id": "ELF#254628", "src": "（解決）", "ko": "（해결）", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254668", "src": "売りますか？", "ko": "팔겠습니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254678", "src": "買いますか？", "ko": "사겠습니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254688", "src": "所持数：", "ko": "소지수：", "state": "reviewed", "note": "초안: 폭 4칸이라 붙여 씀"}
+{"id": "ELF#254698", "src": "買う数：", "ko": "구입수：", "state": "reviewed", "note": "초안: 폭 4칸이라 붙여 씀"}
+{"id": "ELF#2546a8", "src": "売る数：", "ko": "판매수：", "state": "reviewed", "note": "초안: 폭 4칸이라 붙여 씀"}
+{"id": "ELF#2546b8", "src": "赤の魔石×", "ko": "붉은마석×", "state": "reviewed", "note": "초안: 용어집 붉은 마석, 폭 5칸이라 붙여 씀"}
+{"id": "ELF#2546c8", "src": "青の魔石×", "ko": "푸른마석×", "state": "reviewed", "note": "초안: 용어집 푸른 마석, 폭 5칸이라 붙여 씀"}
+{"id": "ELF#2546d8", "src": "黄の魔石×", "ko": "노란마석×", "state": "reviewed", "note": "초안: 용어집 노란 마석, 폭 5칸이라 붙여 씀"}
+{"id": "ELF#2546e8", "src": "白の魔石×", "ko": "하얀마석×", "state": "reviewed", "note": "초안: 용어집 하얀 마석, 폭 5칸이라 붙여 씀"}
+{"id": "ELF#2546f8", "src": "緑の魔石×", "ko": "초록마석×", "state": "reviewed", "note": "초안: 용어집 초록 마석, 폭 5칸이라 붙여 씀"}
+{"id": "ELF#254708", "src": "暗黒魔石×", "ko": "암흑마석×", "state": "reviewed", "note": "초안: 용어집 암흑 마석, 폭 5칸이라 붙여 씀"}
+{"id": "ELF#254718", "src": "個できました。", "ko": "개 만들었다．", "state": "reviewed", "note": "초안: 폭 7칸이라 합니다체(9칸) 대신 해라체"}
+{"id": "ELF#254728", "src": "精錬結果", "ko": "정련결과", "state": "reviewed", "note": "초안: 용어집 精錬=정련, 폭 4칸이라 붙여 씀"}
+{"id": "ELF#254738", "src": "買いますか？", "ko": "사겠습니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254748", "src": "売りますか？", "ko": "팔겠습니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254758", "src": "精錬しますか？", "ko": "정련합니까？", "state": "reviewed", "note": "초안: 폭 7칸이라 ~합니까"}
+{"id": "ELF#254768", "src": "買う数：", "ko": "구입수：", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254778", "src": "売る数：", "ko": "판매수：", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254788", "src": "作る数：", "ko": "제작수：", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254798", "src": "所持数：", "ko": "소지수：", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254ba0", "src": "%c%c悲しみ%c%cを抱えているようだ。", "ko": "%c%c슬픔%c%c을 품은 듯하다．", "state": "reviewed", "note": "초안: 색 코드는 슬픔 둘레 유지"}
+{"id": "ELF#254bc8", "src": "のりうつりますか？", "ko": "빙의하겠습니까？", "state": "reviewed", "note": "초안"}
+{"id": "ELF#254e48", "src": "霊体では宝箱を開けられない！", "ko": "영체로는 상자를 못 연다！", "state": "reviewed", "note": "초안: 용어집 霊体=영체, 폭 14칸이라 보물상자→상자"}
+{"id": "ELF#254e78", "src": "宝箱は空っぽだった！", "ko": "보물상자가 비었다！", "state": "reviewed", "note": "초안: 폭 10칸 제한"}
+{"id": "ELF#254ea8", "src": "手に入れた。", "ko": "입수했다．", "state": "reviewed", "note": "초안: 폭 6칸, 앞에 아이템 이름이 붙는 구조인지 미확인"}
+{"id": "ELF#254eb8", "src": "何も入っていない！", "ko": "아무것도 없다！", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2550f0", "src": "通り抜けられない", "ko": "지나갈 수 없다", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255108", "src": "　　お金　%c%c－%s", "ko": "　　돈　　%c%c－%s", "state": "reviewed", "note": "초안: お金(2칸)→돈(1칸), 금액 열 위치 유지 위해 전각 공백 추가"}
+{"id": "ELF#255120", "src": "　　お金　%c%c＋%s", "ko": "　　돈　　%c%c＋%s", "state": "reviewed", "note": "초안: お金(2칸)→돈(1칸), 금액 열 위치 유지 위해 전각 공백 추가"}
+{"id": "ELF#255590", "src": "左スティック：回転", "ko": "왼쪽 스틱：회전", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2555a8", "src": "ボタン：回転      ", "ko": "버튼：회전      ", "state": "reviewed", "note": "초안: 뒤 반각 공백(아이콘 자리) 유지"}
+{"id": "ELF#2555c0", "src": "ボタン：決定", "ko": "버튼：결정", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2555d0", "src": "ボタン：戻る", "ko": "버튼：뒤로", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2555e0", "src": "ボタン：全てはずす", "ko": "버튼：모두 해제", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2555f8", "src": "    ：アミュレット変更", "ko": "    ：아뮬렛 변경", "state": "reviewed", "note": "초안: 용어집 아뮬렛, 앞 반각 공백(아이콘 자리) 유지"}
+{"id": "ELF#255610", "src": "ボタン：キャンセル", "ko": "버튼：취소", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255628", "src": "ボタン：はずす", "ko": "버튼：해제", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255638", "src": "ボタン：取り出す", "ko": "버튼：꺼내기", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255650", "src": "ボタン：戻す", "ko": "버튼：넣기", "state": "reviewed", "note": "초안: 戻す(되돌리기)는 폭 초과라 꺼내기의 반대 넣기"}
+{"id": "ELF#255660", "src": "   ： ルゥン回転", "ko": "   ： 룬 회전", "state": "reviewed", "note": "초안: 용어집 룬, 반각 공백 유지"}
+{"id": "ELF#255678", "src": "全てのルゥンをはずします", "ko": "모든 룬을 해제합니다", "state": "reviewed", "note": "초안: 용어집 룬"}
+{"id": "ELF#255698", "src": "    よろしいですか？    ", "ko": "    괜찮겠습니까？    ", "state": "reviewed", "note": "초안: 앞뒤 반각 공백 유지"}
+{"id": "ELF#2556b8", "src": "    ：はい    ：いいえ", "ko": "    ：예　    ：아니요", "state": "reviewed", "note": "초안: 아이콘 자리 반각 공백 유지, 예 뒤 전각 공백으로 はい 폭 맞춤"}
+{"id": "ELF#2556d0", "src": "せってい", "ko": "설정", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255a30", "src": "敵配置№ : %d", "ko": "적배치№ ： %d", "state": "reviewed", "note": "초안: 디버그 정보, 반각 콜론→전각"}
+{"id": "ELF#255a40", "src": "名前　：%s", "ko": "이름　：%s", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255a50", "src": "レベル：%d　経験値：%d", "ko": "레벨：%d　경험치：%d", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255a68", "src": "ＨＰ　：%d / %d", "ko": "", "state": "untranslated", "note": "원문 유지: 일본어 없음"}
+{"id": "ELF#255a78", "src": "ＭＰ　：%d / %d", "ko": "", "state": "untranslated", "note": "원문 유지: 일본어 없음"}
+{"id": "ELF#255a88", "src": "力：%d　素早さ：%d　精神：%d", "ko": "힘：%d　민첩：%d　정신：%d", "state": "reviewed", "note": "초안: 素早さ→민첩"}
+{"id": "ELF#255aa8", "src": "攻撃力：%d　防御力：%d", "ko": "공격력：%d　방어력：%d", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255ae8", "src": "効果:%d  ターン:%d", "ko": "효과：%d  턴：%d", "state": "reviewed", "note": "초안: 반각 콜론→전각"}
+{"id": "ELF#255b00", "src": "行動リスト№：%d", "ko": "행동목록№：%d", "state": "reviewed", "note": "초안: 폭 제한으로 リスト→목록"}
+{"id": "ELF#255b18", "src": "行動テーブル：a", "ko": "행동 테이블：ａ", "state": "reviewed", "note": "초안: 반각 a→전각"}
+{"id": "ELF#255b28", "src": "行動テーブル：b", "ko": "행동 테이블：ｂ", "state": "reviewed", "note": "초안: 반각 b→전각"}
+{"id": "ELF#255b38", "src": "行動テーブル：c", "ko": "행동 테이블：ｃ", "state": "reviewed", "note": "초안: 반각 c→전각"}
+{"id": "ELF#255b68", "src": "行動№：%d  前の行動№：%d", "ko": "행동№：%d  이전행동№：%d", "state": "reviewed", "note": "초안: 폭 제한으로 붙여 씀"}
+{"id": "ELF#255d70", "src": "戦闘結果", "ko": "전투결과", "state": "reviewed", "note": "초안: 폭 4칸이라 붙여 씀"}
+{"id": "ELF#255d80", "src": "タクティカルボーナス", "ko": "택티컬 보너스", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255d98", "src": "獲得経験値", "ko": "경험치", "state": "reviewed", "note": "초안: 폭 5칸이라 獲得 생략"}
+{"id": "ELF#255da8", "src": "次のレベルまで", "ko": "다음 레벨까지", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255db8", "src": "獲得金額", "ko": "얻은 돈", "state": "reviewed", "note": "초안: 폭 4칸, 獲得=얻은 으로 통일"}
+{"id": "ELF#255dc8", "src": "獲得アイテム", "ko": "얻은 아이템", "state": "reviewed", "note": "초안"}
+{"id": "ELF#256500", "src": "リンドブルム", "ko": "린드부름", "state": "reviewed", "note": "용어집 G0213"}
+{"id": "ELF#256510", "src": "ムマキム", "ko": "무마킴", "state": "reviewed", "note": "용어집 G0211"}
+{"id": "ELF#256520", "src": "ヴィヴィアン", "ko": "비비안", "state": "reviewed", "note": "용어집 G0206"}
+{"id": "ELF#256530", "src": "ゴーレム", "ko": "골렘", "state": "reviewed", "note": "용어집 G0207"}
+{"id": "ELF#256540", "src": "ショゴス", "ko": "쇼고스", "state": "reviewed", "note": "용어집 G0209"}
+{"id": "ELF#256550", "src": "アハ・イシュケ", "ko": "에흐 우슈케", "state": "reviewed", "note": "용어집 G0205"}
+{"id": "ELF#256560", "src": "バルログ", "ko": "발로그", "state": "reviewed", "note": "용어집 G0210"}
+{"id": "ELF#256570", "src": "ラウ・ム・ルグ", "ko": "라우 무 루그", "state": "reviewed", "note": "용어집 G0212"}
+{"id": "ELF#2565a0", "src": "　にげる", "ko": "　도망", "state": "reviewed", "note": "초안: 전투 명령은 명사형으로 통일"}
+{"id": "ELF#2565b0", "src": "ストレージ", "ko": "스토리지", "state": "reviewed", "note": "초안: 용어집 스토리지 포인트 계열"}
+{"id": "ELF#2565c0", "src": "たたかう", "ko": "공격", "state": "reviewed", "note": "초안: 전투 명령 명사형"}
+{"id": "ELF#2565d0", "src": "　まほう", "ko": "　마법", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2565e0", "src": "しょうかん", "ko": "소환", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2565f0", "src": "アイテム", "ko": "아이템", "state": "reviewed", "note": "초안"}
+{"id": "ELF#256618", "src": "いれかえ", "ko": "교체", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2569c0", "src": "リンドブルム", "ko": "린드부름", "state": "reviewed", "note": "용어집 G0213"}
+{"id": "ELF#2569d0", "src": "ムマキム", "ko": "무마킴", "state": "reviewed", "note": "용어집 G0211"}
+{"id": "ELF#2569e0", "src": "ヴィヴィアン", "ko": "비비안", "state": "reviewed", "note": "용어집 G0206"}
+{"id": "ELF#2569f0", "src": "ゴーレム", "ko": "골렘", "state": "reviewed", "note": "용어집 G0207"}
+{"id": "ELF#256a00", "src": "ショゴス", "ko": "쇼고스", "state": "reviewed", "note": "용어집 G0209"}
+{"id": "ELF#256a10", "src": "アハ・イシュケ", "ko": "에흐 우슈케", "state": "reviewed", "note": "용어집 G0205"}
+{"id": "ELF#256a20", "src": "バルログ", "ko": "발로그", "state": "reviewed", "note": "용어집 G0210"}
+{"id": "ELF#256a30", "src": "ラウ・ム・ルグ", "ko": "라우 무 루그", "state": "reviewed", "note": "용어집 G0212"}
+{"id": "ELF#256e08", "src": "ホーリー・スプリンクル", "ko": "홀리 스프링클", "state": "reviewed", "note": "용어집 G0337"}
+{"id": "ELF#256e20", "src": "ブレーク・イントゥ・ピース", "ko": "브레이크 인투 피스", "state": "reviewed", "note": "용어집 G0336"}
+{"id": "ELF#256e40", "src": "ディフィート・バウンダー", "ko": "디피트 바운더", "state": "reviewed", "note": "용어집 G0335"}
+{"id": "ELF#256e60", "src": "アンダー・ザ・サン", "ko": "언더 더 선", "state": "reviewed", "note": "용어집 G0334"}
+{"id": "ELF#256e78", "src": "シングル・アウト・フォー", "ko": "싱글 아웃 포", "state": "reviewed", "note": "용어집 G0333"}
+{"id": "ELF#256e98", "src": "プリック・クロー・マラ", "ko": "프릭 클로 마라", "state": "reviewed", "note": "용어집 G0332"}
+{"id": "ELF#256eb0", "src": "フィッシュ・イン・トラブル", "ko": "피시 인 트러블", "state": "reviewed", "note": "용어집 G0331"}
+{"id": "ELF#256ed0", "src": "バーニング・ドヴェルグ", "ko": "버닝 드베르그", "state": "reviewed", "note": "용어집 G0346"}
+{"id": "ELF#256ee8", "src": "メナシング・ウォーリア", "ko": "메나싱 워리어", "state": "reviewed", "note": "초안: 용어집 G0345(メナシング・ウォーリアー)"}
+{"id": "ELF#256f00", "src": "エンデュランス・クリーヴァー", "ko": "인듀어런스 클리버", "state": "reviewed", "note": "용어집 G0344"}
+{"id": "ELF#256f20", "src": "シルヴァン・ローグ", "ko": "실반 로그", "state": "reviewed", "note": "용어집 G0343"}
+{"id": "ELF#256f38", "src": "ブリザード・レイ", "ko": "블리자드 레이", "state": "reviewed", "note": "용어집 G0342"}
+{"id": "ELF#256f50", "src": "サーペンタイン・スパウト", "ko": "서펜타인 스파우트", "state": "reviewed", "note": "용어집 G0341"}
+{"id": "ELF#256f70", "src": "クゥイヴァー・フル・ブロー", "ko": "퀴버 풀 블로", "state": "reviewed", "note": "용어집 G0340"}
+{"id": "ELF#256f90", "src": "ヴェスパイン・スクリュー", "ko": "베스파인 스크루", "state": "reviewed", "note": "용어집 G0339"}
+{"id": "ELF#256fb0", "src": "バニッシュ・ドレイク", "ko": "배니시 드레이크", "state": "reviewed", "note": "용어집 G0330"}
+{"id": "ELF#256fc8", "src": "ファイア・バック・ブリード", "ko": "파이어 백 브리드", "state": "reviewed", "note": "용어집 G0329"}
+{"id": "ELF#256fe8", "src": "キャリバー・ウォーシップ", "ko": "캘리버 워십", "state": "reviewed", "note": "용어집 G0328"}
+{"id": "ELF#257008", "src": "ハイランド・ブレイヴ", "ko": "하이랜드 브레이브", "state": "reviewed", "note": "용어집 G0327"}
+{"id": "ELF#25ce18", "src": "／", "ko": "", "state": "untranslated", "note": "원문 유지: 기호 한 글자"}
+{"id": "ELF#25ce20", "src": "ロード", "ko": "로드", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25ce28", "src": "セーブ", "ko": "세이브", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25ce98", "src": "　", "ko": "", "state": "untranslated", "note": "원문 유지: 전각 공백"}
+{"id": "ELF#25cff8", "src": "ミミー", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#25d000", "src": "ナビ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#25d008", "src": "レイス", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#25d010", "src": "ギルス", "ko": "길스", "state": "reviewed", "note": "용어집 G0017"}
+{"id": "ELF#25d018", "src": "アモル", "ko": "아모르", "state": "reviewed", "note": "용어집 G0019"}
+{"id": "ELF#25d020", "src": "漁師", "ko": "어부", "state": "reviewed", "note": "초안: 이름 입력 기본 이름 후보, 용어집 漁師 계열(어부 숙소 등)"}
+{"id": "ELF#25d028", "src": "ビルド", "ko": "빌드", "state": "reviewed", "note": "용어집 G0010"}
+{"id": "ELF#25d200", "src": "は　い", "ko": "　예　", "state": "reviewed", "note": "초안: は　い 3칸 폭 유지"}
+{"id": "ELF#25d208", "src": "いいえ", "ko": "아니요", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d210", "src": "９", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d218", "src": "８", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d220", "src": "７", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d228", "src": "６", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d230", "src": "５", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d238", "src": "４", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d240", "src": "３", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d248", "src": "２", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d250", "src": "１", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d258", "src": "０", "ko": "", "state": "untranslated", "note": "원문 유지: 숫자 한 글자"}
+{"id": "ELF#25d2c0", "src": "　", "ko": "", "state": "untranslated", "note": "원문 유지: 전각 공백"}
+{"id": "ELF#25d2c8", "src": "決定", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#25d2d0", "src": "もどる", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#25d2d8", "src": "すすむ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
+{"id": "ELF#25d2e0", "src": "＿", "ko": "", "state": "untranslated", "note": "원문 유지: 기호 한 글자"}
+{"id": "ELF#25d2f0", "src": "やめる", "ko": "취소", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d340", "src": "つかう", "ko": "사용", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d348", "src": "やめる", "ko": "취소", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d350", "src": "すてる", "ko": "버리기", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d360", "src": "つかう", "ko": "사용", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d368", "src": "やめる", "ko": "취소", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d378", "src": "そうび", "ko": "장비", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d380", "src": "はずす", "ko": "해제", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d388", "src": "やめる", "ko": "취소", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d390", "src": "－", "ko": "", "state": "untranslated", "note": "원문 유지: 기호 한 글자"}
+{"id": "ELF#25d398", "src": "説明：", "ko": "설명：", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3a0", "src": "買う", "ko": "구입", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3a8", "src": "売る", "ko": "판매", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3b0", "src": "はい", "ko": "예", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3b8", "src": "いいえ", "ko": "아니요", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3c0", "src": "個", "ko": "개", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3c8", "src": "道具屋", "ko": "도구점", "state": "reviewed", "note": "용어집 G0049"}
+{"id": "ELF#25d3d0", "src": "武器屋", "ko": "무기점", "state": "reviewed", "note": "용어집 G0050"}
+{"id": "ELF#25d3d8", "src": "個", "ko": "개", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3e0", "src": "買う", "ko": "구입", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3e8", "src": "売る", "ko": "판매", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3f0", "src": "精錬", "ko": "정련", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d3f8", "src": "が", "ko": "가", "state": "reviewed", "note": "초안: 쓰임새 미확인, 앞말 받침에 따라 이/가 문제 가능"}
+{"id": "ELF#25d400", "src": "精錬中", "ko": "정련중", "state": "reviewed", "note": "초안: 폭 3칸이라 붙여 씀"}
+{"id": "ELF#25d408", "src": "・", "ko": "", "state": "untranslated", "note": "원문 유지: 기호 한 글자"}
+{"id": "ELF#25d410", "src": "拓石所", "ko": "공방", "state": "reviewed", "note": "초안: 용어집 G0051 마석 공방(5칸)은 상점 제목 자리 3칸 초과라 공방 으로 줄임(대안 정련소)"}
+{"id": "ELF#25d510", "src": "は　い", "ko": "　예　", "state": "reviewed", "note": "초안: は　い 3칸 폭 유지"}
+{"id": "ELF#25d518", "src": "いいえ", "ko": "아니요", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d538", "src": "返済：", "ko": "상환：", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d540", "src": "報酬：", "ko": "보수：", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d5b8", "src": "はずす", "ko": "해제", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d5c0", "src": "そうび", "ko": "장비", "state": "reviewed", "note": "초안"}
+{"id": "ELF#25d6a0", "src": "もどす", "ko": "뒤로", "state": "reviewed", "note": "초안: 쓰임새 미확인(はずす·そうび 옆), 戻る와 같은 뒤로"}
