@@ -9,6 +9,7 @@
 폭(칸): 토큰을 뺀 글자 1개 = 1칸, {n:xx} = 4칸(최장 기본 이름), {j:..} = 1칸.
   대사 줄(op 57)은 max(25, 원문 폭) 초과면 실패, 22 초과면 경고 (docs/poc.md PoC3).
 반각 영숫자·기호(0x21–0x7E)는 화면에 안 그려지므로 금지(전각 사용). 반각 공백은 허용.
+한글 음절 말고는 Shift-JIS 로 인코딩되는 글자만 허용(예: U+00B7 · 대신 ・).
 """
 import glob
 import json
@@ -38,6 +39,17 @@ def cells(s):
     return n + len(TOKEN_RE.sub("", s))
 
 
+def _encodable(c):
+    """한글 음절(빌드 때 폰트 슬롯에 넣음) 또는 원래 Shift-JIS 코드가 있는 글자."""
+    if "가" <= c <= "힣":
+        return True
+    try:
+        c.encode("cp932")
+        return True
+    except UnicodeEncodeError:
+        return False
+
+
 def _check_row(r, src):
     rid = r["id"]
     if r.get("state") not in STATES:
@@ -53,6 +65,9 @@ def _check_row(r, src):
         raise TranslationError(f"{rid}: 번역 없음")
     if re.search(r"[\x21-\x7e]", TOKEN_RE.sub("", ko)):
         raise TranslationError(f"{rid}: 반각 영숫자·기호 사용(화면에 안 그려짐)")
+    bad = sorted({c for c in TOKEN_RE.sub("", ko) if not _encodable(c)})
+    if bad:
+        raise TranslationError(f"{rid}: 인코딩할 수 없는 글자 {''.join(bad)!r}")
     ks = [t for t in tokens(ko) if t[1] != "j"]
     if Counter(ks) != Counter(tokens(r["src"])):
         raise TranslationError(f"{rid}: 토큰 불일치 {tokens(r['src'])} / {ks}")

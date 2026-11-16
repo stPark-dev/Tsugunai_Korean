@@ -64,6 +64,13 @@ def test_halfwidth_ascii_fails():
     assert check([row("A#002", "가 나．")], SRC) == []
 
 
+def test_unencodable_char_fails():
+    # 한글 음절(폰트 슬롯에 새로 넣음) 말고는 원래 Shift-JIS 코드가 있어야 함. U+00B7 · 은 없음 → ・
+    with pytest.raises(TranslationError):
+        check([row("A#002", "진·마도")], SRC)
+    assert check([row("A#002", "진・마도　가！")], SRC) == []
+
+
 def test_state_rules():
     with pytest.raises(TranslationError):
         check([row("A#002", "", state="needs_review")], SRC)
