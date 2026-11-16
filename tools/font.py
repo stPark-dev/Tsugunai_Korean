@@ -3,7 +3,9 @@
 +0x00 CLUT 16×RGBA(32bit), 알파만 의미(0..0x80). 인덱스 15는 툴 쓰레기값.
 +0x40 u32 1, +0x44 폭, +0x45 높이, +0x46 u16 글자 수 N
 +0x48 코드표 N×u16 (Shift-JIS 값, 오름차순)
-이후 글리프 N개, 4bpp, 행 우선, 상위 니블이 왼쪽 픽셀
+이후 글리프 N개, 4bpp, 행 우선, 하위 니블이 왼쪽 픽셀(GS PSMT4 순서).
+  게임은 글리프 바이트를 그대로 텍스처로 올린다(0x1a0fd0 복사 루프). 원래 글리프는 상위 니블=왼쪽으로
+  그려진 듯 매끄럽지만 화면에는 두 픽셀씩 뒤바뀌어 나온다(docs/poc.md PoC5 글꼴 가독성).
 """
 import struct
 
@@ -60,7 +62,7 @@ class Font:
     def glyph(self, i):
         g = self.glyphs[i]
         w = self.width
-        return [[(g[(y * w + x) // 2] >> 4) if x % 2 == 0 else (g[(y * w + x) // 2] & 0xF)
+        return [[(g[(y * w + x) // 2] & 0xF) if x % 2 == 0 else (g[(y * w + x) // 2] >> 4)
                  for x in range(w)] for y in range(self.height)]
 
     def set_glyph_indices(self, i, px):
@@ -70,8 +72,14 @@ class Font:
             for x in range(w):
                 v = px[y][x]
                 k = (y * w + x) // 2
-                out[k] |= (v << 4) if x % 2 == 0 else v
+                out[k] |= v if x % 2 == 0 else (v << 4)
         self.glyphs[i] = bytes(out)
+
+    def fix_pair_order(self, i):
+        """원래 글리프(상위 니블=왼쪽으로 그려짐)를 화면 순서로 바로잡음(D10). 폭이 짝수라 바이트마다 니블 교환."""
+        if self.width % 2:
+            raise FontError("폭이 홀수면 바이트 단위로 픽셀 쌍을 바꿀 수 없음")
+        self.glyphs[i] = bytes(((b & 0xF) << 4) | (b >> 4) for b in self.glyphs[i])
 
     def set_glyph_alpha(self, i, alpha255):
         """0..255 알파 비트맵을 팔레트 알파(0..0x80)에 최근접 양자화."""
@@ -94,7 +102,7 @@ class Font:
         self.glyphs = [g for _, g in pairs]
 
 
-DEFAULT_TTF = ("/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc", 1)  # Noto Sans CJK KR Medium
+DEFAULT_TTF = ("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc", 1)  # Noto Sans CJK KR Bold (D10)
 
 
 def render_alpha(ch, w, h, ttf=DEFAULT_TTF, size=20):
@@ -109,3 +117,12 @@ def render_alpha(ch, w, h, ttf=DEFAULT_TTF, size=20):
     dr.text((ox, oy), ch, font=font, fill=255)
     px = im.load()
     return [[px[x, y] if x < w - 1 else 0 for x in range(w)] for y in range(h)]
+
+
+def put_hangul(font, cmap, render=None):
+    """D10: 모든 원래 글리프의 픽셀 쌍을 바로잡은 뒤 배정 슬롯(음절 → 코드)에 한글을 렌더링해 덮어쓴다."""
+    render = render or (lambda ch, w, h: render_alpha(ch, w, h))
+    for i in range(len(font.glyphs)):
+        font.fix_pair_order(i)
+    for ch, code in cmap.items():
+        font.set_glyph_alpha(font.index(code), render(ch, font.width, font.height))

@@ -13,7 +13,7 @@ import sys
 from tools import cdimage
 from tools.discbuild import build
 from tools.elf_text import ElfText, layout_from_elf
-from tools.font import Font, render_alpha
+from tools.font import Font, put_hangul
 from tools.hangul import allocate, encode, is_hangul, josa_pairs, josa_table, kanji_slots
 from tools.josa_hook import apply as apply_hook, build as build_hook
 from tools import name_grid
@@ -47,8 +47,7 @@ def main(src, out, hero="레온"):
 
     font = Font.parse(decompress(img.read_file(by[FONT])))
     a = allocate(used, kanji_slots(font.codes))
-    for ch, code in a.cmap.items():
-        font.set_glyph_alpha(font.index(code), render_alpha(ch, font.width, font.height))
+    put_hangul(font, a.cmap)                       # 원래 글리프 픽셀 쌍 바로잡기 + 한글 렌더링(D10)
     enc = lambda s: encode(s, a.cmap, pairs)
 
     scps = {p: img.read_file(f) for p, f in by.items() if p.startswith("/DATAIMG/MQ00/SCP/")}

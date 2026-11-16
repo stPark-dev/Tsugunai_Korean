@@ -7,6 +7,8 @@ from tools.discbuild import build
 from tools.font import Font, render_alpha, sjis_code
 from tools.sl00 import compress, decompress
 
+POC1_TTF = ("/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc", 1)  # 기록 재현용(D10 이전, 니블 순서 정정 전)
+
 SWAP = {"ル": "루", "イ": "이", "僧": "승", "官": "관",
         "何": "무", "と": "슨", "い": "일", "う": "이", "こ": "란", "で": "말", "し": "인", "ょ": "가"}
 FONT_PATH = "/DATAIMG/FONT/FONT.BIN"
@@ -17,7 +19,7 @@ def main(src, out):
     by = {f.path: f for f in img.list_files()}
     font = Font.parse(decompress(img.read_file(by[FONT_PATH])))
     for jp, ko in SWAP.items():
-        font.set_glyph_alpha(font.index(sjis_code(jp)), render_alpha(ko, font.width, font.height))
+        font.set_glyph_alpha(font.index(sjis_code(jp)), render_alpha(ko, font.width, font.height, POC1_TTF))
     packed = compress(font.to_bytes())
     rep = build(src, {FONT_PATH: packed}, out)
     print("FONT.BIN", len(packed), "B, 재배치:", rep.relocated)
