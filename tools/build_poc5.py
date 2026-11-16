@@ -2,6 +2,7 @@
 
 - MQ00 번역 전체(text/ko/MQ00.jsonl)를 넣고, 쓰인 한글 음절을 한자 슬롯에 받침 있는 것부터 배정·렌더링.
 - 실행 파일: 조사 훅(tools/josa_hook.py) + 주인공 기본 이름(기본 「레온」, 셋째 인수로 바꿈. 예: 레이스).
+- 이름 입력(D9): 히라가나·가타카나 쪽을 text/name_grid.txt 음절표로, 화면 글자를 한국어로.
 - 확인할 줄: M00_21#026 「{n:01}{j:이었/였}던가．」
     기본 이름 레온 → 「레온이었던가．」, 가나로 이름을 넣으면(한글 아님) → 「…였던가．」
 """
@@ -15,12 +16,16 @@ from tools.elf_text import ElfText, layout_from_elf
 from tools.font import Font, render_alpha
 from tools.hangul import allocate, encode, is_hangul, josa_pairs, josa_table, kanji_slots
 from tools.josa_hook import apply as apply_hook, build as build_hook
+from tools import name_grid
 from tools.scp_text import apply_texts
 from tools.sl00 import compress, decompress
 
 ELF = "/SCPS_110.07"
 FONT = "/DATAIMG/FONT/FONT.BIN"
 HERO = {"ELF#25d008": "레온"}          # 이름 표 0x238070[0] 이 가리키는 기본 이름(용량 3자)
+LABELS = {"ELF#2542c0": "이름 입력", "ELF#2542b0": "한글１", "ELF#2542a0": "한글２",
+          "ELF#254290": "영문・숫자", "ELF#254280": "기본 이름", "ELF#25d2c8": "결정",
+          "ELF#25d2d0": "뒤로", "ELF#25d2d8": "앞으로"}
 
 
 def _rows(path):
@@ -36,6 +41,8 @@ def main(src, out, hero="레온"):
              if r["state"] != "untranslated"]
     pairs = josa_pairs(every)
     used = {c for r in mq00 for c in r["ko"] if is_hangul(c)}
+    grid = name_grid.load("text/name_grid.txt")
+    used |= {c for s in [*HERO.values(), *LABELS.values(), *grid] for c in s if is_hangul(c)}
     used |= {c for s in HERO.values() for c in s} | {c for p in pairs for x in p for c in x}
 
     font = Font.parse(decompress(img.read_file(by[FONT])))
@@ -50,7 +57,8 @@ def main(src, out, hero="레온"):
     elf = img.read_file(by[ELF])
     lay = layout_from_elf(elf)
     et = ElfText.parse(elf, lay, font.codes)
-    elf = bytearray(et.apply(HERO, enc))
+    elf = bytearray(et.apply({**HERO, **LABELS}, enc))
+    name_grid.apply(elf, lay.delta, grid, enc)
     apply_hook(elf, lay.delta, build_hook(a.lo, a.split, josa_table(pairs, a.cmap)))
 
     rep[ELF] = bytes(elf)
