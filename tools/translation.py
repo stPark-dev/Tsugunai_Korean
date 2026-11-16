@@ -6,10 +6,10 @@
 토큰
   {c:xx}  색, {n:xx}  이름 변수 — 원문과 같은 묶음(순서는 자유)이어야 한다
   {j:A/B} 이름 변수 바로 뒤 조사(받침 있을 때 A, 없을 때 B). 번역 전용, 빌드 때 푼다
-폭(칸): 토큰을 뺀 글자 1개 = 1칸, {n:xx} = 4칸(최장 기본 이름), {j:..} = 1칸.
+폭(칸): 토큰을 뺀 글자 1개 = 1칸, {n:xx} = 4칸(최장 기본 이름), {j:A/B} = 긴 쪽 글자 수.
   대사 줄(op 57)은 max(25, 원문 폭) 초과면 실패, 22 초과면 경고 (docs/poc.md PoC3).
 반각 영숫자·기호(0x21–0x7E)는 화면에 안 그려지므로 금지(전각 사용). 반각 공백은 허용.
-한글 음절 말고는 Shift-JIS 로 인코딩되는 글자만 허용(예: U+00B7 · 대신 ・).
+한글 음절 말고는 전각 Shift-JIS(2바이트)와 반각 공백만 허용(예: U+00B7 · 대신 ・, 반각 가나·제어 문자 금지).
 """
 import glob
 import json
@@ -17,6 +17,8 @@ import os
 import re
 import sys
 from collections import Counter
+
+from tools.hangul import is_hangul, sjis_bytes
 
 STATES = {"untranslated", "in_progress", "needs_review", "reviewed", "needs_human_review",
           "distribution_eligible"}
@@ -35,19 +37,13 @@ def tokens(s):
 def cells(s):
     n = 0
     for t in tokens(s):
-        n += NAME_CELLS if t[1] == "n" else 1 if t[1] == "j" else 0
+        n += NAME_CELLS if t[1] == "n" else max(map(len, t[3:-1].split("/"))) if t[1] == "j" else 0
     return n + len(TOKEN_RE.sub("", s))
 
 
 def _encodable(c):
-    """한글 음절(빌드 때 폰트 슬롯에 넣음) 또는 원래 Shift-JIS 코드가 있는 글자."""
-    if "가" <= c <= "힣":
-        return True
-    try:
-        c.encode("cp932")
-        return True
-    except UnicodeEncodeError:
-        return False
+    """한글 음절(빌드 때 폰트 슬롯에 넣음) 또는 펼치기 함수가 바르게 읽는 Shift-JIS 글자."""
+    return is_hangul(c) or sjis_bytes(c) is not None
 
 
 def _check_row(r, src):

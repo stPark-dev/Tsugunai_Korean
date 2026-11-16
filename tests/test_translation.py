@@ -23,6 +23,7 @@ def test_tokens_and_cells():
     assert tokens(GOOD["ko"]) == ["{n:01}", "{j:은/는}", "{c:09}", "{c:08}"]
     assert cells("{c:09}가 나{c:08}") == 3
     assert cells("{n:01}{j:은/는}") == 5          # 이름 최장 기본값 4칸(라후르크) + 조사 1칸
+    assert cells("{n:01}{j:이구먼/구먼}") == 7     # 조사는 긴 쪽 글자 수만큼
 
 
 def test_good_row_passes():
@@ -69,6 +70,9 @@ def test_unencodable_char_fails():
     with pytest.raises(TranslationError):
         check([row("A#002", "진·마도")], SRC)
     assert check([row("A#002", "진・마도　가！")], SRC) == []
+    for bad in ("가ｱ", "가\t"):                                  # 반각 가나·제어 문자는 바이트가 어긋남
+        with pytest.raises(TranslationError):
+            check([row("A#002", bad)], SRC)
 
 
 def test_state_rules():
