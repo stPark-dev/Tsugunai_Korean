@@ -109,6 +109,8 @@
 {"id": "ELF#251de0", "src": "かきくけこ", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#251df0", "src": "あいうえお", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#253e78", "src": "宝箱は空っぽだった！", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#253e90", "src": "%c%c%sＧ%c%c", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#253ea0", "src": "%c%c%s%c%cを１個", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#253eb8", "src": "手に入れた。", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#253ec8", "src": "%c%c%s%c%cを出ますか？", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#253ee0", "src": "地下%s%s階", "refs": 1, "cap": 15, "debug": false}
@@ -149,7 +151,9 @@
 {"id": "ELF#254bc8", "src": "のりうつりますか？", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#254c08", "src": "%s はありません\n", "refs": 1, "cap": 23, "debug": true}
 {"id": "ELF#254e48", "src": "霊体では宝箱を開けられない！", "refs": 1, "cap": 31, "debug": false}
+{"id": "ELF#254e68", "src": "%c%c%sＧ%c%c", "refs": 2, "cap": 15, "debug": false}
 {"id": "ELF#254e78", "src": "宝箱は空っぽだった！", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#254e90", "src": "%c%c%s%c%cを%s個", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#254ea8", "src": "手に入れた。", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#254eb8", "src": "何も入っていない！", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#2550f0", "src": "通り抜けられない", "refs": 1, "cap": 23, "debug": false}
@@ -179,11 +183,13 @@
 {"id": "ELF#255a78", "src": "ＭＰ　：%d / %d", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#255a88", "src": "力：%d　素早さ：%d　精神：%d", "refs": 1, "cap": 31, "debug": false}
 {"id": "ELF#255aa8", "src": "攻撃力：%d　防御力：%d", "refs": 1, "cap": 23, "debug": false}
+{"id": "ELF#255ac0", "src": "炎%d 冷%d 雷%d 地%d 爆%d 毒%d 眠%d 封%d", "refs": 1, "cap": 39, "debug": false}
 {"id": "ELF#255ae8", "src": "効果:%d  ターン:%d", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#255b00", "src": "行動リスト№：%d", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#255b18", "src": "行動テーブル：a", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#255b28", "src": "行動テーブル：b", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#255b38", "src": "行動テーブル：c", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#255b48", "src": "1:%d 2:%d 3:%d 4:%d 条件:%d", "refs": 1, "cap": 31, "debug": false}
 {"id": "ELF#255b68", "src": "行動№：%d  前の行動№：%d", "refs": 1, "cap": 31, "debug": false}
 {"id": "ELF#255d00", "src": "戦闘管理ワークが設定されていません\n", "refs": 1, "cap": 39, "debug": true}
 {"id": "ELF#255d70", "src": "戦闘結果", "refs": 1, "cap": 15, "debug": false}
@@ -197,6 +203,7 @@
 {"id": "ELF#256300", "src": "キャラの種別が不正です NUM=%d FLG=%x\n", "refs": 1, "cap": 47, "debug": true}
 {"id": "ELF#256358", "src": "不正なアイテムを落としました ITEM0=%d ITEM1=%d\n", "refs": 1, "cap": 47, "debug": true}
 {"id": "ELF#256388", "src": "召喚獣が死にました\n", "refs": 1, "cap": 23, "debug": true}
+{"id": "ELF#2563d0", "src": "ストレージアタック", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#2563e8", "src": "復活エラー\n", "refs": 1, "cap": 23, "debug": true}
 {"id": "ELF#256450", "src": "条件式のパラメータが不正です\n", "refs": 2, "cap": 31, "debug": true}
 {"id": "ELF#2564c8", "src": "タスクコマンド登録しすぎ num=%d id=%d flg=%x\n", "refs": 1, "cap": 55, "debug": true}
@@ -214,11 +221,13 @@
 {"id": "ELF#2565d0", "src": "　まほう", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#2565e0", "src": "しょうかん", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#2565f0", "src": "アイテム", "refs": 1, "cap": 15, "debug": false}
+{"id": "ELF#256608", "src": "よびだす", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#256618", "src": "いれかえ", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#256628", "src": "召喚できないのに召喚しようとしてます\n", "refs": 1, "cap": 39, "debug": true}
 {"id": "ELF#256650", "src": "MPが足りない魔法を使いました\n", "refs": 1, "cap": 31, "debug": true}
 {"id": "ELF#256670", "src": "死んでます。\n", "refs": 1, "cap": 15, "debug": true}
 {"id": "ELF#2566a8", "src": "魔法№が不正です NUM=%d\n", "refs": 1, "cap": 39, "debug": true}
+{"id": "ELF#2567a0", "src": "封じられている", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#256990", "src": "数が足りないアイテムを使いました\n", "refs": 1, "cap": 47, "debug": true}
 {"id": "ELF#2569c0", "src": "リンドブルム", "refs": 1, "cap": 15, "debug": false}
 {"id": "ELF#2569d0", "src": "ムマキム", "refs": 1, "cap": 15, "debug": false}
@@ -232,7 +241,9 @@
 {"id": "ELF#256b48", "src": "召喚していないのに戻そうとしました\n", "refs": 1, "cap": 39, "debug": true}
 {"id": "ELF#256c48", "src": "ポイントライト出し過ぎ\n", "refs": 1, "cap": 23, "debug": true}
 {"id": "ELF#256c60", "src": "ポイントライト開放エラー\n", "refs": 1, "cap": 31, "debug": true}
+{"id": "ELF#256c80", "src": "WORNING : 素早さがゼロです ID=%d, NUM=%d\n", "refs": 3, "cap": 47, "debug": true}
 {"id": "ELF#256dc0", "src": "死んでます。\n", "refs": 1, "cap": 15, "debug": true}
+{"id": "ELF#256de8", "src": "ジャイアント・スウィンジング", "refs": 1, "cap": 31, "debug": false}
 {"id": "ELF#256e08", "src": "ホーリー・スプリンクル", "refs": 1, "cap": 23, "debug": false}
 {"id": "ELF#256e20", "src": "ブレーク・イントゥ・ピース", "refs": 1, "cap": 31, "debug": false}
 {"id": "ELF#256e40", "src": "ディフィート・バウンダー", "refs": 1, "cap": 31, "debug": false}

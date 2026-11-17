@@ -16,7 +16,7 @@ import struct
 import sys
 from dataclasses import dataclass, field
 
-from tools.elfrefs import ElfRefError, find_refs, patch_ref
+from tools.elfrefs import ADDR_OPS, ElfRefError, find_refs, patch_ref
 from tools.textcodec import decode_sjis
 
 BACKTRACK = 256
@@ -90,12 +90,20 @@ def _scan_one(blob, i, end, codes):
             j += 1
         else:
             return None
-    if j >= end or dbl == 0 or dbl * 4 < j - i:
+    if j >= end or dbl == 0:
         return None
     return j, dbl
 
 
-def _candidates(blob, layout, codes):
+def _addr_like(blob, ref):
+    """주소를 만드는 참조(포인터·addiu/daddiu/ori). 로드·스토어만 있는 주소는 상수로 본다."""
+    return ref.kind == "ptr" or (blob[ref.off + 3] >> 2) in ADDR_OPS
+
+
+def _candidates(blob, layout, codes, refs=None):
+    """NUL 다음에서 시작하는 문자열 + 코드가 주소로 만드는 곳에서 시작하는 문자열
+    (상수 바로 뒤에 NUL 없이 붙은 것). 이미 찾은 문자열 안쪽 주소는 새 문자열로 보지 않는다.
+    참조로 시작한 후보가 다른 후보를 삼키면 실패(어디까지가 문자열인지 사람이 봐야 함)."""
     codes = set(codes) | {SPACE}
     out = {}
     for a, b in layout.str_ranges:
@@ -108,6 +116,22 @@ def _candidates(blob, layout, codes):
                     i = r[0] + 1
                     continue
             i += 1
+    covered = [(va, va + len(raw)) for va, raw in out.items()]
+    for va in sorted(refs or {}):
+        o = va - layout.delta
+        rng = next(((a, b) for a, b in layout.str_ranges if a <= o < b), None)
+        if va in out or rng is None or any(s < va <= e for s, e in covered):
+            continue
+        if not any(_addr_like(blob, r) for r in refs[va]):
+            continue
+        r = _scan_one(blob, o, rng[1], codes)
+        if r:
+            end = r[0] + layout.delta
+            if any(va < x < end and any(_addr_like(blob, q) for q in refs[x]) for x in refs) or \
+                    any(va < x <= end for x in out):
+                raise ElfTextError(f"겹치는 문자열 후보 {va:#x}")
+            out[va] = blob[o:r[0]]
+            covered.append((va, end))
     return out
 
 
@@ -119,12 +143,12 @@ class ElfText:
 
     @classmethod
     def parse(cls, blob: bytes, layout: Layout, codes):
-        cands = _candidates(blob, layout, codes)
         lo = min(a for a, _ in layout.str_ranges) + layout.delta
         hi = max(b for _, b in layout.str_ranges) + layout.delta
         # 문자열 시작 참조는 되짚기까지, 용량을 자르는 다른 피참조 주소는 직선 추적만(오탐 줄임)
         allrefs = find_refs(blob, layout.text, layout.data, layout.gp, range(lo, hi))
         ref_addrs = sorted(allrefs)
+        cands = _candidates(blob, layout, codes, allrefs)
         strrefs = find_refs(blob, layout.text, layout.data, layout.gp, set(cands), BACKTRACK)
         et = cls(blob, layout)
         starts = sorted(cands)

@@ -109,7 +109,9 @@
 {"id": "ELF#251de0", "src": "かきくけこ", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
 {"id": "ELF#251df0", "src": "あいうえお", "ko": "", "state": "untranslated", "note": "다른 빌드 단계가 씀(기본 이름·이름 입력)"}
 {"id": "ELF#253e78", "src": "宝箱は空っぽだった！", "ko": "보물상자가 비었다！", "state": "reviewed", "note": "초안: 폭 10칸 제한"}
-{"id": "ELF#253eb8", "src": "手に入れた。", "ko": "입수했다．", "state": "reviewed", "note": "초안: 폭 6칸, 앞에 아이템 이름이 붙는 구조인지 미확인"}
+{"id": "ELF#253e90", "src": "%c%c%sＧ%c%c", "ko": "", "state": "untranslated", "note": "원문 유지: 돈 입수 1줄 「[금액]Ｇ」 (2줄 입수했다．)"}
+{"id": "ELF#253ea0", "src": "%c%c%s%c%cを１個", "ko": "%c%c%s%c%c１개를", "state": "reviewed", "note": "초안: 아이템 입수 1줄. 조사를 이름이 아닌 개 뒤에 붙여 받침과 무관하게. 실행 파일 0x1838b0·0x1a8de0: 1줄 이 서식 → 2줄 ELF#253eb8/254ea8 手に入れた。"}
+{"id": "ELF#253eb8", "src": "手に入れた。", "ko": "입수했다．", "state": "reviewed", "note": "초안: 입수 메시지 2줄째(1줄 = 금액·아이템 서식 문자열, 실행 파일 코드로 확인)"}
 {"id": "ELF#253ec8", "src": "%c%c%s%c%cを出ますか？", "ko": "%c%c%s%c%c 나갑니까？", "state": "reviewed", "note": "초안: 폭 6칸이라 조사 생략(장소 이름 받침과 무관)"}
 {"id": "ELF#253ee0", "src": "地下%s%s階", "ko": "지하%s%s층", "state": "reviewed", "note": "초안"}
 {"id": "ELF#253ef0", "src": "地下%s階", "ko": "지하%s층", "state": "reviewed", "note": "초안"}
@@ -148,8 +150,10 @@
 {"id": "ELF#254ba0", "src": "%c%c悲しみ%c%cを抱えているようだ。", "ko": "%c%c슬픔%c%c을 품은 듯하다．", "state": "reviewed", "note": "초안: 색 코드는 슬픔 둘레 유지"}
 {"id": "ELF#254bc8", "src": "のりうつりますか？", "ko": "빙의하겠습니까？", "state": "reviewed", "note": "초안"}
 {"id": "ELF#254e48", "src": "霊体では宝箱を開けられない！", "ko": "영체로는 상자를 못 연다！", "state": "reviewed", "note": "초안: 용어집 霊体=영체, 폭 14칸이라 보물상자→상자"}
+{"id": "ELF#254e68", "src": "%c%c%sＧ%c%c", "ko": "", "state": "untranslated", "note": "원문 유지: 돈 입수 1줄 「[금액]Ｇ」 (2줄 입수했다．)"}
 {"id": "ELF#254e78", "src": "宝箱は空っぽだった！", "ko": "보물상자가 비었다！", "state": "reviewed", "note": "초안: 폭 10칸 제한"}
-{"id": "ELF#254ea8", "src": "手に入れた。", "ko": "입수했다．", "state": "reviewed", "note": "초안: 폭 6칸, 앞에 아이템 이름이 붙는 구조인지 미확인"}
+{"id": "ELF#254e90", "src": "%c%c%s%c%cを%s個", "ko": "%c%c%s%c%c%s개를", "state": "reviewed", "note": "초안: 아이템 입수 1줄(개수 %s). 조사를 개 뒤에. 실행 파일 0x1838b0·0x1a8de0: 1줄 이 서식 → 2줄 ELF#253eb8/254ea8 手に入れた。"}
+{"id": "ELF#254ea8", "src": "手に入れた。", "ko": "입수했다．", "state": "reviewed", "note": "초안: 입수 메시지 2줄째(1줄 = 금액·아이템 서식 문자열, 실행 파일 코드로 확인)"}
 {"id": "ELF#254eb8", "src": "何も入っていない！", "ko": "아무것도 없다！", "state": "reviewed", "note": "초안"}
 {"id": "ELF#2550f0", "src": "通り抜けられない", "ko": "지나갈 수 없다", "state": "reviewed", "note": "초안"}
 {"id": "ELF#255108", "src": "　　お金　%c%c－%s", "ko": "　　돈　　%c%c－%s", "state": "reviewed", "note": "초안: お金(2칸)→돈(1칸), 금액 열 위치 유지 위해 전각 공백 추가"}
@@ -176,11 +180,13 @@
 {"id": "ELF#255a78", "src": "ＭＰ　：%d / %d", "ko": "", "state": "untranslated", "note": "원문 유지: 일본어 없음"}
 {"id": "ELF#255a88", "src": "力：%d　素早さ：%d　精神：%d", "ko": "힘：%d　민첩：%d　정신：%d", "state": "reviewed", "note": "초안: 素早さ→민첩"}
 {"id": "ELF#255aa8", "src": "攻撃力：%d　防御力：%d", "ko": "공격력：%d　방어력：%d", "state": "reviewed", "note": "초안"}
+{"id": "ELF#255ac0", "src": "炎%d 冷%d 雷%d 地%d 爆%d 毒%d 眠%d 封%d", "ko": "화%d 냉%d 뇌%d 지%d 폭%d 독%d 면%d 봉%d", "state": "reviewed", "note": "초안: 전투 행동 디버그 표시 옆(내성 값으로 보임)"}
 {"id": "ELF#255ae8", "src": "効果:%d  ターン:%d", "ko": "효과：%d  턴：%d", "state": "reviewed", "note": "초안: 반각 콜론→전각"}
 {"id": "ELF#255b00", "src": "行動リスト№：%d", "ko": "행동목록№：%d", "state": "reviewed", "note": "초안: 폭 제한으로 リスト→목록"}
 {"id": "ELF#255b18", "src": "行動テーブル：a", "ko": "행동 테이블：ａ", "state": "reviewed", "note": "초안: 반각 a→전각"}
 {"id": "ELF#255b28", "src": "行動テーブル：b", "ko": "행동 테이블：ｂ", "state": "reviewed", "note": "초안: 반각 b→전각"}
 {"id": "ELF#255b38", "src": "行動テーブル：c", "ko": "행동 테이블：ｃ", "state": "reviewed", "note": "초안: 반각 c→전각"}
+{"id": "ELF#255b48", "src": "1:%d 2:%d 3:%d 4:%d 条件:%d", "ko": "１：%d ２：%d ３：%d ４：%d 조건：%d", "state": "reviewed", "note": "초안: 반각 숫자·콜론→전각"}
 {"id": "ELF#255b68", "src": "行動№：%d  前の行動№：%d", "ko": "행동№：%d  이전행동№：%d", "state": "reviewed", "note": "초안: 폭 제한으로 붙여 씀"}
 {"id": "ELF#255d70", "src": "戦闘結果", "ko": "전투결과", "state": "reviewed", "note": "초안: 폭 4칸이라 붙여 씀"}
 {"id": "ELF#255d80", "src": "タクティカルボーナス", "ko": "택티컬 보너스", "state": "reviewed", "note": "초안"}
@@ -188,6 +194,7 @@
 {"id": "ELF#255da8", "src": "次のレベルまで", "ko": "다음 레벨까지", "state": "reviewed", "note": "초안"}
 {"id": "ELF#255db8", "src": "獲得金額", "ko": "얻은 돈", "state": "reviewed", "note": "초안: 폭 4칸, 獲得=얻은 으로 통일"}
 {"id": "ELF#255dc8", "src": "獲得アイテム", "ko": "얻은 아이템", "state": "reviewed", "note": "초안"}
+{"id": "ELF#2563d0", "src": "ストレージアタック", "ko": "스토리지 어택", "state": "reviewed", "note": "용어집 G0479"}
 {"id": "ELF#256500", "src": "リンドブルム", "ko": "린드부름", "state": "reviewed", "note": "용어집 G0213"}
 {"id": "ELF#256510", "src": "ムマキム", "ko": "무마킴", "state": "reviewed", "note": "용어집 G0211"}
 {"id": "ELF#256520", "src": "ヴィヴィアン", "ko": "비비안", "state": "reviewed", "note": "용어집 G0206"}
@@ -202,7 +209,9 @@
 {"id": "ELF#2565d0", "src": "　まほう", "ko": "　마법", "state": "reviewed", "note": "초안"}
 {"id": "ELF#2565e0", "src": "しょうかん", "ko": "소환", "state": "reviewed", "note": "초안"}
 {"id": "ELF#2565f0", "src": "アイテム", "ko": "아이템", "state": "reviewed", "note": "초안"}
-{"id": "ELF#256618", "src": "いれかえ", "ko": "교체", "state": "reviewed", "note": "초안"}
+{"id": "ELF#256608", "src": "よびだす", "ko": "호출", "state": "reviewed", "note": "초안: 전투 소환 하위 명령 よびだす/もどす/いれかえ(실행 파일 0x1d8ae8·0x1d8b1c 가 이어 그림, NA FAQ Call/Return/Change)"}
+{"id": "ELF#256618", "src": "いれかえ", "ko": "교체", "state": "reviewed", "note": "초안: 전투 소환 하위 명령 よびだす/もどす/いれかえ(실행 파일 0x1d8ae8·0x1d8b1c 가 이어 그림, NA FAQ Call/Return/Change)"}
+{"id": "ELF#2567a0", "src": "封じられている", "ko": "봉인되어 있다", "state": "reviewed", "note": "초안: 전투 중 60프레임 표시되는 단독 메시지(실행 파일 0x1de230), 봉인 상태로 보임"}
 {"id": "ELF#2569c0", "src": "リンドブルム", "ko": "린드부름", "state": "reviewed", "note": "용어집 G0213"}
 {"id": "ELF#2569d0", "src": "ムマキム", "ko": "무마킴", "state": "reviewed", "note": "용어집 G0211"}
 {"id": "ELF#2569e0", "src": "ヴィヴィアン", "ko": "비비안", "state": "reviewed", "note": "용어집 G0206"}
@@ -211,6 +220,7 @@
 {"id": "ELF#256a10", "src": "アハ・イシュケ", "ko": "에흐 우슈케", "state": "reviewed", "note": "용어집 G0205"}
 {"id": "ELF#256a20", "src": "バルログ", "ko": "발로그", "state": "reviewed", "note": "용어집 G0210"}
 {"id": "ELF#256a30", "src": "ラウ・ム・ルグ", "ko": "라우 무 루그", "state": "reviewed", "note": "용어집 G0212"}
+{"id": "ELF#256de8", "src": "ジャイアント・スウィンジング", "ko": "자이언트 스윙징", "state": "reviewed", "note": "용어집 G0338"}
 {"id": "ELF#256e08", "src": "ホーリー・スプリンクル", "ko": "홀리 스프링클", "state": "reviewed", "note": "용어집 G0337"}
 {"id": "ELF#256e20", "src": "ブレーク・イントゥ・ピース", "ko": "브레이크 인투 피스", "state": "reviewed", "note": "용어집 G0336"}
 {"id": "ELF#256e40", "src": "ディフィート・バウンダー", "ko": "디피트 바운더", "state": "reviewed", "note": "용어집 G0335"}
@@ -280,7 +290,7 @@
 {"id": "ELF#25d3e0", "src": "買う", "ko": "구입", "state": "reviewed", "note": "초안"}
 {"id": "ELF#25d3e8", "src": "売る", "ko": "판매", "state": "reviewed", "note": "초안"}
 {"id": "ELF#25d3f0", "src": "精錬", "ko": "정련", "state": "reviewed", "note": "초안"}
-{"id": "ELF#25d3f8", "src": "が", "ko": "가", "state": "reviewed", "note": "초안: 쓰임새 미확인, 앞말 받침에 따라 이/가 문제 가능"}
+{"id": "ELF#25d3f8", "src": "が", "ko": "　", "state": "reviewed", "note": "정련 결과 「[아이템 이름] が [개수] 個できました。」 의 が(실행 파일 0x19592c, 따로 그림). 앞 이름이 바뀌어 이/가를 고를 수 없어 전각 공백 → 「붉은 마석　３개 만들었다．」"}
 {"id": "ELF#25d400", "src": "精錬中", "ko": "정련중", "state": "reviewed", "note": "초안: 폭 3칸이라 붙여 씀"}
 {"id": "ELF#25d408", "src": "・", "ko": "", "state": "untranslated", "note": "원문 유지: 기호 한 글자"}
 {"id": "ELF#25d410", "src": "拓石所", "ko": "공방", "state": "reviewed", "note": "초안: 용어집 G0051 마석 공방(5칸)은 상점 제목 자리 3칸 초과라 공방 으로 줄임(대안 정련소)"}
@@ -290,4 +300,4 @@
 {"id": "ELF#25d540", "src": "報酬：", "ko": "보수：", "state": "reviewed", "note": "초안"}
 {"id": "ELF#25d5b8", "src": "はずす", "ko": "해제", "state": "reviewed", "note": "초안"}
 {"id": "ELF#25d5c0", "src": "そうび", "ko": "장비", "state": "reviewed", "note": "초안"}
-{"id": "ELF#25d6a0", "src": "もどす", "ko": "뒤로", "state": "reviewed", "note": "초안: 쓰임새 미확인(はずす·そうび 옆), 戻る와 같은 뒤로"}
+{"id": "ELF#25d6a0", "src": "もどす", "ko": "귀환", "state": "reviewed", "note": "초안: 전투 소환 하위 명령 よびだす/もどす/いれかえ(실행 파일 0x1d8ae8·0x1d8b1c 가 이어 그림, NA FAQ Call/Return/Change). 처음 초안 뒤로 는 잘못(소환수를 돌려보내는 명령)"}

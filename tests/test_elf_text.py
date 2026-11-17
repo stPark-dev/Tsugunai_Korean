@@ -63,6 +63,56 @@ def test_extract_rows():
     assert rows["ELF#250090"]["refs"] == 0 and rows["ELF#250090"]["cap"] == 6
 
 
+def test_referenced_string_right_after_constant():
+    """NUL 없이 상수(double) 바로 뒤에 붙은 문자열도 코드가 그 주소를 가리키면 추출한다.
+    이미 찾은 문자열 안쪽을 가리키는 참조는 새 문자열로 보지 않는다."""
+    b = bytearray(0x100)
+    code = [lui(A0, 0x25), addiu(A0, A0, 0x68),      # 상수 뒤 문자열
+            lui(A0, 0x25), addiu(A0, A0, 0x82)]      # 0x80 문자열의 안쪽
+    b[0:16] = b"".join(struct.pack("<I", w) for w in code)
+    b[0x60:0x68] = struct.pack("<d", 10430.375)
+    b[0x68:0x6F] = sj("あいう") + b"\0"
+    b[0x80:0x85] = sj("かさ") + b"\0"
+    lay = Layout(delta=DELTA, text=(0, 0x40), data=(), str_ranges=((0x60, 0x100),), gp=0, fixed=())
+    codes = CODES | {int.from_bytes(sj(c), "big") for c in "かさ"}
+    rows = _rows(ElfText.parse(bytes(b), lay, codes))
+    assert rows["ELF#250068"]["src"] == "あいう"
+    assert "ELF#250082" not in rows
+
+
+def _ref_blob(code, puts):
+    b = bytearray(0x100)
+    b[0:4 * len(code)] = b"".join(struct.pack("<I", w) for w in code)
+    for off, data in puts:
+        b[off:off + len(data)] = data
+    lay = Layout(delta=DELTA, text=(0, 0x40), data=(), str_ranges=((0x60, 0x100),), gp=0, fixed=())
+    return bytes(b), lay
+
+
+def lw(rt, rs, imm):
+    return (0x23 << 26) | (rs << 21) | (rt << 16) | (imm & 0xFFFF)
+
+
+def test_format_heavy_string_extracted():
+    raw, lay = _ref_blob([lui(A0, 0x25), addiu(A0, A0, 0x60)], [(0x60, b"%c%c%s%c%c" + sj("あい") + b"\0")])
+    assert _rows(ElfText.parse(raw, lay, CODES))["ELF#250060"]["src"] == "%c%c%s%c%cあい"
+
+
+def test_load_only_reference_is_not_a_string_start():
+    """lw 로 읽기만 하는 상수 주소는 NUL 없이 시작하는 문자열 후보가 아니다."""
+    raw, lay = _ref_blob([lui(A0, 0x25), lw(A0, A0, 0x6C)],
+                         [(0x68, struct.pack("<f", 1.0) + sj("あい") + b"\0")])
+    assert "ELF#25006c" not in _rows(ElfText.parse(raw, lay, CODES))
+
+
+def test_overlapping_reference_starts_fail():
+    """참조로 시작한 후보가 다른 참조 시작 후보를 삼키면 사람이 보도록 실패."""
+    raw, lay = _ref_blob([lui(A0, 0x25), addiu(A0, A0, 0x6C), lui(A0, 0x25), addiu(A0, A0, 0x70)],
+                         [(0x68, struct.pack("<f", 1.0) + b"ABCD" + sj("あい") + b"\0")])
+    with pytest.raises(ElfTextError):
+        ElfText.parse(raw, lay, CODES)
+
+
 def test_apply_nothing_is_identity():
     raw = _blob()
     assert ElfText.parse(raw, LAYOUT, CODES).apply({}, encode_sjis) == raw
@@ -132,6 +182,14 @@ def test_real_inventory(real):
     assert rows["ELF#2565c0"]["src"] == "たたかう"
     assert rows["ELF#255d70"]["src"] == "戦闘結果"
     assert rows["ELF#249fd0"]["src"] == "レイス" and rows["ELF#249fd0"]["refs"] == 0
+    # 서식 토큰이 대부분인 문자열도 화면 문장이다(아이템 입수 첫 줄)
+    assert rows["ELF#253ea0"]["src"] == "%c%c%s%c%cを１個"
+    assert rows["ELF#254e90"]["src"] == "%c%c%s%c%cを%s個"
+    # 실수 상수 바로 뒤(NUL 없음)에 붙은 문자열: 전투 소환 명령 등
+    assert rows["ELF#256608"]["src"] == "よびだす"
+    assert rows["ELF#2563d0"]["src"] == "ストレージアタック"
+    assert rows["ELF#2567a0"]["src"] == "封じられている"
+    assert rows["ELF#256de8"]["src"] == "ジャイアント・スウィンジング"
     assert all(r["refs"] > 0 for r in rows.values() if r["id"] not in ("ELF#249fd0", "ELF#24c880"))
     assert ElfText.parse(raw, lay, codes).apply({}, encode_sjis) == raw
 
