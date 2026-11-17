@@ -27,7 +27,7 @@ from tools.josa_hook import apply as apply_hook, build as build_hook
 from tools.scp_text import apply_texts
 from tools.sl00 import compress, decompress
 from tools.translation import check, load_dir
-from tools import data_text, ui_text
+from tools import data_text, ui_layout, ui_text
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 TEXT = ROOT / "text"
@@ -230,6 +230,7 @@ def main(src, out):
     rep.update(data_text.apply_texts(data_files, data_tr, enc))
     elf = bytearray(ElfText.parse(elf, lay, font.codes).apply(elf_tr, lambda s: encode_ui(s, enc)))
     name_grid.apply(elf, lay.delta, grid, enc)
+    ui_layout.apply(elf, lay.delta, {r["id"]: r["src"] for r in elf_src}, elf_tr)
     apply_hook(elf, lay.delta, build_hook(alloc.lo, alloc.split, josa_table(pairs, alloc.cmap)))
     rep[ELF] = bytes(elf)
     rep[FONT] = compress(font.to_bytes())
