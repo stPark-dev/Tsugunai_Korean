@@ -9,3 +9,9 @@ work/
 __pycache__/
 *.pyc
 Tsugunai (Japan)/
+
+# 외부 세이브 파일(제3자 자료, 커밋 금지)
+*.max
+*.cbs
+*.psu
+*.psv
