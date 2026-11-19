@@ -802,3 +802,6 @@
 {"id": "EST#087-0.name", "src": "モルガン・ル・フェイ", "ko": "모르간 르 페이", "state": "reviewed", "note": "용어집 G0204"}
 {"id": "EST#088-0.name", "src": "ラウ・ム・ルグ", "ko": "라우 무 루그", "state": "reviewed", "note": "용어집 G0212"}
 {"id": "EST#089-0.name", "src": "リンドブルム", "ko": "린드부름", "state": "reviewed", "note": "용어집 G0213"}
+{"id": "AUTOMAP#000.name", "src": "赤の門", "ko": "붉은 문", "state": "reviewed", "note": "용어집 G0065, 검수된 MQ88 「붉은 문 최하층」과 같음"}
+{"id": "AUTOMAP#001.name", "src": "緑の門", "ko": "초록 문", "state": "reviewed", "note": "용어집 G0066, 검수된 MQ88 「초록 문 최하층」과 같음"}
+{"id": "AUTOMAP#002.name", "src": "青の門", "ko": "푸른 문", "state": "reviewed", "note": "용어집 G0067, 검수된 MQ88 「푸른 문 최하층」과 같음"}

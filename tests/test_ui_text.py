@@ -58,3 +58,12 @@ def test_from_glossary_fills_exact_matches():
     by = {r["id"]: r for r in rows}
     assert by["ITEM#000.name"]["ko"] == "회복약" and "G0100" in by["ITEM#000.name"]["note"]
     assert by["ITEM#001.name"]["state"] == "untranslated" and len(rows) == len(SRC)
+
+
+def test_automap_name_widened_to_glossary_width():
+    # 나가기 확인 창은 글자 폭만큼 늘어나므로(0x1b3bcc) 원문 3칸이 아닌 4칸까지.
+    src = [{"id": "AUTOMAP#000.name", "src": "赤の門"}]
+    assert limits(src) == {"AUTOMAP#000.name": 4}
+    check([{"id": "AUTOMAP#000.name", "src": "赤の門", "ko": "붉은 문", "state": "reviewed"}], src)
+    with pytest.raises(UiTextError):
+        check([{"id": "AUTOMAP#000.name", "src": "赤の門", "ko": "붉은 큰문", "state": "reviewed"}], src)

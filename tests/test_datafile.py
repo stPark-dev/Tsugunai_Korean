@@ -1,11 +1,11 @@
-"""데이터 파일(ITEM/INVENT/WEAPON/MAGIC/AMULET/RECORD/EST) 코덱 테스트."""
+"""데이터 파일(ITEM/INVENT/WEAPON/MAGIC/AMULET/RECORD/EST/AUTOMAP) 코덱 테스트."""
 import os
 import struct
 
 import pytest
 
-from tools.datafile import (SPECS, DataFileError, EstFile, RecordFile,
-                            TableFile, pad)
+from tools.datafile import (SPECS, AutomapFile, DataFileError, EstFile,
+                            RecordFile, TableFile, pad)
 
 EX = os.path.join(os.path.dirname(__file__), "..", "work", "ex", "DATAIMG")
 
@@ -169,6 +169,55 @@ def test_est_fixed_name_fields():
     assert new[:512 + 84 * 2] == raw[:512 + 84 * 2]
     with pytest.raises(DataFileError):
         f.set_name((0, 0), b"Y" * 32)
+
+
+def _automap(names):
+    """헤더(0x10 개수, 0x14 표 위치) + 0x28 바이트 레코드(이름 0x20 칸 + u32 10 + 층 표 위치)."""
+    head = struct.pack("<6I", 0, 0x18, 0, 0x18, len(names), 0x20) + b"\xab" * 8
+    return head + b"".join((n + b"\0").ljust(0x20, b"\0") + struct.pack("<2I", 10, 0x900 + i)
+                           for i, n in enumerate(names))
+
+
+def test_automap_fixed_name_fields():
+    raw = _automap([b"RED", b"GREEN"])
+    f = AutomapFile.parse(raw)
+    assert f.names == [b"RED", b"GREEN"]
+    assert f.to_bytes() == raw
+    f.names[0] = b"X" * 0x1F
+    new = f.to_bytes()
+    assert len(new) == len(raw)
+    assert AutomapFile.parse(new).names == [b"X" * 0x1F, b"GREEN"]
+    assert new[0x20 + 0x20:] == raw[0x20 + 0x20:]          # 뒤 필드·다음 레코드 그대로
+    f.names[1] = b"G"                                      # 짧아지면 남는 칸은 0
+    assert f.to_bytes()[0x48:0x48 + 0x28] == b"G" + b"\0" * 0x1F + raw[0x68:0x70]
+    f.names[0] = b"Y" * 0x20
+    with pytest.raises(DataFileError):
+        f.to_bytes()
+
+
+def test_automap_table_outside_file_rejected():
+    raw = bytearray(_automap([b"RED"]))
+    struct.pack_into("<I", raw, 0x10, 2)
+    with pytest.raises(DataFileError):
+        AutomapFile.parse(bytes(raw))
+
+
+def test_automap_bad_header_rejected():
+    with pytest.raises(DataFileError):
+        AutomapFile.parse(b"\0" * 0x10)                   # 머리보다 짧음
+    raw = bytearray(_automap([b"RED"]))
+    struct.pack_into("<I", raw, 0x14, 0x10)                # 표가 머리와 겹침
+    with pytest.raises(DataFileError):
+        AutomapFile.parse(bytes(raw))
+
+
+def test_real_automap():
+    fn = os.path.join(EX, "AUTO_MAP/AUTOMAP.TBL")
+    if not os.path.exists(fn):
+        pytest.skip("추출 파일 없음")
+    raw = open(fn, "rb").read()
+    f = AutomapFile.parse(raw)
+    assert len(f.names) == 3 and f.to_bytes() == raw
 
 
 REAL = [("ITEM", "ITEM/ITEM.DAT", 168), ("INVENT", "INVENT/INVENT.DAT", 70),

@@ -8,6 +8,7 @@
   한글 음절 또는 전각 Shift-JIS 만.
   폭(칸 = 서식 토큰을 뺀 글자 수): 실행 파일 = 그 문자열의 원래 폭 이하(자리가 원래 길이에 맞춰 있음),
     데이터 = 같은 필드(ITEM.name 등)에서 가장 긴 원문 폭 이하(화면이 가장 긴 원문을 담아야 하므로).
+    예외(WIDENED): 그리는 곳이 글자 폭만큼 늘어나는 필드는 근거와 함께 따로 정한 폭.
   바이트 용량(실행 파일 제자리·재배치, 몬스터 이름 15바이트 등)은 적용 도구가 빌드 때 막는다.
 """
 import json
@@ -18,6 +19,10 @@ from tools.hangul import is_hangul, sjis_bytes
 from tools.translation import STATES
 
 FMT_RE = re.compile(r"%[-0-9]*[a-z]")
+
+# 필드 → 폭. AUTOMAP.name(자동 생성 던전 이름)은 「%s 나갑니까？」 창(창 오른쪽 끝 = 글 끝까지 늘림, 0x1b3bcc)과
+# 세이브 장소에 쓰인다. 원문 3칸 대신 용어집 이름(붉은 문 등 4칸)까지. 바이트 칸(0x20)은 datafile 이 막음.
+WIDENED = {"AUTOMAP.name": 4}
 
 
 class UiTextError(ValueError):
@@ -39,7 +44,7 @@ def limits(src_rows):
     by_field = {}
     for r in src_rows:
         f = field_of(r["id"])
-        by_field[f] = max(by_field.get(f, 0), cells(r["src"]))
+        by_field[f] = max(by_field.get(f, WIDENED.get(f, 0)), cells(r["src"]))
     return {r["id"]: by_field[field_of(r["id"])] for r in src_rows}
 
 

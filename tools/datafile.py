@@ -1,4 +1,4 @@
-"""데이터 파일 텍스트 코덱 (ITEM / INVENT / WEAPON / MAGIC / AMULET / RECORD / EST).
+"""데이터 파일 텍스트 코덱 (ITEM / INVENT / WEAPON / MAGIC / AMULET / RECORD / EST / AUTOMAP).
 
 오프셋 표 파일(TableFile): 파일 앞 u32 오프셋 표 → 레코드. 표 길이는 따로 없고,
   유효한(파일 안·단조 증가) 값이 이어지는 데까지가 레코드 수다. 표 뒤의 0xCD 칸은 그대로 둔다.
@@ -12,6 +12,8 @@
   - MAGIC  머리 0x24, 길이 바이트 없음, 설명 1개
 RECORD: u32 개수 c + 오프셋 2c개(제목, 설명) + 빈틈없이 이어진 문자열.
 EST: u32×128 그룹 표(0 = 빈 칸) → 그룹 = 84바이트 몬스터 레코드 묶음, +0 에 32바이트 고정 이름 칸.
+AUTOMAP(자동 생성 던전 표): +0x10 u32 개수, +0x14 u32 표 위치 → 0x28바이트 레코드
+  (+0 0x20바이트 고정 이름 칸, +0x20 u32(원본 10·20·30), +0x24 층 표 위치). 실행 파일 0x1840c0 이 같은 머리를 읽는다.
 """
 import struct
 from dataclasses import dataclass, field
@@ -215,4 +217,33 @@ class EstFile:
         for key, b in self.new.items():
             p = self.pos[key]
             out[p:p + EST_NAME] = b
+        return bytes(out)
+
+
+AUTOMAP_HEAD, AUTOMAP_REC, AUTOMAP_NAME = 0x18, 0x28, 0x20
+
+
+@dataclass
+class AutomapFile:
+    raw: bytes
+    base: int
+    names: list
+
+    @classmethod
+    def parse(cls, raw: bytes):
+        if len(raw) < AUTOMAP_HEAD:
+            raise DataFileError("AUTOMAP 머리가 짧음")
+        n, base = struct.unpack_from("<2I", raw, 0x10)
+        if base < AUTOMAP_HEAD or base + n * AUTOMAP_REC > len(raw):
+            raise DataFileError("AUTOMAP 표가 머리와 겹치거나 파일 밖")
+        return cls(raw, base, [_cstr(raw[o:o + AUTOMAP_NAME], f"@{o:#x}")
+                               for o in range(base, base + n * AUTOMAP_REC, AUTOMAP_REC)])
+
+    def to_bytes(self) -> bytes:
+        out = bytearray(self.raw)
+        for i, s in enumerate(self.names):
+            if len(s) + 1 > AUTOMAP_NAME:
+                raise DataFileError(f"AUTOMAP 이름 {AUTOMAP_NAME - 1}바이트 초과: {i}")
+            o = self.base + i * AUTOMAP_REC
+            out[o:o + AUTOMAP_NAME] = s.ljust(AUTOMAP_NAME, b"\0")
         return bytes(out)

@@ -7,7 +7,7 @@ ID = "<묶음>#<레코드 3자리>.<필드>"   예: ITEM#000.name, RECORD#012.de
 import json
 import sys
 
-from tools.datafile import SPECS, EstFile, RecordFile, TableFile
+from tools.datafile import SPECS, AutomapFile, EstFile, RecordFile, TableFile
 from tools.textcodec import decode_sjis
 
 PATHS = {
@@ -18,6 +18,7 @@ PATHS = {
     "AMULET": "/DATAIMG/AMULET/AMULET.DAT",
     "RECORD": "/DATAIMG/INVENT/RECORD.DAT",
     "EST": "/DATAIMG/BATTLE/EST.BIN",
+    "AUTOMAP": "/DATAIMG/AUTO_MAP/AUTOMAP.TBL",
 }
 FIELDS = {
     "ITEM": ("name", "desc"),
@@ -26,7 +27,9 @@ FIELDS = {
     "MAGIC": ("desc",),
     "AMULET": ("name", "summon"),
     "RECORD": ("title", "desc"),
+    "AUTOMAP": ("name",),
 }
+FLAT = {"RECORD": "fields", "AUTOMAP": "names"}   # 레코드 구분 없이 필드가 한 줄로 늘어선 파일
 
 
 class DataTextError(ValueError):
@@ -38,6 +41,8 @@ def _load(key, raw):
         return EstFile.parse(raw)
     if key == "RECORD":
         return RecordFile.parse(raw)
+    if key == "AUTOMAP":
+        return AutomapFile.parse(raw)
     return TableFile.parse(raw, SPECS[key])
 
 
@@ -46,8 +51,8 @@ def _items(key, obj):
     if key == "EST":
         return [(f"EST#{s:03d}-{k}.name", b) for (s, k), b in obj.names()]
     names = FIELDS[key]
-    if key == "RECORD":
-        flat = obj.fields
+    if key in FLAT:
+        flat = getattr(obj, FLAT[key])
     else:
         flat = [b for r in obj.records for b in r.fields]
     return [(f"{key}#{i // len(names):03d}.{names[i % len(names)]}", b) for i, b in enumerate(flat)]
@@ -77,10 +82,12 @@ def _set(key, obj, rid, data):
     if fname not in names or not rec.isdigit():
         raise DataTextError(f"잘못된 ID {rid}")
     i, j = int(rec), names.index(fname)
-    if key == "RECORD":
-        if 2 * i + j >= len(obj.fields):
+    if key in FLAT:
+        flat = getattr(obj, FLAT[key])
+        k = len(names) * i + j
+        if k >= len(flat):
             raise DataTextError(f"범위 밖 ID {rid}")
-        obj.fields[2 * i + j] = data
+        flat[k] = data
     else:
         if i >= len(obj.records):
             raise DataTextError(f"범위 밖 ID {rid}")

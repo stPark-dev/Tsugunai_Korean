@@ -802,3 +802,6 @@
 {"id": "EST#087-0.name", "src": "モルガン・ル・フェイ"}
 {"id": "EST#088-0.name", "src": "ラウ・ム・ルグ"}
 {"id": "EST#089-0.name", "src": "リンドブルム"}
+{"id": "AUTOMAP#000.name", "src": "赤の門"}
+{"id": "AUTOMAP#001.name", "src": "緑の門"}
+{"id": "AUTOMAP#002.name", "src": "青の門"}

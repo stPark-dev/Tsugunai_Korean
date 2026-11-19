@@ -35,6 +35,7 @@ def test_extract_known_strings(files):
     assert t["AMULET#000.name"] == "鳥の護符"
     assert t["RECORD#000.title"] == "試練の始まり"
     assert t["EST#000-0.name"] == "アンシリーコート"
+    assert [t[f"AUTOMAP#{i:03d}.name"] for i in range(3)] == ["赤の門", "緑の門", "青の門"]
     assert all(r["src"] for r in extract_all(files))
 
 
@@ -49,13 +50,14 @@ def test_apply_roundtrip_and_change(files):
     # 원문 그대로 넣으면 바뀌는 파일 없음
     same = apply_texts(files, {r["id"]: r["src"] for r in rows}, encode_sjis)
     assert same == {}
-    out = apply_texts(files, {"ITEM#000.name": "回復薬回復薬回復薬", "EST#000-0.name": "アンシリー"},
-                      encode_sjis)
-    assert set(out) == {PATHS["ITEM"], PATHS["EST"]}
+    out = apply_texts(files, {"ITEM#000.name": "回復薬回復薬回復薬", "EST#000-0.name": "アンシリー",
+                                "AUTOMAP#002.name": "青い門"}, encode_sjis)
+    assert set(out) == {PATHS["ITEM"], PATHS["EST"], PATHS["AUTOMAP"]}
     t = _by_id(extract_all({**files, **out}))
     assert t["ITEM#000.name"] == "回復薬回復薬回復薬"
     assert t["ITEM#001.name"] == _by_id(rows)["ITEM#001.name"]
     assert t["EST#000-0.name"] == "アンシリー"
+    assert t["AUTOMAP#002.name"] == "青い門" and t["AUTOMAP#000.name"] == "赤の門"
 
 
 def test_apply_errors(files):
@@ -67,3 +69,7 @@ def test_apply_errors(files):
         apply_texts(files, {"ITEM#000.bogus": "x"}, encode_sjis)
     with pytest.raises(DataFileError):
         apply_texts(files, {"EST#000-0.name": "あ" * 16}, encode_sjis)
+    with pytest.raises(DataTextError):
+        apply_texts(files, {"AUTOMAP#003.name": "x"}, encode_sjis)
+    with pytest.raises(DataFileError):
+        apply_texts(files, {"AUTOMAP#000.name": "あ" * 16}, encode_sjis)
