@@ -138,13 +138,17 @@ def test_merge_writers_rejects_fixed_overlapping_grid():
 def test_apply_gfx_redraws_sheet_from_label_rows():
     import os
     from tools.build import GFX, apply_gfx
+    import pytest
     from tools.gfx_label import FONTS
     sheet = os.path.join(os.path.dirname(__file__), "..", "work/ex/DATAIMG/STSWIN00.GTM")
     if not os.path.exists(sheet) or not all(os.path.exists(p) for p, _ in FONTS.values()):
         import pytest
         pytest.skip("추출 파일 없음")
-    raw = open(sheet, "rb").read()
-    assert set(GFX) == {"/DATAIMG/STSWIN00.GTM"}
-    out = apply_gfx(lambda p: raw)
-    assert set(out) == {"/DATAIMG/STSWIN00.GTM"}
-    assert len(out["/DATAIMG/STSWIN00.GTM"]) == len(raw) and out["/DATAIMG/STSWIN00.GTM"] != raw
+    battle = os.path.join(os.path.dirname(__file__), "..", "work/ex/DATAIMG/BTLEFF/SENNTOU0.GTM")
+    if not os.path.exists(battle):
+        pytest.skip("추출 파일 없음")
+    raws = {"/DATAIMG/STSWIN00.GTM": open(sheet, "rb").read(), "/DATAIMG/BTLEFF/SENNTOU0.GTM": open(battle, "rb").read()}
+    assert set(GFX) == set(raws)
+    out = apply_gfx(raws.__getitem__)
+    assert set(out) == set(raws)
+    assert all(len(out[p]) == len(raws[p]) and out[p] != raws[p] for p in raws)

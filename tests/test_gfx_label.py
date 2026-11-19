@@ -186,3 +186,89 @@ def test_font_hash_mismatch_fails(tmp_path, monkeypatch):
 def test_system_fonts_match_recorded_hashes():
     import tools.gfx_label as gl
     gl.check_fonts()
+
+
+BG, RING, WHITE, GREY = 5, 6, 7, 8
+
+
+def _outlined():
+    """배경이 0 이 아니고(BG) 흰 글자(WHITE/GREY)에 검은 테두리(RING)가 있는 시트."""
+    g = _gtm()
+    cl = bytearray(g.clut)
+    for i, (r, gg, b) in {BG: (0, 0, 0), RING: (8, 8, 8), WHITE: (255, 255, 255), GREY: (200, 200, 200)}.items():
+        v = (r * 31 // 255) | (gg * 31 // 255) << 5 | (b * 31 // 255) << 10
+        j = (i & ~0x18) | ((i & 0x08) << 1) | ((i & 0x10) >> 1)
+        struct.pack_into("<H", cl, 2 * j, v)
+    g.clut = bytes(cl)
+    for i in range(len(g.pixels)):
+        g.pixels[i] = BG
+    for y in range(8, 24):
+        for x in range(10, 60):
+            g.pixels[y * g.width + x] = RING if x % 4 == 0 else (WHITE if y < 16 else GREY)
+    return g
+
+
+@need_font
+def test_outline_style_on_non_zero_background():
+    g = _outlined()
+    apply_labels(g, [_row(bg=BG, outline=RING)])
+    W = g.width
+    box = [(x, y) for y in range(8, 24) for x in range(10, 60)]
+    used = {g.pixels[y * W + x] for x, y in box}
+    assert used <= {BG, RING, WHITE, GREY} and {BG, RING} < used and used & {WHITE, GREY}
+    fill = {(x, y) for x, y in box if g.pixels[y * W + x] in (WHITE, GREY)}
+    for x, y in fill:                            # 채움 바로 옆(상하좌우)은 채움이나 테두리, 배경 아님
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            if (x + dx, y + dy) in box:
+                assert g.pixels[(y + dy) * W + x + dx] != BG
+    assert all(g.pixels[i] == BG for i in range(len(g.pixels)) if not (10 <= i % W < 60 and 8 <= i // W < 24))
+
+
+@pytest.mark.parametrize("bad", [{"bg": 256}, {"outline": -1}, {"bg": "5"}])
+def test_check_rows_rejects_bad_indices(bad):
+    with pytest.raises(GfxLabelError):
+        check_rows([_row(**bad)], 96, 40)
+
+
+def test_check_rows_rejects_unknown_font():
+    with pytest.raises(GfxLabelError):
+        check_rows([_row(font="comic")], 96, 40)
+
+
+@need_font
+def test_serif_font_row_differs_from_default():
+    a, b = _outlined(), _outlined()
+    apply_labels(a, [_row(bg=BG, outline=RING)])
+    apply_labels(b, [_row(bg=BG, outline=RING, font="serif")])
+    assert a.to_bytes() != b.to_bytes()
+
+
+@need_font
+def test_outline_never_clipped_at_box_edge():
+    """원래 글자(테두리 포함)가 칸을 꽉 채워도 새 채움은 칸 가장자리에 닿지 않는다(테두리 1px 자리)."""
+    g = _outlined()
+    apply_labels(g, [_row(bg=BG, outline=RING, ko="회  피", align="C")])
+    W = g.width
+    fill = [(x, y) for y in range(8, 24) for x in range(10, 60) if g.pixels[y * W + x] in (WHITE, GREY)]
+    assert fill and all(10 < x < 59 and 8 < y < 23 for x, y in fill)
+
+
+@need_font
+def test_outline_rows_keep_brightest_color():
+    g = _outlined()
+    apply_labels(g, [_row(bg=BG, outline=RING)])
+    W = g.width
+    top = [g.pixels[y * W + x] for y in range(8, 16) for x in range(10, 60)]
+    assert top.count(WHITE) > top.count(GREY)
+
+
+@pytest.mark.parametrize("bad", [{"bg": 1}, {"outline": 1}, {"font": "serif"}])
+def test_badge_rejects_gold_only_keys(bad):
+    colors = {"top": 1, "bottom": 2, "shadow": 3, "edge": 4}
+    with pytest.raises(GfxLabelError):
+        check_rows([_row(style="badge", colors=colors, **bad)], 96, 40)
+
+
+def test_outline_equal_to_bg_rejected():
+    with pytest.raises(GfxLabelError):
+        check_rows([_row(bg=5, outline=5)], 96, 40)

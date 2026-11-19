@@ -4,10 +4,11 @@
 지우고 그리면 잘라 쓰는 범위와 상관없이 같은 자리에 나온다. 행(text/gfx/*.jsonl):
   {id, src, ko, state, box: [x0, x1, y0, y1], align: L|R|C, style: gold|badge, body?: [y0, y1], colors?}
   gold  = 원래 라벨의 줄별 밝은 색 × 글자 덮임 → 그 칸이 원래 쓰던 팔레트 인덱스 중 가장 가까운 것(팔레트 그대로).
+          bg = 배경 인덱스(기본 0), outline = 있으면 새 글자 둘레 1px 를 이 인덱스로(전투 시트의 흰 글자 검은 테두리).
   badge = 지정 인덱스: 위·아래 채움(top/bottom), 오른쪽 아래 그림자(shadow), 바깥 테두리(edge), 나머지 0.
   body  = 새 글자를 그릴 줄 범위(기본 = 원래 글자 위아래). 아래 칸이 잘라 쓰는 줄에 닿지 않게 줄일 때.
   align = 메뉴 목록은 L(왼쪽 끝 유지), 쌍점 앞 능력치 이름은 R, 한 글자 속성은 C.
-글꼴은 D10 과 같은 Noto Sans CJK KR(라벨 Black, 작은 배지 Bold).
+글꼴은 D10 과 같은 Noto Sans CJK KR(라벨 Black, 작은 배지 Bold). font: serif 면 Noto Serif CJK KR Bold(원본 명조체 라벨, D13).
 """
 import hashlib
 import os
@@ -15,9 +16,11 @@ import os
 from tools.hangul import is_hangul
 
 FONTS = {"gold": ("/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc", 1),
-         "badge": ("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc", 1)}
+         "badge": ("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc", 1),
+         "serif": ("/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc", 1)}
 FONT_SHA1 = {"gold": "aae77a58b5d711e051a73facd39a41775f41ef40",      # 다른 판이면 결과가 달라지므로 빌드 실패
-             "badge": "43f0027121b407326b3f06d0466df83887879e1b"}
+             "badge": "43f0027121b407326b3f06d0466df83887879e1b",
+             "serif": "65a0b704522858142628192d0b2292220e3bc2c3"}
 SS = 4                 # 안티에일리어싱용 확대 배율
 GOLD_MIN, GOLD_GAIN, BRIGHT = 0.25, 1.15, 120
 MIN_HEIGHT = 0.7       # 폭에 맞추느라 글자 높이가 원래의 70% 밑으로 줄면 실패(읽을 수 없음)
@@ -61,6 +64,14 @@ def check_rows(rows, width, height):
         b0, b1 = r.get("body", [y0, y1])
         if not y0 <= b0 < b1 <= y1:
             raise GfxLabelError(f"{rid}: body {r.get('body')} 가 칸 밖")
+        if any(k in r and not (type(r[k]) is int and 0 <= r[k] < 256) for k in ("bg", "outline")):
+            raise GfxLabelError(f"{rid}: bg·outline 은 0..255 인덱스")
+        if "outline" in r and r["outline"] == r.get("bg", 0):
+            raise GfxLabelError(f"{rid}: outline 이 bg 와 같음")
+        if r.get("style") == "badge" and any(k in r for k in ("bg", "outline", "font")):
+            raise GfxLabelError(f"{rid}: badge 는 bg·outline·font 를 쓰지 않음")
+        if r.get("font", "gold") not in FONTS:
+            raise GfxLabelError(f"{rid}: font {r.get('font')}")
         if r.get("align") not in ("L", "R", "C"):
             raise GfxLabelError(f"{rid}: align {r.get('align')}")
         if r.get("style") not in ("gold", "badge"):
@@ -108,26 +119,40 @@ def _lum(c):
 def _gold(g, r, pal):
     W = g.width
     x0, x1, y0, y1 = r["box"]
+    bg, ring = r.get("bg", 0), r.get("outline")
     px = lambda x, y: g.pixels[y * W + x]
-    rows = [y for y in range(y0, y1) if any(px(x, y) for x in range(x0, x1))]
+    ink = lambda x, y: px(x, y) != bg
+    rows = [y for y in range(y0, y1) if any(ink(x, y) for x in range(x0, x1))]
     if not rows:
         raise GfxLabelError(f"{r['id']}: 칸에 원래 글자 없음")
     b0, b1 = r.get("body", [rows[0], rows[-1] + 1])
-    cand = sorted({px(x, y) for y in range(y0, y1) for x in range(x0, x1)} - {0})
+    cand = sorted({px(x, y) for y in range(y0, y1) for x in range(x0, x1)} - {bg, ring})
     bright, last = {}, None
     for y in list(range(b0, b1)) + list(reversed(range(b0, b1))):   # 빈 줄은 이웃 줄 색
-        cs = [pal[px(x, y)] for x in range(x0, x1) if px(x, y) and _lum(pal[px(x, y)]) > BRIGHT]
+        cs = [pal[px(x, y)] for x in range(x0, x1) if ink(x, y) and _lum(pal[px(x, y)]) > BRIGHT]
+        if cs and ring is not None:            # 테두리 글자(흰색)는 평균이 회색 안티에일리어싱에 끌려 어두워짐 → 가장 밝은 색
+            cs = [max(cs, key=_lum)]
         bright[y] = bright.get(y) or (tuple(sum(c[i] for c in cs) / len(cs) for i in range(3)) if cs else last)
         last = bright[y]
     if any(v is None for v in bright.values()):
         raise GfxLabelError(f"{r['id']}: 원래 글자에 밝은 색이 없어 색을 정할 수 없음")
-    m = _mask(r["ko"], x1 - x0, b1 - b0, r["align"], FONTS["gold"], GOLD_MIN)
-    _clear(g, r["box"])
+    if ring is not None:                       # 테두리 1px 자리를 칸 안에 남김
+        mx0, mx1, mb0, mb1 = x0 + 1, x1 - 1, max(b0, y0 + 1), min(b1, y1 - 1)
+    else:
+        mx0, mx1, mb0, mb1 = x0, x1, b0, b1
+    m = _mask(r["ko"], mx1 - mx0, mb1 - mb0, r["align"], FONTS[r.get("font", "gold")], GOLD_MIN)
+    _clear(g, r["box"], bg)
+    fill = set()
     for yy, line in enumerate(m):
         for xx, a in enumerate(line):
             if a:
-                t = [c * min(1, a * GOLD_GAIN) for c in bright[b0 + yy]]
-                g.pixels[(b0 + yy) * W + x0 + xx] = min(cand, key=lambda i: sum((pal[i][k] - t[k]) ** 2 for k in range(3)))
+                t = [c * min(1, a * GOLD_GAIN) for c in bright[mb0 + yy]]
+                g.pixels[(mb0 + yy) * W + mx0 + xx] = min(cand, key=lambda i: sum((pal[i][k] - t[k]) ** 2 for k in range(3)))
+                fill.add((mx0 + xx, mb0 + yy))
+    if ring is not None:
+        for x, y in {(x + dx, y + dy) for x, y in fill for dx in (-1, 0, 1) for dy in (-1, 0, 1)} - fill:
+            if x0 <= x < x1 and y0 <= y < y1:
+                g.pixels[y * W + x] = ring
 
 
 def _badge(g, r):
@@ -147,10 +172,10 @@ def _badge(g, r):
                 g.pixels[y * W + x] = idx(y)
 
 
-def _clear(g, box):
+def _clear(g, box, bg=0):
     x0, x1, y0, y1 = box
     for y in range(y0, y1):
-        g.pixels[y * g.width + x0:y * g.width + x1] = bytes(x1 - x0)
+        g.pixels[y * g.width + x0:y * g.width + x1] = bytes([bg]) * (x1 - x0)
 
 
 def apply_labels(g, rows):

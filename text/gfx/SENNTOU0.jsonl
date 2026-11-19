@@ -1,0 +1,5 @@
+{"id": "SENNTOU0#00", "src": "魔法防御", "ko": "마법방어", "state": "reviewed", "box": [158, 239, 312, 334], "align": "L", "style": "gold", "bg": 221, "outline": 222, "note": "마법 방어 결과 칸. D13 사용자 결정", "font": "serif"}
+{"id": "SENNTOU0#01", "src": "鉄壁防御", "ko": "철벽방어", "state": "reviewed", "box": [242, 323, 324, 348], "align": "L", "style": "gold", "bg": 221, "outline": 222, "note": "노멀 가드 결과로 보임. D13 사용자 결정", "font": "serif"}
+{"id": "SENNTOU0#02", "src": "反撃防御", "ko": "반격방어", "state": "reviewed", "box": [243, 321, 349, 373], "align": "L", "style": "gold", "bg": 221, "outline": 222, "note": "튜토리얼 「반격 방어」(M00_02#102)와 같은 말. D13 사용자 결정", "font": "serif"}
+{"id": "SENNTOU0#03", "src": "防御", "ko": "방어", "state": "reviewed", "box": [280, 320, 375, 397], "align": "L", "style": "gold", "bg": 221, "outline": 222, "note": "ＳＰ防御 의 防御 만(ＳＰ 픽셀은 원본 유지). D13 사용자 결정", "font": "serif"}
+{"id": "SENNTOU0#04", "src": "回 避", "ko": "회  피", "state": "reviewed", "box": [253, 313, 398, 419], "align": "C", "style": "gold", "bg": 221, "outline": 222, "note": "백스텝 결과로 보임. 원문처럼 글자 사이를 띄움. D13 사용자 결정", "font": "serif"}

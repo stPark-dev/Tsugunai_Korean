@@ -37,7 +37,8 @@ TEXT = ROOT / "text"
 SOURCE_SHA1 = "72f131160b40ff309ebf06ac501bf65971da4da6"      # docs/survey.md, SCPS-11007
 ELF = "/SCPS_110.07"
 FONT = "/DATAIMG/FONT/FONT.BIN"
-GFX = {"/DATAIMG/STSWIN00.GTM": TEXT / "gfx" / "STSWIN00.jsonl"}   # 그림 글자 라벨(D3, G4)
+GFX = {"/DATAIMG/STSWIN00.GTM": TEXT / "gfx" / "STSWIN00.jsonl",              # 그림 글자 라벨(D3, G4)
+       "/DATAIMG/BTLEFF/SENNTOU0.GTM": TEXT / "gfx" / "SENNTOU0.jsonl"}       # G5 전투
 # 기본 이름 포인터 표 0x238070 순서 = 이름 변수 {n:01}–{n:07}
 NAME_IDS = ("ELF#25d008", "ELF#251aa8", "ELF#251a98", "ELF#251a88", "ELF#251a78",
             "ELF#25d000", "ELF#25cff8")
