@@ -29,6 +29,8 @@ from tools.sl00 import compress, decompress
 from tools.translation import check, load_dir
 from tools import data_text, ui_layout, ui_text
 from tools.gfx_label import apply_labels
+from tools import gfx_card
+from tools.psi import Psi
 from tools.gtm import Gtm
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -68,6 +70,20 @@ def apply_gfx(read):
         new = g.to_bytes()
         if new != raw:
             out[path] = new
+    return out
+
+
+def apply_cards(read, data_rows):
+    """퀘스트 제목 카드(G2). 번역된 카드만 {경로: SL00 압축 바이트}."""
+    rows = _jsonl(TEXT / "gfx" / "TITLE.jsonl")
+    gfx_card.check_titles(rows, data_rows)
+    gfx_card.check_fonts()
+    out = {}
+    for r in rows:
+        if r["state"] == "untranslated":
+            continue
+        p = Psi.parse(decompress(read(r["path"])))
+        out[r["path"]] = compress(gfx_card.compose(p, r["ko"]).to_bytes())
     return out
 
 
@@ -252,6 +268,7 @@ def main(src, out):
     rep[ELF] = bytes(elf)
     rep[FONT] = compress(font.to_bytes())
     rep.update(apply_gfx(lambda p: img.read_file(by[p])))
+    rep.update(apply_cards(lambda p: img.read_file(by[p]), ui_rows["DATA"]))
 
     kept = list(scp_src.values()) + [r for r in elf_src if not r["debug"]] + data_src
     stale = stale_kanji(kept, slots, set(texts) | set(elf_tr) | set(data_tr))

@@ -152,3 +152,22 @@ def test_apply_gfx_redraws_sheet_from_label_rows():
     out = apply_gfx(raws.__getitem__)
     assert set(out) == set(raws)
     assert all(len(out[p]) == len(raws[p]) and out[p] != raws[p] for p in raws)
+
+
+def test_apply_cards_redraws_translated_title_cards():
+    import os
+    import pytest
+    from tools.build import _jsonl, TEXT, apply_cards
+    from tools.gfx_card import CARD_FONTS
+    from tools.psi import Psi
+    from tools.sl00 import decompress
+    ex = os.path.join(os.path.dirname(__file__), "..", "work/ex")
+    rows = _jsonl(TEXT / "gfx" / "TITLE.jsonl")
+    if not all(os.path.exists(ex + r["path"]) for r in rows) or not all(os.path.exists(p) for p, _ in CARD_FONTS.values()):
+        pytest.skip("추출 파일·글꼴 없음")
+    out = apply_cards(lambda p: open(ex + p, "rb").read(), _jsonl(TEXT / "ko_ui" / "DATA.jsonl"))
+    done = {r["path"] for r in rows if r["state"] != "untranslated"}
+    assert set(out) == done and len(done) == 34          # Ｌ－４ 카드만 그대로
+    for p, b in out.items():
+        q = Psi.parse(decompress(b))
+        assert (q.width, q.height) == (512, 128) and q.pixels != Psi.parse(decompress(open(ex + p, "rb").read())).pixels
