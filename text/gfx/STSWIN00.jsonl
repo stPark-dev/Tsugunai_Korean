@@ -1,13 +1,13 @@
-{"id": "STSWIN00#00", "src": "耐魔力", "ko": "내마력", "state": "needs_human_review", "box": [1, 60, 327, 346], "align": "L", "style": "gold", "note": "마법 저항. 시안"}
-{"id": "STSWIN00#01", "src": "炎", "ko": "화", "state": "needs_human_review", "box": [76, 93, 331, 348], "align": "C", "style": "gold", "note": "속성 한 글자. 시안(화·폭·냉·성·뢰)", "body": [331, 347]}
-{"id": "STSWIN00#02", "src": "爆", "ko": "폭", "state": "needs_human_review", "box": [112, 129, 331, 349], "align": "C", "style": "gold", "note": "속성 한 글자. 시안", "body": [331, 347]}
-{"id": "STSWIN00#03", "src": "冷", "ko": "냉", "state": "needs_human_review", "box": [148, 165, 331, 349], "align": "C", "style": "gold", "note": "속성 한 글자. 시안", "body": [331, 347]}
-{"id": "STSWIN00#04", "src": "星", "ko": "성", "state": "needs_human_review", "box": [183, 202, 331, 348], "align": "C", "style": "gold", "note": "속성 한 글자. 시안", "body": [331, 347]}
-{"id": "STSWIN00#05", "src": "雷", "ko": "뢰", "state": "needs_human_review", "box": [220, 238, 331, 348], "align": "C", "style": "gold", "note": "속성 한 글자. 시안", "body": [331, 347]}
+{"id": "STSWIN00#00", "src": "耐魔力", "ko": "마법내성", "state": "reviewed", "box": [1, 60, 327, 346], "align": "L", "style": "gold", "note": "마법 저항. D12 사용자 결정(내마력 대신)"}
+{"id": "STSWIN00#01", "src": "炎", "ko": "화", "state": "reviewed", "box": [76, 93, 331, 348], "align": "C", "style": "gold", "note": "속성 한 글자. D12 사용자 결정(화·폭·냉·성·뢰)", "body": [331, 347]}
+{"id": "STSWIN00#02", "src": "爆", "ko": "폭", "state": "reviewed", "box": [112, 129, 331, 349], "align": "C", "style": "gold", "note": "속성 한 글자. D12 사용자 결정", "body": [331, 347]}
+{"id": "STSWIN00#03", "src": "冷", "ko": "냉", "state": "reviewed", "box": [148, 165, 331, 349], "align": "C", "style": "gold", "note": "속성 한 글자. D12 사용자 결정", "body": [331, 347]}
+{"id": "STSWIN00#04", "src": "星", "ko": "성", "state": "reviewed", "box": [183, 202, 331, 348], "align": "C", "style": "gold", "note": "속성 한 글자. D12 사용자 결정", "body": [331, 347]}
+{"id": "STSWIN00#05", "src": "雷", "ko": "뢰", "state": "reviewed", "box": [220, 238, 331, 348], "align": "C", "style": "gold", "note": "속성 한 글자. D12 사용자 결정", "body": [331, 347]}
 {"id": "STSWIN00#06", "src": "ちから", "ko": "힘", "state": "reviewed", "box": [2, 52, 352, 369], "align": "R", "style": "gold", "note": "아이템 설명 『힘』과 같음"}
 {"id": "STSWIN00#07", "src": "すばやさ", "ko": "민첩", "state": "reviewed", "box": [65, 135, 351, 369], "align": "R", "style": "gold", "note": "아이템 설명 『민첩』과 같음"}
 {"id": "STSWIN00#08", "src": "せいしん", "ko": "정신", "state": "reviewed", "box": [149, 220, 352, 368], "align": "R", "style": "gold", "note": "아이템 설명 『정신』과 같음"}
-{"id": "STSWIN00#09", "src": "ステータス", "ko": "상태", "state": "needs_human_review", "box": [229, 317, 352, 369], "align": "L", "style": "gold", "note": "메뉴·화면 제목. 상태 이상(ステータス異常)과 같은 말. 시안"}
+{"id": "STSWIN00#09", "src": "ステータス", "ko": "상태", "state": "reviewed", "box": [229, 317, 352, 369], "align": "L", "style": "gold", "note": "메뉴·화면 제목. 상태 이상(ステータス異常)과 같은 말. D12 사용자 결정"}
 {"id": "STSWIN00#10", "src": "防御", "ko": "방어", "state": "reviewed", "box": [3, 38, 376, 394], "align": "R", "style": "gold", "note": "방어력(ELF)과 같음"}
 {"id": "STSWIN00#11", "src": "アイテム", "ko": "아이템", "state": "reviewed", "box": [52, 119, 377, 394], "align": "L", "style": "gold", "note": "전투 명령과 같음"}
 {"id": "STSWIN00#12", "src": "アミュレット", "ko": "아뮬렛", "state": "reviewed", "box": [133, 223, 377, 394], "align": "L", "style": "gold", "note": "용어집 G0113 아뮬렛"}
@@ -19,6 +19,6 @@
 {"id": "STSWIN00#18", "src": "はずす", "ko": "해제", "state": "reviewed", "box": [207, 259, 399, 417], "align": "L", "style": "gold", "note": "ELF はずす→해제와 같음"}
 {"id": "STSWIN00#19", "src": "すてる", "ko": "버리기", "state": "reviewed", "box": [269, 320, 400, 417], "align": "L", "style": "gold", "note": "ELF すてる→버리기와 같음"}
 {"id": "STSWIN00#20", "src": "ルゥン設定", "ko": "룬 설정", "state": "reviewed", "box": [327, 416, 399, 417], "align": "L", "style": "gold", "note": "용어집 G0112 룬"}
-{"id": "STSWIN00#21", "src": "履歴", "ko": "기록", "state": "needs_human_review", "box": [411, 449, 448, 465], "align": "L", "style": "gold", "note": "쓰이는 화면 미확인. 시안"}
+{"id": "STSWIN00#21", "src": "履歴", "ko": "기록", "state": "reviewed", "box": [411, 449, 448, 465], "align": "L", "style": "gold", "note": "쓰이는 화면 미확인. D12 사용자 결정"}
 {"id": "STSWIN00#22", "src": "クエスト", "ko": "퀘스트", "state": "reviewed", "box": [362, 426, 471, 489], "align": "L", "style": "gold", "note": "메뉴 제목"}
 {"id": "STSWIN00#23", "src": "召喚", "ko": "소환", "state": "reviewed", "box": [223, 256, 99, 116], "align": "C", "style": "badge", "colors": {"top": 97, "bottom": 63, "shadow": 183, "edge": 218}, "note": "대사 소환과 같음. 배지 안쪽만(괄호 유지)"}
