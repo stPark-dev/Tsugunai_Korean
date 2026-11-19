@@ -28,6 +28,8 @@ from tools.scp_text import apply_texts
 from tools.sl00 import compress, decompress
 from tools.translation import check, load_dir
 from tools import data_text, ui_layout, ui_text
+from tools.gfx_label import apply_labels
+from tools.gtm import Gtm
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 TEXT = ROOT / "text"
@@ -35,6 +37,7 @@ TEXT = ROOT / "text"
 SOURCE_SHA1 = "72f131160b40ff309ebf06ac501bf65971da4da6"      # docs/survey.md, SCPS-11007
 ELF = "/SCPS_110.07"
 FONT = "/DATAIMG/FONT/FONT.BIN"
+GFX = {"/DATAIMG/STSWIN00.GTM": TEXT / "gfx" / "STSWIN00.jsonl"}   # 그림 글자 라벨(D3, G4)
 # 기본 이름 포인터 표 0x238070 순서 = 이름 변수 {n:01}–{n:07}
 NAME_IDS = ("ELF#25d008", "ELF#251aa8", "ELF#251a98", "ELF#251a88", "ELF#251a78",
             "ELF#25d000", "ELF#25cff8")
@@ -52,6 +55,19 @@ def verify_source(path, sha1):
     got = _sha1_file(path)
     if got != sha1:
         raise BuildError(f"지원하지 않는 원본 이미지(SHA1 {got})")
+
+
+def apply_gfx(read):
+    """read(경로) → 원본 바이트. 라벨 행으로 다시 그린 시트만 {경로: 바이트}."""
+    out = {}
+    for path, rows_path in GFX.items():
+        raw = read(path)
+        g = Gtm.parse(raw)
+        apply_labels(g, _jsonl(rows_path))
+        new = g.to_bytes()
+        if new != raw:
+            out[path] = new
+    return out
 
 
 def selected_texts(rows):
@@ -234,6 +250,7 @@ def main(src, out):
     apply_hook(elf, lay.delta, build_hook(alloc.lo, alloc.split, josa_table(pairs, alloc.cmap)))
     rep[ELF] = bytes(elf)
     rep[FONT] = compress(font.to_bytes())
+    rep.update(apply_gfx(lambda p: img.read_file(by[p])))
 
     kept = list(scp_src.values()) + [r for r in elf_src if not r["debug"]] + data_src
     stale = stale_kanji(kept, slots, set(texts) | set(elf_tr) | set(data_tr))

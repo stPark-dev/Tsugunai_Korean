@@ -133,3 +133,18 @@ def test_data_layout_rejects_bad_brackets_and_spaces(bad):
 def test_merge_writers_rejects_fixed_overlapping_grid():
     with pytest.raises(BuildError):
         merge_writers({}, {"ELF#5": "가"}, {"ELF#5"})
+
+
+def test_apply_gfx_redraws_sheet_from_label_rows():
+    import os
+    from tools.build import GFX, apply_gfx
+    from tools.gfx_label import FONTS
+    sheet = os.path.join(os.path.dirname(__file__), "..", "work/ex/DATAIMG/STSWIN00.GTM")
+    if not os.path.exists(sheet) or not all(os.path.exists(p) for p, _ in FONTS.values()):
+        import pytest
+        pytest.skip("추출 파일 없음")
+    raw = open(sheet, "rb").read()
+    assert set(GFX) == {"/DATAIMG/STSWIN00.GTM"}
+    out = apply_gfx(lambda p: raw)
+    assert set(out) == {"/DATAIMG/STSWIN00.GTM"}
+    assert len(out["/DATAIMG/STSWIN00.GTM"]) == len(raw) and out["/DATAIMG/STSWIN00.GTM"] != raw
