@@ -16,8 +16,15 @@ GTM = 32B 헤더 + CLUT 256×16bit(ABGR1555, CSM1) + 8bpp 픽셀 (+0x0C 폭/높�
 - TITLE/SCE.PSI(Sony 로고), CATTLE0/1(개발사 로고), FONT/GAMEOVER·NOWLOAD(영문), MS_WAKU1(창 틀), ENDPIC01–13·BG_IMG(그림만), BTLEFF/*.PSI(이펙트)
 - MOVIE/MV000–010.PSS: 2초 간격 프레임 샘플에서 일본어 없음(`work/movie/*_sheet.png`, MV010 「Fin.」 영문). 샘플 간격보다 짧게 나오는 글자는 배제 못 함.
 
-## 미확인 (다음 확인 방법)
+## 모델 텍스처·얼굴·아이콘 전수 조사 (2026-11-20, 대상 아님)
 
-- 맵 모델(MAP_BG/MAP_GMK *.MDL) 텍스처 속 간판·비석 글자 → 플레이 중 관찰로 목록에 추가
-- FACE/FACE.ARC, BATTLE/*.TPL, DAD_*.ICO(메모리카드 아이콘) 형식 미해석
-- WALL_6.GTM(512×256): 벽 무늬, 글자 없음(확인함)
+- 묶음 형식: `[u32 개수][u16 0x20 항목 크기][u16 0x20 정렬]` + 항목 `[u32 오프셋][u32 크기][이름 0x18]`, 파일·항목 모두 SL00 압축일 수 있음.
+  MDL·MOL·PSL·ARC·MED·BIN(맵 MAP_BG/MAP_GMK, CHARA, MONSTER, BTL_BG, AMULET, AUTO_MAP, MAGIC, BATTLE)이 이 형식.
+- 텍스처 .psi 8,411개 → 중복 제거 3,872장(8bpp·32bpp, 일부 16bpp ABGR1555·4bpp 변형 25장) + FACE.BIN 얼굴 gt2 16장(32bpp 128×128)
+  + 메모리카드 아이콘 DAD_C·D·N.ICO 텍스처(128×128 RLE ABGR1555)를 모두 PNG로 꺼내(`work/tex`, `work/tex2`, `work/tex_extra`) 눈으로 확인.
+  변 길이 32px 미만은 제외. 번호 붙인 시트 `work/texsheet/s000–s076.png`(색인 `index.txt`), `extra.png`, `med_bin.png`.
+- 결과: **일본어(가나·한자) 글자 없음.** 글자처럼 보이는 것은 지어낸 문자(룬·간판 te090·te141·두루마리 ta522·책등 te256/te266)와
+  알아볼 수 없는 영문 채우기 글(양피지 공지, 책등, 「Romantic Night」 포스터, 묘비, 가격표 tc927, 디버그 표기 tf260 「R-1…L-4」).
+  영문은 일본 원판에서도 그대로인 장식이라 대상 아님.
+- 텍스처 없는 형식(확인함): BATTLE/*.TPL(배치 표, float 좌표), ASL·ETC·MOC·RDM·DID·DAW(이름 목록 없음, 모델·애니메이션·맵 데이터).
+- 남은 한계: 맵 지오메트리 위에 정점 색으로 그린 글자, 실행 중 조합되는 글자는 이 방법으로 못 봄 → 플레이 중 관찰로 보완.
