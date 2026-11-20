@@ -20,7 +20,7 @@ GTM = 32B 헤더 + CLUT 256×16bit(ABGR1555, CSM1) + 8bpp 픽셀 (+0x0C 폭/높�
 
 - 묶음 형식: `[u32 개수][u16 0x20 항목 크기][u16 0x20 정렬]` + 항목 `[u32 오프셋][u32 크기][이름 0x18]`, 파일·항목 모두 SL00 압축일 수 있음.
   MDL·MOL·PSL·ARC·MED·BIN(맵 MAP_BG/MAP_GMK, CHARA, MONSTER, BTL_BG, AMULET, AUTO_MAP, MAGIC, BATTLE)이 이 형식.
-- 텍스처 .psi 8,411개 → 중복 제거 3,872장(8bpp·32bpp, 일부 16bpp ABGR1555·4bpp 변형 25장) + FACE.BIN 얼굴 gt2 16장(32bpp 128×128)
+- 텍스처 .psi 8,411개 → 중복 제거 3,856장(맵·캐릭터 등 3,734 + 마법·전투 122)(8bpp·32bpp, 일부 16bpp ABGR1555·4bpp 변형 25장) + FACE.BIN 얼굴 gt2 16장(32bpp 128×128)
   + 메모리카드 아이콘 DAD_C·D·N.ICO 텍스처(128×128 RLE ABGR1555)를 모두 PNG로 꺼내(`work/tex`, `work/tex2`, `work/tex_extra`) 눈으로 확인.
   변 길이 32px 미만은 제외. 번호 붙인 시트 `work/texsheet/s000–s076.png`(색인 `index.txt`), `extra.png`, `med_bin.png`.
 - 결과: **일본어(가나·한자) 글자 없음.** 글자처럼 보이는 것은 지어낸 문자(룬·간판 te090·te141·두루마리 ta522·책등 te256/te266)와
