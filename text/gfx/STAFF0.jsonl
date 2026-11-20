@@ -1,0 +1,30 @@
+{"id": "STAFF0#00", "src": "ディレクター", "ko": "디렉터", "state": "needs_human_review", "box": [5, 146, 1, 21], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#01", "src": "企画・シナリオ", "ko": "기획・시나리오", "state": "needs_human_review", "box": [290, 459, 1, 21], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#02", "src": "テクニカルディレクター", "ko": "테크니컬 디렉터", "state": "needs_human_review", "box": [5, 267, 24, 45], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#03", "src": "プログラム担当", "ko": "프로그램 담당", "state": "needs_human_review", "box": [290, 457, 24, 45], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#04", "src": "グラフィック担当", "ko": "그래픽 담당", "state": "needs_human_review", "box": [3, 197, 49, 69], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#05", "src": "キャラクター", "ko": "캐릭터", "state": "needs_human_review", "box": [292, 433, 49, 69], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#06", "src": "エネミー", "ko": "에너미", "state": "needs_human_review", "box": [5, 99, 73, 93], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#07", "src": "背景", "ko": "배경", "state": "needs_human_review", "box": [293, 338, 73, 93], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#08", "src": "ムービー", "ko": "무비", "state": "needs_human_review", "box": [6, 100, 97, 117], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#09", "src": "エフェクト", "ko": "이펙트", "state": "needs_human_review", "box": [291, 405, 97, 117], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#10", "src": "企画サポート", "ko": "기획 서포트", "state": "needs_human_review", "box": [4, 144, 121, 141], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#11", "src": "スタッフサポート", "ko": "스태프 서포트", "state": "needs_human_review", "box": [289, 477, 121, 141], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#12", "src": "制作進行管理", "ko": "제작 진행 관리", "state": "needs_human_review", "box": [4, 149, 145, 165], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#13", "src": "エネミーデザイン", "ko": "에너미 디자인", "state": "needs_human_review", "box": [291, 484, 145, 165], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#14", "src": "プロモーション", "ko": "프로모션", "state": "needs_human_review", "box": [290, 459, 240, 261], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#15", "src": "スーパーバイザー", "ko": "슈퍼바이저", "state": "needs_human_review", "box": [289, 481, 264, 284], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#16", "src": "キャラクター原案", "ko": "캐릭터 원안", "state": "needs_human_review", "box": [6, 197, 289, 310], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#17", "src": "製作・著作", "ko": "제작・저작", "state": "needs_human_review", "box": [291, 413, 289, 310], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#18", "src": "マネージャー", "ko": "매니저", "state": "needs_human_review", "box": [49, 189, 313, 336], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#19", "src": "音楽", "ko": "음악", "state": "needs_human_review", "box": [293, 338, 313, 336], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#20", "src": "スタッフ", "ko": "스태프", "state": "needs_human_review", "box": [45, 141, 337, 360], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#21", "src": "イメージボード", "ko": "이미지 보드", "state": "needs_human_review", "box": [291, 457, 337, 360], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#22", "src": "ディレクター", "ko": "디렉터", "state": "needs_human_review", "box": [74, 215, 361, 382], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#23", "src": "舞台デザイン", "ko": "무대 디자인", "state": "needs_human_review", "box": [290, 436, 361, 382], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#24", "src": "タイトル考案", "ko": "타이틀 고안", "state": "needs_human_review", "box": [2, 147, 385, 405], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#25", "src": "制作管理", "ko": "제작 관리", "state": "needs_human_review", "box": [291, 387, 385, 405], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#26", "src": "セールスプロモーション", "ko": "세일즈 프로모션", "state": "needs_human_review", "box": [5, 269, 408, 429], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#27", "src": "サウンドエフェクト", "ko": "사운드 이펙트", "state": "needs_human_review", "box": [3, 222, 433, 454], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#28", "src": "ゲーム制作", "ko": "게임 제작", "state": "needs_human_review", "box": [3, 123, 457, 479], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF0#29", "src": "サウンドプログラム", "ko": "사운드 프로그램", "state": "needs_human_review", "box": [4, 215, 481, 502], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}

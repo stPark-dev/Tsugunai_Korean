@@ -40,7 +40,8 @@ SOURCE_SHA1 = "72f131160b40ff309ebf06ac501bf65971da4da6"      # docs/survey.md, 
 ELF = "/SCPS_110.07"
 FONT = "/DATAIMG/FONT/FONT.BIN"
 GFX = {"/DATAIMG/STSWIN00.GTM": TEXT / "gfx" / "STSWIN00.jsonl",              # 그림 글자 라벨(D3, G4)
-       "/DATAIMG/BTLEFF/SENNTOU0.GTM": TEXT / "gfx" / "SENNTOU0.jsonl"}       # G5 전투
+       "/DATAIMG/BTLEFF/SENNTOU0.GTM": TEXT / "gfx" / "SENNTOU0.jsonl",       # G5 전투
+       **{f"/DATAIMG/FONT/STAFF{n}.PSI": TEXT / "gfx" / f"STAFF{n}.jsonl" for n in (0, 2, 3)}}  # G3 스태프롤 직함
 # 기본 이름 포인터 표 0x238070 순서 = 이름 변수 {n:01}–{n:07}
 NAME_IDS = ("ELF#25d008", "ELF#251aa8", "ELF#251a98", "ELF#251a88", "ELF#251a78",
             "ELF#25d000", "ELF#25cff8")
@@ -65,10 +66,20 @@ def apply_gfx(read):
     out = {}
     for path, rows_path in GFX.items():
         raw = read(path)
-        g = Gtm.parse(raw)
-        apply_labels(g, _jsonl(rows_path))
-        new = g.to_bytes()
-        if new != raw:
+        if path.endswith(".PSI"):            # 스태프롤: SL00 압축 8bpp PSI
+            p = Psi.parse(decompress(raw))
+            if p.bpp != 8:
+                raise BuildError(f"{path}: 8bpp PSI 만 라벨을 다시 그릴 수 있음")
+            g = Psi(p.header, p.width, p.height, p.bpp, p.clut, bytearray(p.pixels))
+            apply_labels(g, _jsonl(rows_path))
+            new = compress(bytes(g.to_bytes()))
+            changed = bytes(g.pixels) != p.pixels
+        else:
+            g = Gtm.parse(raw)
+            apply_labels(g, _jsonl(rows_path))
+            new = g.to_bytes()
+            changed = new != raw
+        if changed:
             out[path] = new
     return out
 

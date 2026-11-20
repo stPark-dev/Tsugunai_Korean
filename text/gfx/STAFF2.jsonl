@@ -1,0 +1,10 @@
+{"id": "STAFF2#00", "src": "エネミーサウンドエフェクト", "ko": "에너미 사운드 이펙트", "state": "needs_human_review", "box": [2, 323, 242, 263], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#01", "src": "エグゼクティブプロデューサー", "ko": "이그제큐티브 프로듀서", "state": "needs_human_review", "box": [2, 338, 289, 310], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#02", "src": "サウンドディレクター&", "ko": "사운드 디렉터＆", "state": "needs_human_review", "box": [4, 266, 314, 334], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#03", "src": "プログラム", "ko": "프로그램", "state": "needs_human_review", "box": [71, 188, 337, 358], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#04", "src": "パッケージ&ソフトウェア", "ko": "패키지＆소프트웨어", "state": "needs_human_review", "box": [1, 292, 361, 381], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#05", "src": "マニュアルデザイン", "ko": "매뉴얼 디자인", "state": "needs_human_review", "box": [4, 219, 386, 406], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#06", "src": "パッケージ・コーディネート", "ko": "패키지 코디네이트", "state": "needs_human_review", "box": [1, 312, 408, 428], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#07", "src": "ソフトウェアマニュアル・ライティング", "ko": "소프트웨어 매뉴얼 라이팅", "state": "needs_human_review", "box": [4, 439, 433, 453], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#08", "src": "タイトルロゴ・デザイン", "ko": "타이틀 로고 디자인", "state": "needs_human_review", "box": [1, 268, 457, 477], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF2#09", "src": "セールスプロモーション", "ko": "세일즈 프로모션", "state": "needs_human_review", "box": [4, 268, 480, 501], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}

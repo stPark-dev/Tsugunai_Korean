@@ -262,7 +262,7 @@ def test_outline_rows_keep_brightest_color():
     assert top.count(WHITE) > top.count(GREY)
 
 
-@pytest.mark.parametrize("bad", [{"bg": 1}, {"outline": 1}, {"font": "serif"}])
+@pytest.mark.parametrize("bad", [{"bg": 1}, {"outline": 1}, {"font": "serif"}, {"shear": 0.2}])
 def test_badge_rejects_gold_only_keys(bad):
     colors = {"top": 1, "bottom": 2, "shadow": 3, "edge": 4}
     with pytest.raises(GfxLabelError):
@@ -272,3 +272,32 @@ def test_badge_rejects_gold_only_keys(bad):
 def test_outline_equal_to_bg_rejected():
     with pytest.raises(GfxLabelError):
         check_rows([_row(bg=5, outline=5)], 96, 40)
+
+
+@need_font
+def test_shear_slants_glyphs_right_at_top():
+    a, b = _gtm(), _gtm()
+    apply_labels(a, [_row(ko="가", align="C")])
+    apply_labels(b, [_row(ko="가", align="C", shear=0.3)])
+    def tilt(g):
+        ink = _ink(g, (10, 60, 8, 24))
+        top = [x for x, y in ink if y < 14]
+        bot = [x for x, y in ink if y >= 18]
+        return sum(top) / len(top) - sum(bot) / len(bot)
+    assert tilt(b) > tilt(a) + 1
+
+
+@need_font
+def test_middle_dot_and_ampersand_allowed():
+    apply_labels(_gtm(), [_row(ko="가・나＆")])
+
+
+@pytest.mark.parametrize("bad", [{"shear": 0.9}, {"shear": -0.1}, {"shear": "0.2"}])
+def test_check_rows_rejects_bad_shear(bad):
+    with pytest.raises(GfxLabelError):
+        check_rows([_row(**bad)], 96, 40)
+
+
+def test_serif_black_font_registered_with_hash():
+    import tools.gfx_label as gl
+    assert gl.FONTS["serif_black"][0].endswith("NotoSerifCJK-Black.ttc") and len(gl.FONT_SHA1["serif_black"]) == 40

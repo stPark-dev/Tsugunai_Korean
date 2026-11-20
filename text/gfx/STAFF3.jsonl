@@ -1,0 +1,4 @@
+{"id": "STAFF3#00", "src": "サウンドスーパーバイザー", "ko": "사운드 슈퍼바이저", "state": "needs_human_review", "box": [4, 290, 73, 93], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF3#01", "src": "企画・戦闘パート", "ko": "기획・전투 파트", "state": "needs_human_review", "box": [3, 191, 96, 119], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF3#02", "src": "制作総指揮", "ko": "제작 총지휘", "state": "needs_human_review", "box": [3, 124, 121, 143], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}
+{"id": "STAFF3#03", "src": "ミュージックコーディネイト", "ko": "뮤직 코디네이트", "state": "needs_human_review", "box": [5, 309, 170, 190], "align": "L", "style": "gold", "font": "serif_black", "shear": 0.25, "note": "직함만(D14). 시안"}

@@ -145,12 +145,13 @@ def test_apply_gfx_redraws_sheet_from_label_rows():
         import pytest
         pytest.skip("추출 파일 없음")
     battle = os.path.join(os.path.dirname(__file__), "..", "work/ex/DATAIMG/BTLEFF/SENNTOU0.GTM")
-    if not os.path.exists(battle):
+    ex = os.path.join(os.path.dirname(__file__), "..", "work/ex")
+    if not os.path.exists(battle) or not all(os.path.exists(ex + p) for p in GFX):
         pytest.skip("추출 파일 없음")
     raws = {"/DATAIMG/STSWIN00.GTM": open(sheet, "rb").read(), "/DATAIMG/BTLEFF/SENNTOU0.GTM": open(battle, "rb").read()}
-    assert set(GFX) == set(raws)
-    out = apply_gfx(raws.__getitem__)
-    assert set(out) == set(raws)
+    assert set(raws) <= set(GFX)
+    out = apply_gfx(lambda p: raws[p] if p in raws else open(os.path.join(os.path.dirname(__file__), "..", "work/ex") + p, "rb").read())
+    assert set(raws) <= set(out)
     assert all(len(out[p]) == len(raws[p]) and out[p] != raws[p] for p in raws)
 
 
@@ -171,3 +172,22 @@ def test_apply_cards_redraws_translated_title_cards():
     for p, b in out.items():
         q = Psi.parse(decompress(b))
         assert (q.width, q.height) == (512, 128) and q.pixels != Psi.parse(decompress(open(ex + p, "rb").read())).pixels
+
+
+def test_apply_gfx_handles_compressed_psi_staff_sheets():
+    import os
+    import pytest
+    from tools.build import GFX, apply_gfx
+    from tools.gfx_label import FONTS
+    from tools.psi import Psi
+    from tools.sl00 import decompress
+    ex = os.path.join(os.path.dirname(__file__), "..", "work/ex")
+    if not all(os.path.exists(ex + p) for p in GFX) or not all(os.path.exists(p) for p, _ in FONTS.values()):
+        pytest.skip("추출 파일·글꼴 없음")
+    staff = {f"/DATAIMG/FONT/STAFF{n}.PSI" for n in (0, 2, 3)}
+    assert staff <= set(GFX)
+    out = apply_gfx(lambda p: open(ex + p, "rb").read())
+    for p in staff:
+        old = Psi.parse(decompress(open(ex + p, "rb").read()))
+        new = Psi.parse(decompress(out[p]))
+        assert (new.width, new.height, new.clut) == (old.width, old.height, old.clut) and new.pixels != old.pixels

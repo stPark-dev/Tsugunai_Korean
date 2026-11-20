@@ -8,7 +8,8 @@
   badge = 지정 인덱스: 위·아래 채움(top/bottom), 오른쪽 아래 그림자(shadow), 바깥 테두리(edge), 나머지 0.
   body  = 새 글자를 그릴 줄 범위(기본 = 원래 글자 위아래). 아래 칸이 잘라 쓰는 줄에 닿지 않게 줄일 때.
   align = 메뉴 목록은 L(왼쪽 끝 유지), 쌍점 앞 능력치 이름은 R, 한 글자 속성은 C.
-글꼴은 D10 과 같은 Noto Sans CJK KR(라벨 Black, 작은 배지 Bold). font: serif 면 Noto Serif CJK KR Bold(원본 명조체 라벨, D13).
+  shear = 기울임(0..0.5, 위가 오른쪽으로). 스태프롤처럼 원본이 기울어진 글자.
+글꼴은 D10 과 같은 Noto Sans CJK KR(라벨 Black, 작은 배지 Bold). font: serif 면 Noto Serif CJK KR Bold(원본 명조체 라벨, D13), serif_black 은 Black(굵은 스태프롤 직함).
 """
 import hashlib
 import os
@@ -17,16 +18,20 @@ from tools.hangul import is_hangul
 
 FONTS = {"gold": ("/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc", 1),
          "badge": ("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc", 1),
-         "serif": ("/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc", 1)}
+         "serif": ("/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc", 1),
+         "serif_black": ("/usr/share/fonts/opentype/noto/NotoSerifCJK-Black.ttc", 1)}
 FONT_SHA1 = {"gold": "aae77a58b5d711e051a73facd39a41775f41ef40",      # 다른 판이면 결과가 달라지므로 빌드 실패
              "badge": "43f0027121b407326b3f06d0466df83887879e1b",
-             "serif": "65a0b704522858142628192d0b2292220e3bc2c3"}
+             "serif": "65a0b704522858142628192d0b2292220e3bc2c3",
+             "serif_black": "6ece10e3a25abfc555b2be4b6f245edd68a00f86"}
 SS = 4                 # 안티에일리어싱용 확대 배율
 GOLD_MIN, GOLD_GAIN, BRIGHT = 0.25, 1.15, 120
 MIN_HEIGHT = 0.7       # 폭에 맞추느라 글자 높이가 원래의 70% 밑으로 줄면 실패(읽을 수 없음)
 BADGE_MIN = 150
 STATES_SKIP = {"untranslated"}
 COLOR_KEYS = {"top", "bottom", "shadow", "edge"}
+PUNCT = " ・＆"          # 한글 말고 그릴 수 있는 글자(스태프롤 직함의 가운뎃점·앰퍼샌드)
+MAX_SHEAR = 0.5
 
 
 class GfxLabelError(ValueError):
@@ -68,8 +73,10 @@ def check_rows(rows, width, height):
             raise GfxLabelError(f"{rid}: bg·outline 은 0..255 인덱스")
         if "outline" in r and r["outline"] == r.get("bg", 0):
             raise GfxLabelError(f"{rid}: outline 이 bg 와 같음")
-        if r.get("style") == "badge" and any(k in r for k in ("bg", "outline", "font")):
-            raise GfxLabelError(f"{rid}: badge 는 bg·outline·font 를 쓰지 않음")
+        if r.get("style") == "badge" and any(k in r for k in ("bg", "outline", "font", "shear")):
+            raise GfxLabelError(f"{rid}: badge 는 bg·outline·font·shear 를 쓰지 않음")
+        if "shear" in r and not (type(r["shear"]) in (int, float) and 0 <= r["shear"] <= MAX_SHEAR):
+            raise GfxLabelError(f"{rid}: shear {r['shear']}")
         if r.get("font", "gold") not in FONTS:
             raise GfxLabelError(f"{rid}: font {r.get('font')}")
         if r.get("align") not in ("L", "R", "C"):
@@ -81,22 +88,23 @@ def check_rows(rows, width, height):
             raise GfxLabelError(f"{rid}: badge 색 {sorted(COLOR_KEYS)} 필요(0..255)")
         if r.get("state") not in STATES_SKIP:
             ko = r.get("ko", "")
-            if not ko.strip() or any(not (is_hangul(c) or c == " ") for c in ko):
-                raise GfxLabelError(f"{rid}: 한글·공백만 그릴 수 있음 {ko!r}")
+            if not ko.strip() or any(not (is_hangul(c) or c in PUNCT) for c in ko):
+                raise GfxLabelError(f"{rid}: 한글·공백·{PUNCT.strip()}만 그릴 수 있음 {ko!r}")
         for o in boxes:
             if x0 < o[1] and o[0] < x1 and y0 < o[3] and o[2] < y1:
                 raise GfxLabelError(f"{rid}: 다른 칸 {o} 과 겹침")
         boxes.append((x0, x1, y0, y1))
 
 
-def _mask(text, w, h, align, font, min_alpha):
-    """높이 h·폭 w 에 맞춘 글자 덮임(0..1) 행렬."""
+def _mask(text, w, h, align, font, min_alpha, shear=0):
+    """높이 h·폭 w 에 맞춘 글자 덮임(0..1) 행렬. shear 면 위쪽을 오른쪽으로 기울인다(기울어진 만큼 폭에 포함)."""
     from PIL import Image, ImageDraw, ImageFont
     size = h * SS * 2
+    slant = int(shear * h * SS)
     while True:
         f = ImageFont.truetype(font[0], size, index=font[1])
         l, t, r, b = f.getbbox(text)
-        if b - t <= h * SS and r - l <= w * SS:
+        if b - t <= h * SS and r - l + slant <= w * SS:
             if b - t < MIN_HEIGHT * h * SS:
                 raise GfxLabelError(f"{text!r} 가 {w}×{h} 칸에 들어가려면 너무 작아짐")
             break
@@ -104,9 +112,11 @@ def _mask(text, w, h, align, font, min_alpha):
             raise GfxLabelError(f"{text!r} 가 {w}×{h} 칸에 안 들어감")
         size -= 1
     im = Image.new("L", (w * SS, h * SS), 0)
-    room = w * SS - (r - l)
+    room = w * SS - (r - l) - slant
     left = {"L": 0, "R": room, "C": room // 2}[align]
     ImageDraw.Draw(im).text((left - l, (h * SS - (b - t)) // 2 - t), text, font=f, fill=255)
+    if shear:      # 출력 (x, y) ← 입력 (x + shear·y - slant, y): 위(y=0)가 slant 만큼 오른쪽
+        im = im.transform(im.size, Image.AFFINE, (1, shear, -slant, 0, 1, 0), Image.BICUBIC)
     im = im.resize((w, h), Image.BOX)
     return [[im.getpixel((x, y)) / 255 if im.getpixel((x, y)) >= min_alpha * 255 else 0
              for x in range(w)] for y in range(h)]
@@ -140,7 +150,7 @@ def _gold(g, r, pal):
         mx0, mx1, mb0, mb1 = x0 + 1, x1 - 1, max(b0, y0 + 1), min(b1, y1 - 1)
     else:
         mx0, mx1, mb0, mb1 = x0, x1, b0, b1
-    m = _mask(r["ko"], mx1 - mx0, mb1 - mb0, r["align"], FONTS[r.get("font", "gold")], GOLD_MIN)
+    m = _mask(r["ko"], mx1 - mx0, mb1 - mb0, r["align"], FONTS[r.get("font", "gold")], GOLD_MIN, r.get("shear", 0))
     _clear(g, r["box"], bg)
     fill = set()
     for yy, line in enumerate(m):
