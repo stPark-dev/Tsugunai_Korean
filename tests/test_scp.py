@@ -108,3 +108,71 @@ def test_all_text_records_follow_padding_rule():
         for t in Script.parse(open(fn, "rb").read()).texts():
             n = len(t.text)
             assert t.payload == t.text + b"\0" * (4 - n % 4), (fn, t.op, t.payload)
+
+
+def _embedded(op, head=b"", tail_len=20):
+    """하위 스크립트를 품은 레코드(op 0x3F/0x8A: 시퀀스+20바이트 꼬리, op 0xA1: 64바이트 머리+시퀀스).
+
+    파일: 헤더 + 0x39 "AB" + [op: head | 0x800D{ 0x01 → 아래 0x60, 0x01 → 아래 FFFF } 0x60 FFFF | tail] + FFFF
+    하위 점프는 파일 기준 절대 오프셋(실제 M00_07.SCP 의 op 0x3F 와 같은 구조).
+    """
+    text = _rec(0x39, b"AB\0\0")
+    base = 0x20 + len(text) + 4 + len(head)          # 하위 시퀀스 시작(파일 오프셋)
+    j1_at, j2_at = base + 4, base + 12
+    rec60_at = base + 4 + 16
+    sep_at = rec60_at + 8
+    cont = struct.pack("<HH", 0x800D, 4 + 16) + _rec(0x01, struct.pack("<I", rec60_at)) + _rec(0x01, struct.pack("<I", sep_at))
+    seq = cont + _rec(0x60, b"\0\0\0\0") + b"\xff" * 4
+    emb = _rec(op, head + seq + bytes(range(tail_len)))
+    data = struct.pack("<8I", 0x20, 0, 0, 0, 0, 0, 0, 0) + text + emb + b"\xff" * 4
+    assert data[j1_at:j1_at + 2] == b"\x01\x00" and data[j2_at:j2_at + 2] == b"\x01\x00"
+    return data, j1_at, j2_at
+
+
+@pytest.mark.parametrize("op,head,tail", [(0x3F, b"", 20), (0x8A, b"", 20), (0xA1, bytes(64), 0)])
+def test_embedded_script_jumps_relocate(op, head, tail):
+    raw, j1_at, j2_at = _embedded(op, head, tail)
+    s = Script.parse(raw)
+    assert s.to_bytes() == raw
+    s.texts()[0].set_text(b"ABCDEFGHIJK")                     # 8바이트 늘림 → 뒤 레코드 전부 +8
+    out = s.to_bytes()
+    t1, t2 = (struct.unpack_from("<I", out, a + 8 + 4)[0] for a in (j1_at, j2_at))
+    assert out[t1:t1 + 2] == b"\x60\x00"                      # 같은 하위 레코드를 가리킴
+    assert out[t2:t2 + 4] == b"\xff" * 4                      # 하위 구분자
+    assert out[-4 - tail:-4] == bytes(range(tail))            # 꼬리 그대로
+    assert Script.parse(out).to_bytes() == out
+
+
+def test_embedded_jump_to_middle_of_record_rejected():
+    raw, j1_at, _ = _embedded(0x3F)
+    raw = bytearray(raw)
+    struct.pack_into("<I", raw, j1_at + 4, struct.unpack_from("<I", raw, j1_at + 4)[0] + 4)
+    with pytest.raises(ScpError):
+        Script.parse(bytes(raw))
+
+
+@need
+def test_grow_every_text_keeps_embedded_jumps_in_all_scripts():
+    """M00_07.SCP 몬스터 배치(op 0x3F) 하위 점프가 안 옮겨져 인카운트 때 멈춘 회귀."""
+    for fn in SCPS:
+        s = Script.parse(open(fn, "rb").read())
+        before = [j.target_node_desc() for j in s.jumps()]
+        for t in s.texts():
+            t.set_text(t.text + "가나".encode("cp949"))
+        s2 = Script.parse(s.to_bytes())
+        assert [j.target_node_desc() for j in s2.jumps()] == before, fn
+
+
+@need
+def test_no_jump_like_pattern_left_in_opaque_records():
+    """아직 모르는 '점프를 품은 op' 가 남아 있으면 실패(이번 결함처럼 가드가 못 보는 점프)."""
+    from tools.scp import Rec, Jump
+    for fn in SCPS:
+        s = Script.parse(open(fn, "rb").read())
+        starts = {n.pos for n in s.walk()}
+        for n in s.walk():
+            if type(n) is Rec and n.op not in TEXT_OPS:
+                p = n.payload
+                for i in range(0, len(p) - 7, 4):
+                    if p[i:i + 4] == b"\x01\x00\x08\x00":
+                        assert struct.unpack_from("<I", p, i + 4)[0] not in starts, (fn, hex(n.pos), hex(n.op))

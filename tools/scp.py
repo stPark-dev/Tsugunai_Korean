@@ -7,12 +7,15 @@
                op & 0x8000 = 컨테이너, 자식이 +4부터. 실제 크기가 64KB를 넘으면
                len 필드는 하위 16비트만 남는다(M21_00, M24_01 원본).
   op 0x01      +4 u32 = 파일 내 절대 오프셋(레코드·구분자 시작 또는 EOF)
+  op 0x3F/0x8A 페이로드 = 하위 레코드 열 + 20바이트 꼬리, op 0xA1 = 64바이트 머리 + 하위 레코드 열.
+               하위 열의 op 0x01 도 파일 기준 절대 오프셋(원본 전수: 452개 레코드, 하위 점프 3,289개).
   텍스트 op    본문 = Shift-JIS 문자열 + NUL 1~4개(4바이트 정렬)
 """
 import struct
 
 TEXT_OPS = frozenset({0x14, 0x38, 0x39, 0x3B})  # 장소명, 화자, 대사, 선택지
 JUMP_OP = 0x01
+EMBED_OPS = {0x3F: (0, 20), 0x8A: (0, 20), 0xA1: (64, 0)}   # op → (머리, 꼬리) 바이트
 SEP = b"\xff\xff\xff\xff"
 
 
@@ -55,6 +58,16 @@ class Jump(Rec):
     def target_node_desc(self):
         t = self.target_node
         return "EOF" if t is EOF else (type(t).__name__, t.op, t.index)
+
+
+class Emb(Node):
+    """하위 레코드 열을 품은 레코드. 머리·꼬리 바이트는 그대로 둔다."""
+
+    def __init__(self, op, head, children, tail):
+        self.op, self.head, self.children, self.tail = op, head, children, tail
+
+    def size(self):
+        return 4 + len(self.head) + sum(c.size() for c in self.children) + len(self.tail)
 
 
 class Cont(Node):
@@ -105,6 +118,11 @@ def _parse_seq(d, p, end):
                 raise ScpError(f"레코드 범위 초과 @{p:#x}")
             payload = d[p + 4:p + ln]
             n = (Jump if op == JUMP_OP else Rec)(op, payload)
+            if op in EMBED_OPS:
+                h, t = EMBED_OPS[op]
+                if ln < 4 + h + t:
+                    raise ScpError(f"op {op:#x} 길이 {ln:#x} @{p:#x}")
+                n = Emb(op, payload[:h], _parse_seq(d, p + 4 + h, p + ln - t), payload[len(payload) - t:])
             if op == JUMP_OP:
                 if ln != 8:
                     raise ScpError(f"점프 길이 {ln} @{p:#x}")
@@ -124,7 +142,7 @@ class Script:
     def walk(self, nodes=None):
         for n in self.nodes if nodes is None else nodes:
             yield n
-            if isinstance(n, Cont):
+            if isinstance(n, (Cont, Emb)):
                 yield from self.walk(n.children)
 
     @classmethod
@@ -163,6 +181,8 @@ class Script:
             n.pos = p
             if isinstance(n, Cont):
                 self._layout(n.children, p + 4)
+            elif isinstance(n, Emb):
+                self._layout(n.children, p + 4 + len(n.head))
             p += n.size()
         return p
 
@@ -181,6 +201,12 @@ class Script:
                 elif isinstance(n, Cont):
                     out.extend(struct.pack("<HH", n.op, n.size() & 0xFFFF))
                     emit(n.children)
+                elif isinstance(n, Emb):
+                    if n.size() > 0xFFFF:
+                        raise ScpError("레코드 64KB 초과")
+                    out.extend(struct.pack("<HH", n.op, n.size()) + n.head)
+                    emit(n.children)
+                    out.extend(n.tail)
                 elif isinstance(n, Jump):
                     n.target = off(n.target_node)
                     out.extend(struct.pack("<HHI", n.op, 8, n.target))

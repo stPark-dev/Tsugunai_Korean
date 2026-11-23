@@ -7,7 +7,7 @@ import json
 import posixpath
 import sys
 
-from tools.scp import Script
+from tools.scp import EOF, Script, ScpError
 from tools.textcodec import decode_sjis
 
 
@@ -38,6 +38,12 @@ def extract_all(files: dict):
     return rows
 
 
+def _targets(sc):
+    """헤더 구역 진입과 모든 점프(하위 열 포함)가 가리키는 논리 노드."""
+    hdr = [None if h is None else "EOF" if h is EOF else (type(h).__name__, h.op, h.index) for h in sc.header_nodes]
+    return hdr, [j.target_node_desc() for j in sc.jumps()]
+
+
 def apply_texts(files: dict, texts: dict, encoder):
     """texts: id → 문자열. 바뀐 파일만 {path: bytes}로 돌려준다."""
     by_stem = {_stem(p): p for p in files}
@@ -51,12 +57,19 @@ def apply_texts(files: dict, texts: dict, encoder):
     for path, items in want.items():
         raw = files[path]
         sc = Script.parse(raw)
+        targets = _targets(sc)
         recs = sc.texts()
         for idx, s in items.items():
             if idx >= len(recs):
                 raise ScpTextError(f"범위 밖 ID {path}#{idx}")
             recs[idx].set_text(encoder(s))
         new = sc.to_bytes()
+        try:
+            same = _targets(Script.parse(new)) == targets
+        except ScpError as e:
+            raise ScpTextError(f"{path}: 출력 다시 읽기 실패 {e}") from e
+        if not same:
+            raise ScpTextError(f"{path}: 점프·구역 진입 대상이 원본과 다름")
         if new != raw:
             out[path] = new
     return out
