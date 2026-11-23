@@ -191,3 +191,10 @@ def test_apply_gfx_handles_compressed_psi_staff_sheets():
         old = Psi.parse(decompress(open(ex + p, "rb").read()))
         new = Psi.parse(decompress(out[p]))
         assert (new.width, new.height, new.clut) == (old.width, old.height, old.clut) and new.pixels != old.pixels
+
+
+def test_build_uses_title_asset_from_ignored_assets_dir():
+    import inspect
+    from tools import build
+    assert build.TITLE_PNG == build.ROOT / "assets" / "title_ko.png"
+    assert "apply_title(" in inspect.getsource(build.main)

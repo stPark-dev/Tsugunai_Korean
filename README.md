@@ -70,7 +70,8 @@ orig/       원본 이미지 심볼릭 링크 (저장소에 포함하지 않음)
 
 ## 개발 환경
 
-- Python 3.11, Pillow, capstone, pytest
+- Python 3.11, Pillow 11.0.0, numpy 2.0.2, opencv-python 4.11.0.86, capstone, pytest
+- 타이틀 그림 `assets/title_ko.png`(원본 그림 파생, 저장소에 넣지 않음) — 빌드가 SHA1 로 확인, 없으면 빌드 실패
 - PCSX2 2.8.2 (flatpak) — 프로젝트 폴더 접근 허용 필요:
   `flatpak override --user --filesystem=<프로젝트 경로> net.pcsx2.PCSX2`
 - 원본 이미지를 `orig/tsugunai.bin`(와 `.cue`)으로 링크합니다.

@@ -15,3 +15,8 @@ Tsugunai (Japan)/
 *.cbs
 *.psu
 *.psv
+
+# 원본 게임 그림에서 만든 그림 자료(제3자 저작물 파생, 커밋 금지) — 빌드가 SHA1 로 확인
+/assets/title_ko.png
+/title_ko.png
+/tsugu_cover_ko.png

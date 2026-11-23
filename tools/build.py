@@ -30,11 +30,13 @@ from tools.translation import check, load_dir
 from tools import data_text, ui_layout, ui_text
 from tools.gfx_label import apply_labels
 from tools import gfx_card
+from tools.gfx_title import apply_title
 from tools.psi import Psi
 from tools.gtm import Gtm
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 TEXT = ROOT / "text"
+TITLE_PNG = ROOT / "assets" / "title_ko.png"   # G1 타이틀 그림(원본 그림 파생, 커밋 안 함, SHA1 은 gfx_title.TITLE_SHA1)
 
 SOURCE_SHA1 = "72f131160b40ff309ebf06ac501bf65971da4da6"      # docs/survey.md, SCPS-11007
 ELF = "/SCPS_110.07"
@@ -280,6 +282,7 @@ def main(src, out):
     rep[FONT] = compress(font.to_bytes())
     rep.update(apply_gfx(lambda p: img.read_file(by[p])))
     rep.update(apply_cards(lambda p: img.read_file(by[p]), ui_rows["DATA"]))
+    rep.update(apply_title(lambda p: img.read_file(by[p]), str(TITLE_PNG)))
 
     kept = list(scp_src.values()) + [r for r in elf_src if not r["debug"]] + data_src
     stale = stale_kanji(kept, slots, set(texts) | set(elf_tr) | set(data_tr))
